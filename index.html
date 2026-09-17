@@ -1,0 +1,2275 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Οικοδομή 360°">
+<meta name="theme-color" content="#0e1116">
+<link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjoizp/Omc6azp/OlM6fzpzOlyAzNjDCsCIsInNob3J0X25hbWUiOiLOn865zrrOv860zr/OvM6uIDM2MMKwIiwiZGVzY3JpcHRpb24iOiLOoM67zq7Pgc63z4Igzr/OtM63zrPPjM+CICYgz4XPgM6/zrvOv86zzrnPg8+Ezq7PgiDOus6xz4TOsc+DzrrOtc+Fzq7PgiIsImxhbmciOiJlbCIsInN0YXJ0X3VybCI6Ii4iLCJzY29wZSI6Ii4iLCJkaXNwbGF5Ijoic3RhbmRhbG9uZSIsIm9yaWVudGF0aW9uIjoiYW55IiwiYmFja2dyb3VuZF9jb2xvciI6IiMwZTExMTYiLCJ0aGVtZV9jb2xvciI6IiMwZTExMTYiLCJpY29ucyI6W3sic3JjIjoiZGF0YTppbWFnZS9zdmcreG1sO2Jhc2U2NCxQSE4yWnlCNGJXeHVjejBpYUhSMGNEb3ZMM2QzZHk1M015NXZjbWN2TWpBd01DOXpkbWNpSUhacFpYZENiM2c5SWpBZ01DQTFNVElnTlRFeUlpQjNhV1IwYUQwaU5URXlJaUJvWldsbmFIUTlJalV4TWlJK0NpQWdQSEpsWTNRZ2QybGtkR2c5SWpVeE1pSWdhR1ZwWjJoMFBTSTFNVElpSUhKNFBTSTVOaUlnWm1sc2JEMGlJMlUyTXpNeU9TSXZQZ29nSUR4eVpXTjBJSGRwWkhSb1BTSTFNVElpSUdobGFXZG9kRDBpTlRFeUlpQnllRDBpT1RZaUlHWnBiR3c5SW5WeWJDZ2paeWtpSUc5d1lXTnBkSGs5SWpBdU16VWlMejRLSUNBOFpHVm1jejRLSUNBZ0lEeHNhVzVsWVhKSGNtRmthV1Z1ZENCcFpEMGlaeUlnZURFOUlqQWlJSGt4UFNJd0lpQjRNajBpTVNJZ2VUSTlJakVpUGdvZ0lDQWdJQ0E4YzNSdmNDQnZabVp6WlhROUlqQWlJSE4wYjNBdFkyOXNiM0k5SWlObVpqWmhOV1lpTHo0S0lDQWdJQ0FnUEhOMGIzQWdiMlptYzJWMFBTSXhJaUJ6ZEc5d0xXTnZiRzl5UFNJak9HWXhZVEUwSWk4K0NpQWdJQ0E4TDJ4cGJtVmhja2R5WVdScFpXNTBQZ29nSUR3dlpHVm1jejRLSUNBOFp5Qm1hV3hzUFNKdWIyNWxJaUJ6ZEhKdmEyVTlJaU5tWm1abVptWWlJSE4wY205clpTMTNhV1IwYUQwaU16QWlJSE4wY205clpTMXNhVzVsWTJGd1BTSnliM1Z1WkNJZ2MzUnliMnRsTFd4cGJtVnFiMmx1UFNKeWIzVnVaQ0krQ2lBZ0lDQThjR0YwYUNCa1BTSk5NVEl3SURRek1pQm9NamN5SWk4K0NpQWdJQ0E4Y0dGMGFDQmtQU0pOTVRZd0lEUXpNaUJXTWpBNElHdzVOaUF0TnpJZ09UWWdOeklnZGpJeU5DSXZQZ29nSUNBZ1BIQmhkR2dnWkQwaVRUSXhOaUEwTXpJZ2RpMDVOaUJvT0RBZ2RqazJJaTgrQ2lBZ1BDOW5QZ284TDNOMlp6NEsiLCJzaXplcyI6ImFueSIsInR5cGUiOiJpbWFnZS9zdmcreG1sIiwicHVycG9zZSI6ImFueSJ9LHsic3JjIjoiZGF0YTppbWFnZS9zdmcreG1sO2Jhc2U2NCxQSE4yWnlCNGJXeHVjejBpYUhSMGNEb3ZMM2QzZHk1M015NXZjbWN2TWpBd01DOXpkbWNpSUhacFpYZENiM2c5SWpBZ01DQTFNVElnTlRFeUlpQjNhV1IwYUQwaU5URXlJaUJvWldsbmFIUTlJalV4TWlJK0NpQWdQSEpsWTNRZ2QybGtkR2c5SWpVeE1pSWdhR1ZwWjJoMFBTSTFNVElpSUhKNFBTSTVOaUlnWm1sc2JEMGlJMlUyTXpNeU9TSXZQZ29nSUR4eVpXTjBJSGRwWkhSb1BTSTFNVElpSUdobGFXZG9kRDBpTlRFeUlpQnllRDBpT1RZaUlHWnBiR3c5SW5WeWJDZ2paeWtpSUc5d1lXTnBkSGs5SWpBdU16VWlMejRLSUNBOFpHVm1jejRLSUNBZ0lEeHNhVzVsWVhKSGNtRmthV1Z1ZENCcFpEMGlaeUlnZURFOUlqQWlJSGt4UFNJd0lpQjRNajBpTVNJZ2VUSTlJakVpUGdvZ0lDQWdJQ0E4YzNSdmNDQnZabVp6WlhROUlqQWlJSE4wYjNBdFkyOXNiM0k5SWlObVpqWmhOV1lpTHo0S0lDQWdJQ0FnUEhOMGIzQWdiMlptYzJWMFBTSXhJaUJ6ZEc5d0xXTnZiRzl5UFNJak9HWXhZVEUwSWk4K0NpQWdJQ0E4TDJ4cGJtVmhja2R5WVdScFpXNTBQZ29nSUR3dlpHVm1jejRLSUNBOFp5Qm1hV3hzUFNKdWIyNWxJaUJ6ZEhKdmEyVTlJaU5tWm1abVptWWlJSE4wY205clpTMTNhV1IwYUQwaU16QWlJSE4wY205clpTMXNhVzVsWTJGd1BTSnliM1Z1WkNJZ2MzUnliMnRsTFd4cGJtVnFiMmx1UFNKeWIzVnVaQ0krQ2lBZ0lDQThjR0YwYUNCa1BTSk5NVEl3SURRek1pQm9NamN5SWk4K0NpQWdJQ0E4Y0dGMGFDQmtQU0pOTVRZd0lEUXpNaUJXTWpBNElHdzVOaUF0TnpJZ09UWWdOeklnZGpJeU5DSXZQZ29nSUNBZ1BIQmhkR2dnWkQwaVRUSXhOaUEwTXpJZ2RpMDVOaUJvT0RBZ2RqazJJaTgrQ2lBZ1BDOW5QZ284TDNOMlp6NEsiLCJzaXplcyI6ImFueSIsInR5cGUiOiJpbWFnZS9zdmcreG1sIiwicHVycG9zZSI6Im1hc2thYmxlIn1dfQo=">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+CiAgPHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSI5NiIgZmlsbD0iI2U2MzMyOSIvPgogIDxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iOTYiIGZpbGw9InVybCgjZykiIG9wYWNpdHk9IjAuMzUiLz4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmZjZhNWYiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjOGYxYTE0Ii8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8ZyBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMzAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+CiAgICA8cGF0aCBkPSJNMTIwIDQzMiBoMjcyIi8+CiAgICA8cGF0aCBkPSJNMTYwIDQzMiBWMjA4IGw5NiAtNzIgOTYgNzIgdjIyNCIvPgogICAgPHBhdGggZD0iTTIxNiA0MzIgdi05NiBoODAgdjk2Ii8+CiAgPC9nPgo8L3N2Zz4K">
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+CiAgPHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSI5NiIgZmlsbD0iI2U2MzMyOSIvPgogIDxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iOTYiIGZpbGw9InVybCgjZykiIG9wYWNpdHk9IjAuMzUiLz4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmZjZhNWYiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjOGYxYTE0Ii8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8ZyBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMzAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+CiAgICA8cGF0aCBkPSJNMTIwIDQzMiBoMjcyIi8+CiAgICA8cGF0aCBkPSJNMTYwIDQzMiBWMjA4IGw5NiAtNzIgOTYgNzIgdjIyNCIvPgogICAgPHBhdGggZD0iTTIxNiA0MzIgdi05NiBoODAgdjk2Ii8+CiAgPC9nPgo8L3N2Zz4K">
+<title>ΟΙΚΟΔΟΜΗ 360°</title>
+<style>
+  :root{
+    --bg:#0e1116; --bg2:#151b23; --panel:#1b232d; --panel2:#212c38;
+    --line:#2c3947; --line2:#3a4a5c;
+    --txt:#eef3f8; --muted:#9fb0c2; --dim:#6f8296;
+    --red:#e63329; --red2:#ff5147; --amber:#ffb020; --amber2:#ffce6a;
+    --blue:#3d9be0; --ok:#38c6a4;
+    --shadow:0 6px 24px rgba(0,0,0,.45);
+    --r:14px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:radial-gradient(1200px 600px at 80% -10%, #1a2431 0%, var(--bg) 55%) fixed;
+    color:var(--txt);
+    font-family:"Segoe UI",system-ui,Roboto,Arial,sans-serif;
+    font-size:15px; line-height:1.5; -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--amber2)}
+  h1,h2,h3,h4{margin:0 0 .4em;font-weight:700;letter-spacing:.2px}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 18px 80px}
+
+  /* Header */
+  header.top{
+    position:sticky;top:0;z-index:50;
+    background:linear-gradient(180deg,rgba(14,17,22,.98),rgba(14,17,22,.9));
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .top-in{max-width:1240px;margin:0 auto;padding:12px 18px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:12px;cursor:pointer}
+  .logo{
+    width:44px;height:44px;border-radius:11px;flex:0 0 auto;
+    background:linear-gradient(135deg,var(--red),#8f1a14);
+    display:grid;place-items:center;box-shadow:var(--shadow);position:relative;overflow:hidden
+  }
+  .logo svg{width:28px;height:28px}
+  .brand h1{font-size:20px;margin:0;line-height:1}
+  .brand .sub{font-size:11px;color:var(--muted);letter-spacing:2px;text-transform:uppercase}
+  nav.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-left:auto}
+  nav.tabs button{
+    background:var(--panel);color:var(--muted);border:1px solid var(--line);
+    padding:9px 13px;border-radius:10px;cursor:pointer;font-size:13.5px;font-weight:600;
+    display:flex;align-items:center;gap:7px;transition:.15s;
+  }
+  nav.tabs button:hover{color:var(--txt);border-color:var(--line2);background:var(--panel2)}
+  nav.tabs button.active{background:linear-gradient(135deg,var(--red),#a01f18);color:#fff;border-color:transparent;box-shadow:0 3px 12px rgba(230,51,41,.35)}
+  .pl-tag{display:inline-flex;align-items:center;gap:6px;background:var(--panel);border:1px solid var(--line2);color:var(--amber2);border-radius:9px;padding:7px 11px;font-size:12.5px;font-weight:700;cursor:pointer;white-space:nowrap}
+  .pl-tag:hover{border-color:var(--amber)}
+  .fs-btn{display:inline-flex;align-items:center;justify-content:center;background:var(--panel);border:1px solid var(--line2);color:var(--txt);border-radius:9px;padding:7px 10px;font-size:16px;line-height:1;cursor:pointer}
+  .fs-btn:hover{border-color:var(--red);color:var(--red2)}
+  nav.tabs button .ic{font-size:15px}
+
+  /* Sections */
+  section.view{display:none;animation:fade .25s ease}
+  section.view.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+  .hero{
+    margin-top:22px;padding:30px;border-radius:var(--r);
+    background:linear-gradient(120deg,#1e2935,#141b23);
+    border:1px solid var(--line);position:relative;overflow:hidden
+  }
+  .hero:before{content:"";position:absolute;inset:0;background:
+     repeating-linear-gradient(45deg,rgba(255,176,32,.05) 0 14px,transparent 14px 28px);pointer-events:none}
+  .hero h2{font-size:30px;margin-bottom:8px}
+  .hero p{color:var(--muted);max-width:760px;font-size:15.5px}
+  .hero .cta{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
+  .btn{
+    border:none;border-radius:11px;padding:13px 20px;font-size:14.5px;font-weight:700;cursor:pointer;
+    display:inline-flex;align-items:center;gap:9px;transition:.15s
+  }
+  .btn.primary{background:linear-gradient(135deg,var(--red),#a01f18);color:#fff;box-shadow:0 4px 16px rgba(230,51,41,.35)}
+  .btn.primary:hover{transform:translateY(-2px)}
+  .btn.ghost{background:var(--panel);color:var(--txt);border:1px solid var(--line2)}
+  .btn.ghost:hover{background:var(--panel2)}
+  .btn.amber{background:linear-gradient(135deg,var(--amber),#d98a00);color:#221600}
+
+  .grid{display:grid;gap:16px}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g4{grid-template-columns:repeat(4,1fr)}
+  @media(max-width:920px){.g2,.g3,.g4{grid-template-columns:1fr}}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:18px;box-shadow:var(--shadow)}
+  .card h3{font-size:16.5px;display:flex;align-items:center;gap:9px}
+  .card .em{font-size:19px}
+  .tile{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:16px;cursor:pointer;transition:.15s;position:relative}
+  .tile:hover{border-color:var(--red);transform:translateY(-3px);background:var(--panel2)}
+  .tile .big{font-size:30px}
+  .tile h4{margin:8px 0 3px;font-size:15.5px}
+  .tile p{margin:0;color:var(--muted);font-size:13px}
+
+  .stat{background:linear-gradient(160deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:var(--r);padding:16px}
+  .stat .k{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+  .stat .v{font-size:26px;font-weight:800;margin-top:4px}
+  .stat .v small{font-size:14px;color:var(--muted);font-weight:600}
+  .accent-red .v{color:var(--red2)}
+  .accent-amber .v{color:var(--amber2)}
+  .accent-blue .v{color:var(--blue)}
+
+  /* Form */
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:13px;font-weight:700;color:var(--muted);margin-bottom:7px;text-transform:uppercase;letter-spacing:.6px}
+  .field .hint{font-weight:500;text-transform:none;letter-spacing:0;color:var(--dim);font-size:11.5px}
+  input[type=number],input[type=text],select{
+    width:100%;background:var(--bg2);border:1px solid var(--line2);color:var(--txt);
+    padding:12px 13px;border-radius:10px;font-size:15px;font-family:inherit
+  }
+  input:focus,select:focus{outline:none;border-color:var(--red)}
+  .pedit{width:110px;background:var(--bg2);border:1px solid var(--line2);color:var(--amber2);border-radius:8px;padding:5px 9px;font-size:12.5px;text-align:right;font-weight:700;font-family:inherit}
+  .pedit:focus{outline:none;border-color:var(--amber)}
+  .peditrow{display:flex;align-items:center;justify-content:space-between;gap:8px;background:var(--bg2);border:1px solid var(--line);border-radius:9px;padding:7px 10px}
+  .peditrow label{font-size:12.5px;color:var(--muted);flex:1}
+  .peditrow .pedit{width:88px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{
+    padding:10px 14px;border-radius:10px;border:1px solid var(--line2);background:var(--bg2);
+    cursor:pointer;font-size:14px;font-weight:600;color:var(--muted);transition:.12s;user-select:none;
+    display:flex;align-items:center;gap:8px
+  }
+  .chip .ci{font-size:17px}
+  .chip:hover{border-color:var(--line2);color:var(--txt)}
+  .chip.sel{background:linear-gradient(135deg,var(--red),#8f1a14);color:#fff;border-color:transparent}
+  .chip.sel.amber{background:linear-gradient(135deg,var(--amber),#c47f00);color:#221600}
+  .switchrow{display:flex;flex-wrap:wrap;gap:10px}
+  .toggle{display:flex;align-items:center;gap:9px;background:var(--bg2);border:1px solid var(--line2);padding:9px 13px;border-radius:10px;cursor:pointer;font-size:13.5px;font-weight:600}
+  .toggle input{accent-color:var(--red);width:17px;height:17px}
+
+  /* Tables */
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
+  th{color:var(--muted);font-size:11.5px;text-transform:uppercase;letter-spacing:.6px;font-weight:700}
+  tr:hover td{background:rgba(255,255,255,.02)}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+  .badge{display:inline-block;padding:2px 9px;border-radius:20px;font-size:11.5px;font-weight:700;background:var(--panel2);border:1px solid var(--line2);color:var(--muted)}
+  .badge.red{background:rgba(230,51,41,.15);color:var(--red2);border-color:rgba(230,51,41,.35)}
+  .badge.amber{background:rgba(255,176,32,.14);color:var(--amber2);border-color:rgba(255,176,32,.3)}
+  .badge.blue{background:rgba(61,155,224,.14);color:var(--blue);border-color:rgba(61,155,224,.3)}
+
+  /* Bars */
+  .bar-row{display:grid;grid-template-columns:180px 1fr 92px;gap:12px;align-items:center;margin-bottom:9px}
+  .bar-row .lbl{font-size:13px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .bar-track{background:var(--bg2);border-radius:8px;height:22px;overflow:hidden;border:1px solid var(--line)}
+  .bar-fill{height:100%;border-radius:8px 0 0 8px;background:linear-gradient(90deg,var(--red),var(--amber));display:flex;align-items:center;transition:width .5s}
+  .bar-row .val{text-align:right;font-variant-numeric:tabular-nums;font-weight:700;font-size:13.5px}
+  @media(max-width:620px){.bar-row{grid-template-columns:120px 1fr 78px}}
+
+  /* Gantt */
+  .gantt{overflow-x:auto}
+  .gantt-row{display:grid;grid-template-columns:190px 1fr;gap:10px;align-items:center;margin-bottom:6px;min-width:520px}
+  .gantt-row .lbl{font-size:12.5px;color:var(--muted)}
+  .gantt-track{position:relative;height:22px;background:var(--bg2);border-radius:6px;border:1px solid var(--line)}
+  .gantt-bar{position:absolute;top:2px;bottom:2px;border-radius:5px;background:linear-gradient(90deg,var(--red2),var(--amber));display:flex;align-items:center;justify-content:center;font-size:10.5px;font-weight:700;color:#1a1200;overflow:hidden;white-space:nowrap}
+
+  .accordion{border:1px solid var(--line);border-radius:12px;margin-bottom:12px;overflow:hidden;background:var(--panel)}
+  .acc-head{padding:15px 18px;cursor:pointer;display:flex;align-items:center;gap:12px;font-weight:700;font-size:16px}
+  .acc-head .num{width:30px;height:30px;border-radius:8px;background:var(--bg2);border:1px solid var(--line2);display:grid;place-items:center;font-size:13px;color:var(--amber2);flex:0 0 auto}
+  .acc-head .chev{margin-left:auto;color:var(--dim);transition:.2s}
+  .acc-head .cost{font-size:12.5px;color:var(--muted);font-weight:600}
+  .accordion.open .chev{transform:rotate(90deg)}
+  .acc-body{display:none;padding:0 18px 18px;border-top:1px solid var(--line)}
+  .accordion.open .acc-body{display:block}
+  .acc-body h5{margin:16px 0 6px;color:var(--amber2);font-size:13px;text-transform:uppercase;letter-spacing:.7px;display:flex;align-items:center;gap:7px}
+  .acc-body ul{margin:6px 0;padding-left:20px;color:var(--muted)}
+  .acc-body li{margin-bottom:4px}
+  .pillrow{display:flex;flex-wrap:wrap;gap:7px;margin:6px 0}
+  .pill{background:var(--bg2);border:1px solid var(--line2);border-radius:8px;padding:5px 11px;font-size:12.5px;color:var(--txt)}
+  .tip{background:rgba(255,176,32,.08);border-left:3px solid var(--amber);padding:10px 14px;border-radius:0 8px 8px 0;margin:8px 0;font-size:13.5px}
+  .warn{background:rgba(230,51,41,.08);border-left:3px solid var(--red);padding:10px 14px;border-radius:0 8px 8px 0;margin:8px 0;font-size:13.5px}
+
+  .search{position:relative;margin:16px 0}
+  .search input{padding-left:42px}
+  .search .si{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--dim)}
+
+  .sectitle{display:flex;align-items:center;gap:12px;margin:26px 0 6px}
+  .sectitle .em{font-size:26px}
+  .sectitle h2{font-size:23px;margin:0}
+  .sectitle p{width:100%;color:var(--muted);margin:2px 0 0;font-size:14px}
+  .lead{color:var(--muted);max-width:820px;margin:2px 0 18px}
+
+  .method-card{border:1px solid var(--line);border-radius:14px;padding:18px;background:var(--panel);display:flex;flex-direction:column}
+  .method-card .mh{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+  .method-card .mh .em{font-size:26px}
+  .prosc{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+  .prosc h6{margin:0 0 5px;font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+  .prosc .pl{color:var(--amber2)} .prosc .mn{color:var(--red2)}
+  .prosc ul{margin:0;padding-left:16px;font-size:12.5px;color:var(--muted)}
+  .meter{height:7px;border-radius:5px;background:var(--bg2);overflow:hidden;margin-top:4px;border:1px solid var(--line)}
+  .meter i{display:block;height:100%;background:linear-gradient(90deg,var(--red),var(--amber))}
+
+  .footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);color:var(--dim);font-size:12.5px;text-align:center}
+  .kbd{background:var(--bg2);border:1px solid var(--line2);border-radius:6px;padding:1px 7px;font-size:12px}
+
+  .empty{text-align:center;color:var(--dim);padding:50px 20px}
+  .empty .em{font-size:44px;display:block;margin-bottom:10px;opacity:.6}
+
+  /* ---- SMARTPHONE ---- */
+  @media(max-width:600px){
+    body{font-size:14px}
+    .wrap{padding:0 12px 60px}
+    .top-in{padding:10px 12px;gap:10px}
+    .brand h1{font-size:17px}
+    .brand .sub{font-size:10px;letter-spacing:1px}
+    .logo{width:38px;height:38px}
+    nav.tabs{flex-wrap:nowrap;overflow-x:auto;margin-left:0;width:100%;justify-content:flex-start;
+      padding-bottom:6px;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+    nav.tabs button{flex:0 0 auto;padding:8px 11px;font-size:12.5px}
+    .hero{padding:20px 16px;margin-top:14px}
+    .hero h2{font-size:22px}
+    .hero p{font-size:14px}
+    .btn{padding:12px 16px;font-size:14px;width:100%;justify-content:center}
+    .hero .cta{flex-direction:column}
+    .hero .cta .btn{width:100%}
+    .grid.g4{grid-template-columns:1fr 1fr;gap:10px}
+    .stat .v{font-size:21px}
+    .sectitle h2{font-size:19px}
+    .sectitle .em{font-size:22px}
+    .card{padding:14px}
+    table{font-size:13px}
+    th,td{padding:8px 8px}
+    .bar-row{grid-template-columns:96px 1fr 70px;gap:8px}
+    .bar-row .lbl{font-size:11.5px}
+    .prosc{grid-template-columns:1fr}
+    .acc-head{font-size:14.5px;padding:13px 14px}
+    .acc-head .cost{display:none}
+    .chip{padding:10px 12px;font-size:13.5px}
+    .toggle{font-size:12.5px}
+    /* πίνακες που δεν χωράνε κυλούν οριζόντια */
+    .card{overflow-x:auto}
+  }
+  @media(max-width:380px){
+    .grid.g4{grid-template-columns:1fr}
+  }
+  .toprint{display:none}
+  @media print{
+    header.top,nav.tabs,.no-print,.hero .cta{display:none!important}
+    body{background:#fff;color:#000}
+    .card,.accordion{box-shadow:none;border-color:#ccc}
+    section.view{display:block!important}
+    section.view:not(.active){display:none!important}
+  }
+  ::-webkit-scrollbar{width:11px;height:11px}
+  ::-webkit-scrollbar-thumb{background:var(--line2);border-radius:6px}
+  ::-webkit-scrollbar-track{background:var(--bg)}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <div class="brand" onclick="go('home')">
+      <div class="logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/>
+        </svg>
+      </div>
+      <div>
+        <h1>ΟΙΚΟΔΟΜΗ&nbsp;360°</h1>
+        <div class="sub">Πλήρης Οδηγός Κατασκευής · <span style="color:var(--amber2)">© Chronis Makris</span></div>
+      </div>
+    </div>
+    <div class="pl-tag" id="plTag" onclick="go('diy')" title="Ενεργή λίστα τιμών — πάτησε για διαχείριση"></div>
+    <button class="fs-btn" id="installBtn" onclick="installApp()" style="display:none" title="Εγκατάσταση εφαρμογής" aria-label="Εγκατάσταση">⤓</button>
+    <button class="fs-btn" id="fsBtn" onclick="toggleFullscreen()" title="Πλήρης οθόνη (F11)" aria-label="Πλήρης οθόνη">⛶</button>
+    <nav class="tabs" id="tabs"></nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <!-- HOME -->
+  <section class="view active" id="home"></section>
+  <!-- SOLVER -->
+  <section class="view" id="solver"></section>
+  <!-- STAGES -->
+  <section class="view" id="stages"></section>
+  <!-- METHODS -->
+  <section class="view" id="methods"></section>
+  <!-- MATERIALS -->
+  <section class="view" id="materials"></section>
+  <!-- TOOLS -->
+  <section class="view" id="tools"></section>
+  <!-- CREWS -->
+  <section class="view" id="crews"></section>
+  <!-- PRICES -->
+  <section class="view" id="prices"></section>
+  <!-- COMPARE -->
+  <section class="view" id="compare"></section>
+  <!-- FURNISH -->
+  <section class="view" id="furnish"></section>
+  <!-- CHECKLIST -->
+  <section class="view" id="checklist"></section>
+  <!-- PERMITS -->
+  <section class="view" id="permits"></section>
+  <!-- DIY -->
+  <section class="view" id="diy"></section>
+
+  <div class="footer">
+    ΟΙΚΟΔΟΜΗ 360° · Offline εργαλείο εκτίμησης & οδηγός κατασκευής · Οι τιμές είναι <b>ενδεικτικές</b> (αγορά Ελλάδας 2025–2026) και δεν αντικαθιστούν προσφορά μηχανικού/εργολάβου.
+    <br>Δεδομένα: ΕΛΣΤΑΤ (δείκτης υλικών), κλαδικές πηγές κόστους κατασκευής 2025. Πάντα ζητήστε επίσημη μελέτη & άδεια δόμησης.
+    <br><b style="color:var(--amber2)">© by Chronis Makris</b>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   ΔΕΔΟΜΕΝΑ
+   ============================================================ */
+
+// Βασικό κόστος αναφοράς (μεσαία ποιότητα, μπετόν, επαρχία) — €/m² ολοκληρωμένο (προ ΦΠΑ)
+const BASE_PER_M2 = 1450;
+// Κανονικοποίηση: τα w των σταδίων αθροίζουν λίγο πάνω από 100 — τα φέρνουμε στο 100%
+// ώστε η ουδέτερη νέα κατοικία να αντιστοιχεί ~ BASE_PER_M2/m². Υπολογίζεται στην αρχικοποίηση.
+let STAGE_NORM = 1;
+
+// Ποιότητα κατασκευής
+const QUALITY = {
+  econ:    {name:"Οικονομική",  mult:0.80, icon:"💶", desc:"Βασικά υλικά, λειτουργικές λύσεις, ~1.100–1.250 €/m²"},
+  mid:     {name:"Μεσαία",      mult:1.00, icon:"🏠", desc:"Καλά υλικά, ενεργειακά επαρκές, ~1.400–1.600 €/m²"},
+  premium: {name:"Premium",     mult:1.45, icon:"💎", desc:"Υψηλές προδιαγραφές, πολυτελή φινιρίσματα, 2.000 €/m²+"},
+};
+
+// Τύπος έργου — επηρεάζει ποιες φάσεις & βάρη
+const PTYPE = {
+  house:    {name:"Νέα Κατοικία",       icon:"🏡"},
+  apart:    {name:"Πολυκατοικία/Διαμ.", icon:"🏢"},
+  shop:     {name:"Κατάστημα/Επαγγελμ.",icon:"🏬"},
+  addition: {name:"Προσθήκη/Επέκταση",  icon:"➕"},
+  renov:    {name:"Ριζική Ανακαίνιση",  icon:"🛠️"},
+};
+
+// Τρόποι ανέγερσης
+const METHODS = {
+  concrete:{name:"Οπλισμένο Σκυρόδεμα (μπετόν)", icon:"🏗️", mult:1.00, speed:2, durab:5, energy:3,
+    desc:"Ο κλασικός ελληνικός τρόπος: φέρων οργανισμός από κολώνες/δοκάρια/πλάκες οπλισμένου σκυροδέματος και πλήρωση με τούβλα.",
+    pros:["Εξαιρετική αντοχή & διάρκεια ζωής","Οικείο σε όλα τα συνεργεία","Αντισεισμικός σχεδιασμός δοκιμασμένος","Εύκολες μελλοντικές προσθήκες"],
+    cons:["Πιο αργός (υγρή δόμηση, χρόνοι πήξης)","Υψηλότερη θερμογέφυρα χωρίς σωστή μόνωση","Μεγαλύτερο βάρος κατασκευής"],
+    best:"Μόνιμες κατοικίες, πολυκατοικίες, καταστήματα."},
+  steel:{name:"Μεταλλικός Σκελετός", icon:"🔩", mult:1.10, speed:4, durab:4, energy:3,
+    desc:"Φέρων σκελετός από χαλύβδινες διατομές (IPE/HEA), πλήρωση με τοιχοποιία ή ελαφριά πανέλα.",
+    pros:["Πολύ γρήγορη ανέγερση","Μεγάλα ανοίγματα χωρίς κολώνες","Ξηρά δόμηση, καθαρό εργοτάξιο","Ανακυκλώσιμο υλικό"],
+    cons:["Απαιτεί πυροπροστασία & αντιδιαβρωτική προστασία","Ακουστική μόνωση προσοχής","Λιγότερα εξειδικευμένα συνεργεία"],
+    best:"Επαγγελματικά κτίρια, βιομηχανικά, γρήγορες κατασκευές, προσθήκες."},
+  prefab:{name:"Προκατασκευή / Προκάτ", icon:"📦", mult:0.85, speed:5, durab:3, energy:4,
+    desc:"Έτοιμα δομικά στοιχεία (πάνελ, modules) που παράγονται σε εργοστάσιο και συναρμολογούνται στο έργο.",
+    pros:["Ταχύτατη ανέγερση (εβδομάδες)","Σταθερό & προβλέψιμο κόστος","Καλή εργοστασιακή μόνωση","Λιγότερα μπάζα/απώλειες"],
+    cons:["Περιορισμοί στον σχεδιασμό","Μεταφορά/γερανός","Μικρότερη αντίληψη «μονιμότητας» στην αγορά"],
+    best:"Εξοχικά, γρήγορες κατοικίες, προσωρινές/επεκτάσιμες λύσεις."},
+  stone:{name:"Πέτρινη / Λιθοδομή", icon:"🪨", mult:1.35, speed:1, durab:5, energy:4,
+    desc:"Φέρουσα ή επενδυτική λιθοδομή από φυσική πέτρα — παραδοσιακή αισθητική.",
+    pros:["Μοναδική αισθητική & αξία μεταπώλησης","Άριστη θερμική αδράνεια","Πολύ μεγάλη διάρκεια ζωής"],
+    cons:["Υψηλό κόστος & εξειδικευμένοι πετράδες","Πολύ αργή κατασκευή","Βαριά — απαιτεί ισχυρά θεμέλια"],
+    best:"Παραδοσιακοί οικισμοί, εξοχικά, premium κατοικίες."},
+  timber:{name:"Ξύλινη (Timber frame)", icon:"🪵", mult:1.05, speed:4, durab:3, energy:5,
+    desc:"Φέρων σκελετός από επεξεργασμένη ξυλεία, με μόνωση στα διάκενα — bioclimatic.",
+    pros:["Κορυφαία θερμομόνωση/ενεργειακά","Πολύ γρήγορη & στεγνή δόμηση","Οικολογικό & «ζεστό»"],
+    cons:["Συντήρηση έναντι υγρασίας/εντόμων","Προκατάληψη αγοράς","Απαιτεί εξειδικευμένο συνεργείο"],
+    best:"Ενεργειακές/βιοκλιματικές κατοικίες, εξοχικά, ορεινά."},
+  icf:{name:"ICF / Θερμομονωτικοί Δόμοι", icon:"🧊", mult:1.15, speed:3, durab:5, energy:5,
+    desc:"Μόνιμοι θερμομονωτικοί καλούπι (διογκωμένη πολυστερίνη) που γεμίζουν με μπετόν — μονολιθικό & μονωμένο κέλυφος.",
+    pros:["Άριστη θερμο/ηχομόνωση εξ ορισμού","Αντοχή σκυροδέματος + ενεργειακά","Γρήγορη ανέγερση κελύφους"],
+    cons:["Λιγότερα έμπειρα συνεργεία στην Ελλάδα","Προσοχή στην τοποθέτηση εγκαταστάσεων","Ελαφρώς αυξημένο κόστος υλικών"],
+    best:"Ενεργειακά αναβαθμισμένες μόνιμες κατοικίες."},
+};
+
+// Περιοχή — logistics πολλαπλασιαστής
+const REGION = {
+  mainland:{name:"Ηπειρωτική / Επαρχία", mult:1.00, icon:"🌄"},
+  city:{name:"Αττική / Θεσ/νίκη", mult:1.10, icon:"🏙️"},
+  island:{name:"Νησί", mult:1.25, icon:"🏝️"},
+  remote:{name:"Δυσπρόσιτο / Ορεινό", mult:1.30, icon:"⛰️"},
+};
+
+/* Στάδια οικοδομής.
+   w = βάρος (% επί βασικού κόστους) για ΝΕΑ ΚΑΤΟΙΚΙΑ με μπετόν.
+   dur = εβδομάδες (ενδεικτικά για ~120m²). */
+const STAGES = [
+  {id:"design", name:"Μελέτες & Άδεια Δόμησης", em:"📐", w:6, dur:8,
+    what:"Αρχιτεκτονική, στατική, Η/Μ μελέτη, ΚΕΝΑΚ/ενεργειακή, τοπογραφικό, έκδοση οικοδομικής άδειας (e-Άδειες) και αμοιβές μηχανικών.",
+    how:["Επιλογή μηχανικού/αρχιτέκτονα & προμελέτη","Τοπογραφικό & έλεγχος όρων δόμησης","Οριστική μελέτη + στατική + Η/Μ + ενεργειακή","Υποβολή e-Άδειες, ΙΚΑ, φορολογικά","Έγκριση & έναρξη"],
+    mats:["design"], tools:["laser_meter","laptop"], crews:["engineer","architect","topographer"],
+    tips:["Ζητήστε 2-3 προσφορές μηχανικών.","Η ενεργειακή κλάση επηρεάζει επιδοτήσεις & λογαριασμούς."],
+    warn:["Χωρίς νόμιμη άδεια, κάθε εργασία είναι αυθαίρετη με βαριά πρόστιμα."]},
+
+  {id:"earth", name:"Εκσκαφές & Χωματουργικά", em:"🚜", w:3, dur:2,
+    what:"Καθαρισμός οικοπέδου, εκσκαφή θεμελίων/υπογείου, διαμόρφωση στάθμης, απομάκρυνση μπαζών.",
+    how:["Χάραξη κτιρίου (πασσάλωση)","Εκσκαφή με εκσκαφέα","Μεταφορά προϊόντων εκσκαφής","Εξυγίανση/συμπύκνωση εδάφους"],
+    mats:["gravel"], tools:["excavator","level","string"], crews:["excavator_op","laborer"],
+    tips:["Έλεγχος υπόγειου νερού & ποιότητας εδάφους πριν.","Κρατήστε τιμολόγια μεταφοράς μπαζών (ΑΕΚΚ)."],
+    warn:["Προσοχή σε υπόγεια δίκτυα (ΔΕΗ/ΕΥΔΑΠ/ΔΕΔΔΗΕ)."]},
+
+  {id:"found", name:"Θεμελίωση", em:"🧱", w:9, dur:3,
+    what:"Πέδιλα/κοιτόστρωση, γενική κοιτόστρωση ή πεδιλοδοκοί, οπλισμός & σκυροδέτηση θεμελίων, στεγανοποίηση.",
+    how:["Καθαριότητα (μπετόν καθαριότητας)","Ξυλότυποι & τοποθέτηση οπλισμού","Σκυροδέτηση με αντλία","Δόνηση & συντήρηση σκυροδέματος","Στεγανωτική στρώση"],
+    mats:["concrete","rebar","formwork","waterproof"], tools:["vibrator","pump","bender","wheelbarrow"], crews:["concrete_crew","ironworker"],
+    tips:["Σωστή επικάλυψη οπλισμού = διάρκεια ζωής.","Στεγανοποίηση υπογείου τώρα, όχι μετά."],
+    warn:["Λάθη στη θεμελίωση διορθώνονται πολύ ακριβά αργότερα."]},
+
+  {id:"frame", name:"Φέρων Οργανισμός / Σκελετός", em:"🏗️", w:18, dur:8,
+    what:"Κολώνες, δοκάρια, πλάκες οπλισμένου σκυροδέματος (ή μεταλλικός/ξύλινος σκελετός) — ο «κορμός» του κτιρίου.",
+    how:["Καλούπωμα (ξυλότυποι/μεταλλότυποι)","Τοποθέτηση & δέσιμο οπλισμού","Σκυροδέτηση ανά όροφο","Ξεκαλούπωμα μετά την πήξη","Επανάληψη ανά στάθμη"],
+    mats:["concrete","rebar","formwork"], tools:["pump","vibrator","bender","scaffold","crane"], crews:["concrete_crew","ironworker","carpenter_form"],
+    tips:["Ο σκελετός είναι ~το βαρύτερο κονδύλι του «μπρούτου».","Αντισεισμικές λεπτομέρειες κατά ΕΑΚ/EC8."],
+    warn:["Μην αλλάζετε φορτία/χρήσεις χωρίς στατικό έλεγχο."]},
+
+  {id:"masonry", name:"Τοιχοποιία (Χτίσιμο)", em:"🧱", w:6, dur:4,
+    what:"Εξωτερικές & εσωτερικές τοιχοποιίες από τούβλα/τσιμεντόλιθους, δρομικές/μπατικές, διαχωριστικά.",
+    how:["Χάραξη τοίχων","Χτίσιμο με κονίαμα","Σενάζ/πρέκια στα ανοίγματα","Αφήνουμε διελεύσεις για Η/Μ"],
+    mats:["bricks","mortar","cement","sand"], tools:["trowel","level","mixer","line"], crews:["mason","laborer"],
+    tips:["Διπλή τοιχοποιία με μόνωση στο κενό μειώνει θερμογέφυρες."],
+    warn:["Συντονισμός με ηλεκτρολόγο/υδραυλικό πριν κλείσουν οι τοίχοι."]},
+
+  {id:"roof", name:"Στέγη / Δώμα & Στεγανώσεις", em:"🏘️", w:5, dur:3,
+    what:"Ξύλινη ή μεταλλική στέγη με κεραμίδια, ή βατό/μη βατό δώμα με θερμομόνωση & στεγανοποίηση.",
+    how:["Κατασκευή στέγης/επικλινών","Φράγμα υδρατμών & θερμομόνωση","Στεγανωτική μεμβράνη","Επικάλυψη (κεραμίδι/λαμαρίνα) ή γαρμπίλι στο δώμα"],
+    mats:["timber","tiles","insulation_roof","membrane"], tools:["nailer","saw","torch"], crews:["roofer","carpenter","insulator"],
+    tips:["«Ψυχρή» απόληξη δώματος κατά τον ΚΕΝΑΚ.","Σωστές κλίσεις απορροής νερού."],
+    warn:["Κακή στεγάνωση = υγρασίες σε όλο το κτίριο."]},
+
+  {id:"frames", name:"Κουφώματα (Πόρτες/Παράθυρα)", em:"🪟", w:8, dur:3,
+    what:"Εξωτερικά κουφώματα αλουμινίου/PVC με ενεργειακούς υαλοπίνακες, θωρακισμένη πόρτα εισόδου, ρολά.",
+    how:["Μετρήσεις & παραγγελία","Τοποθέτηση ψευτόκασων","Τοποθέτηση κουφωμάτων & υαλοπινάκων","Αεροστεγανοποίηση αρμών"],
+    mats:["windows","glazing","entry_door","shutters"], tools:["level","foam_gun","drill"], crews:["aluminum_fitter"],
+    tips:["Τριπλός υαλοπίνακας & θερμοδιακοπή για ενεργειακά.","Ρολά/σίτες στην ίδια παραγγελία."],
+    warn:["Λάθος διαστάσεις = ακριβές διορθώσεις."]},
+
+  {id:"plumb", name:"Υδραυλικά & Αποχέτευση", em:"🚿", w:6, dur:3,
+    what:"Δίκτυο ύδρευσης (ζεστό/κρύο), αποχέτευσης, όμβρια, παροχές μπάνιου/κουζίνας, μπόιλερ/ηλιακός.",
+    how:["Χάραξη & εντοιχισμένες σωληνώσεις","Δίκτυο αποχέτευσης με κλίσεις","Δοκιμή πίεσης/στεγανότητας","Σύνδεση ειδών υγιεινής (τελικά)"],
+    mats:["pipes_water","pipes_drain","boiler","fittings"], tools:["welder_ppr","pipe_cutter","tester"], crews:["plumber","laborer"],
+    tips:["Συλλέκτες (κολλεκτέρ) για εύκολη συντήρηση.","Προβλέψτε ηλιακό/αντλία θερμότητας."],
+    warn:["Δοκιμή πίεσης ΠΡΙΝ κλείσουν οι τοίχοι/δάπεδα."]},
+
+  {id:"elec", name:"Ηλεκτρολογικά & Δίκτυα", em:"⚡", w:6, dur:3,
+    what:"Εντοιχισμένες σωληνώσεις, πίνακας με ασφάλειες/ρελέ, πρίζες/διακόπτες, φωτισμός, data/TV, γείωση.",
+    how:["Χάραξη & σωληνώσεις (κουτιά)","Περνάει καλωδίωση","Πίνακας διανομής & γείωση","Τοποθέτηση μηχανισμών (τελικά)","Έλεγχος & ΥΔΕ"],
+    mats:["cables","panel","sockets","conduit"], tools:["fish_tape","tester_elec","screwdriver","cutter"], crews:["electrician"],
+    tips:["Δομημένη καλωδίωση δικτύου (UTP) παντού.","Πρόβλεψη για φωτοβολταϊκά/φόρτιση EV."],
+    warn:["Υποχρεωτική Υπεύθυνη Δήλωση Εγκαταστάτη (ΥΔΕ) για ρεύμα."]},
+
+  {id:"plaster", name:"Επιχρίσματα (Σοβάδες)", em:"🧴", w:6, dur:4,
+    what:"Τριπτά επιχρίσματα (πεταχτό–λάσπωμα–τριφτό) ή έτοιμοι σοβάδες/γυψοσανίδες στις εσωτερικές επιφάνειες.",
+    how:["Πιτσιλιστό χέρι πρόσφυσης","Λάσπωμα & οδηγοί","Τελικό τριφτό/μαρμαροκονία","Γωνιόκρανα & προστασία ακμών"],
+    mats:["cement","sand","lime","plaster_ready"], tools:["hawk","trowel","straightedge","mixer"], crews:["plasterer","laborer"],
+    tips:["Γυψοσανίδα εσωτερικά = ταχύτητα & καθαρές επιφάνειες.","Αφήστε χρόνο στεγνώματος πριν το βάψιμο."]},
+
+  {id:"insul", name:"Θερμομόνωση / Ενεργειακά", em:"🧊", w:6, dur:3,
+    what:"Εξωτερική θερμοπρόσοψη (κέλυφος), μόνωση δώματος/δαπέδων, αεροστεγανότητα — μειώνει δραστικά λογαριασμούς.",
+    how:["Τοποθέτηση θερμομονωτικών πλακών (EPS/πετροβάμβακας)","Υαλόπλεγμα & βασικό επίχρισμα","Τελικό διακοσμητικό επίχρισμα","Θερμογέφυρες/λεπτομέρειες"],
+    mats:["eps","mesh","render","insulation_floor"], tools:["notched_trowel","cutter","mixer"], crews:["insulator","plasterer"],
+    tips:["Το «Εξοικονομώ» επιδοτεί μεγάλο μέρος.","Καλή μόνωση = απόσβεση σε λίγα χρόνια."]},
+
+  {id:"floor", name:"Δάπεδα / Πλακάκια / Μάρμαρα", em:"🔲", w:9, dur:4,
+    what:"Πλακίδια, μάρμαρα, laminate/ξύλο, βιομηχανικό δάπεδο· επενδύσεις τοίχων μπάνιου/κουζίνας.",
+    how:["Επίπεδο υπόστρωμα (γαρμπιλομπετόν/τσιμεντοκονία)","Στεγανοποίηση υγρών χώρων","Τοποθέτηση με κόλλα & σταυρούς","Αρμολόγηση & καθαρισμός"],
+    mats:["tiles_floor","marble","adhesive","grout","laminate"], tools:["tile_cutter","notched_trowel","level","grinder"], crews:["tiler","marble_worker"],
+    tips:["Μεγάλα πλακίδια = λιγότεροι αρμοί.","Αντιολισθηρά σε μπάνια/εξωτερικά."]},
+
+  {id:"paint", name:"Χρωματισμοί", em:"🎨", w:4, dur:3,
+    what:"Στοκάρισμα/σπατουλάρισμα, αστάρι, τελικά χέρια πλαστικού/ακρυλικού, ειδικές βαφές, λάκες.",
+    how:["Στοκάρισμα & τρίψιμο","Αστάρωμα επιφανειών","2-3 χέρια χρώματος","Ντουκοχρώματα σε ξύλα/μέταλλα"],
+    mats:["putty","primer","paint","varnish"], tools:["roller","brush","spray","sander"], crews:["painter"],
+    tips:["Αντιμουχλικά χρώματα σε μπάνια/υπόγεια.","Οικολογικά χρώματα χαμηλών VOC."]},
+
+  {id:"hvac", name:"Θέρμανση / Ψύξη / Αερισμός", em:"🌡️", w:7, dur:3,
+    what:"Αντλία θερμότητας, ενδοδαπέδιο ή σώματα, κλιματισμός (VRV/split), αερισμός με ανάκτηση (ERV).",
+    how:["Επιλογή συστήματος (μελέτη Η/Μ)","Δίκτυο ενδοδαπέδιου/σωμάτων","Εγκατάσταση μονάδων & ψυκτικών","Ρύθμιση & παράδοση"],
+    mats:["heatpump","underfloor","ac_units","radiators"], tools:["refrig_tools","welder_copper","vacuum_pump"], crews:["hvac_tech","plumber"],
+    tips:["Αντλία θερμότητας + ενδοδαπέδιο = οικονομία & άνεση.","Συνδυασμός με φωτοβολταϊκά."]},
+
+  {id:"kitchen", name:"Κουζίνα / Ντουλάπες / Ξυλουργικά", em:"🪑", w:6, dur:3,
+    what:"Επιπλα κουζίνας & πάγκος, ντουλάπες, εσωτερικές πόρτες, ερμάρια — κατασκευή/τοποθέτηση.",
+    how:["Μετρήσεις & σχεδιασμός","Κατασκευή/παραγγελία επίπλων","Τοποθέτηση & ρύθμιση","Πάγκος (χαλαζίας/granite) & νεροχύτης"],
+    mats:["cabinets","countertop","interior_doors","hardware"], tools:["drill","router","clamps","jig"], crews:["cabinetmaker","carpenter"],
+    tips:["Πάγκος χαλαζία = ανθεκτικός & καθαρός.","Soft-close μηχανισμοί παντού."]},
+
+  {id:"sanit", name:"Είδη Υγιεινής & Μπάνια", em:"🛁", w:5, dur:2,
+    what:"Λεκάνες, νιπτήρες, μπαταρίες, ντουζιέρες, καμπίνες, έπιπλα μπάνιου — τελική τοποθέτηση.",
+    how:["Τοποθέτηση λεκανών/νιπτήρων","Μπαταρίες & ντουζιέρες","Καθρέφτες/αξεσουάρ","Δοκιμή στεγανότητας"],
+    mats:["sanitary","faucets","shower"], tools:["silicone_gun","wrench","drill"], crews:["plumber"],
+    tips:["Κρεμαστές λεκάνες = εύκολο καθάρισμα.","Θερμοστατικές μπαταρίες."]},
+
+  {id:"ext", name:"Περιβάλλων Χώρος & Εξωτερικά", em:"🌳", w:5, dur:3,
+    what:"Αυλή, πλακοστρώσεις, περιτοιχίσεις/κάγκελα, φωτισμός κήπου, ποτιστικό, φύτευση, πάρκινγκ.",
+    how:["Διαμόρφωση εδάφους & αποστραγγίσεις","Πλακοστρώσεις/αυλόπορτες","Περίφραξη & κάγκελα","Φύτευση & εξωτ. φωτισμός"],
+    mats:["pavers","fence","outdoor_light","plants"], tools:["compactor","level","welder"], crews:["landscaper","mason","metalworker"],
+    tips:["Προβλέψτε παροχές νερού/ρεύματος στον κήπο νωρίς."]},
+
+  {id:"clean", name:"Καθαρισμός & Παράδοση", em:"✅", w:1, dur:1,
+    what:"Τελικός καθαρισμός εργοταξίου, λίστα ελλείψεων (punch list), σύνδεση ΔΕΗ/ΕΥΔΑΠ, παράδοση κλειδιών.",
+    how:["Αποξήλωση ικριωμάτων","Λεπτομερής καθαρισμός","Έλεγχος & διόρθωση ατελειών","Συνδέσεις ΔΕΚΟ & πιστοποιητικά"],
+    mats:[], tools:["cleaning"], crews:["laborer"],
+    tips:["Κρατήστε 5-10% της πληρωμής εργολάβου για την οριστική παραλαβή."]},
+];
+
+// Προσαρμογή βαρών ανά τύπο έργου (πολλαπλασιαστές στα w των σταδίων)
+const PTYPE_WEIGHTS = {
+  house:   {}, // βάση
+  apart:   {frame:1.15, found:1.1, ext:0.6, hvac:0.9, kitchen:0.9},
+  shop:    {frames:1.2, elec:1.4, hvac:1.3, floor:1.1, kitchen:0.3, sanit:0.6, paint:1.1, ext:0.7, roof:0.8},
+  addition:{design:0.6, earth:0.5, found:0.7, frame:0.9, ext:0.4},
+  renov:   {design:0.5, earth:0, found:0.1, frame:0.15, roof:0.5, masonry:0.7,
+            frames:1.1, plumb:1.1, elec:1.2, plaster:0.8, floor:1.1, paint:1.2, hvac:1.1, kitchen:1.1, sanit:1.1, ext:0.5, insul:1.1},
+};
+
+// ΥΛΙΚΑ — τιμές ενδεικτικές αγοράς Ελλάδας 2025-26
+const MATERIALS = {
+  design:{name:"Μελέτες & αμοιβές μηχανικών", cat:"Υπηρεσίες", unit:"κατ' αποκοπή", price:"6–10% του έργου", note:"Αρχιτεκτονική+στατική+Η/Μ+ενεργειακή+άδεια."},
+  concrete:{name:"Έτοιμο σκυρόδεμα C20/25", cat:"Σκελετός", unit:"€/m³", price:"95–120", note:"+ άντληση ~ 8–15 €/m³. Με ένσημα/εργασία 150–200 €/m³."},
+  rebar:{name:"Χάλυβας οπλισμού B500C", cat:"Σκελετός", unit:"€/kg", price:"0,90–1,15", note:"Κατεργασμένος/τοποθετημένος ~1,40–1,80 €/kg."},
+  formwork:{name:"Ξυλότυποι / Καλούπια", cat:"Σκελετός", unit:"€/m²", price:"15–30", note:"Ξυλεία, μεταλλότυποι επαναχρησιμοποιούνται."},
+  bricks:{name:"Τούβλα / Τσιμεντόλιθοι", cat:"Τοιχοποιία", unit:"€/τεμ", price:"0,30–0,70", note:"Θερμομονωτικά τούβλα ακριβότερα."},
+  mortar:{name:"Κονίαμα / Έτοιμος σοβάς", cat:"Τοιχοποιία", unit:"€/σακί", price:"5–9", note:"Σακιά 25–40 kg."},
+  cement:{name:"Τσιμέντο (σακί 25kg)", cat:"Δομικά", unit:"€/σακί", price:"5–8", note:"Χύμα φθηνότερο σε ποσότητα."},
+  sand:{name:"Άμμος / Γαρμπίλι / 3Α", cat:"Δομικά", unit:"€/τόνο", price:"18–35", note:"+ μεταφορά αναλόγως απόστασης."},
+  gravel:{name:"Αδρανή / Σκύρα εξυγίανσης", cat:"Χωματουργικά", unit:"€/m³", price:"15–30", note:""},
+  lime:{name:"Ασβέστης / Μαρμαροκονία", cat:"Επιχρίσματα", unit:"€/σακί", price:"6–12", note:""},
+  plaster_ready:{name:"Γυψοσανίδα / Έτοιμα επιχρίσματα", cat:"Επιχρίσματα", unit:"€/m²", price:"9–18", note:"Ανθυγρή/πυράντοχη ακριβότερη."},
+  waterproof:{name:"Στεγανωτικά (μεμβράνες/επαλείψεις)", cat:"Μονώσεις", unit:"€/m²", price:"6–20", note:"Ασφαλτικές μεμβράνες, τσιμεντοειδή."},
+  insulation_roof:{name:"Θερμομόνωση δώματος/στέγης", cat:"Μονώσεις", unit:"€/m²", price:"12–30", note:"Εξηλασμένη/πετροβάμβακας."},
+  eps:{name:"Θερμοπρόσοψη (EPS/πετροβάμβακας)", cat:"Μονώσεις", unit:"€/m²", price:"40–70", note:"Ολοκληρωμένο σύστημα με επίχρισμα."},
+  mesh:{name:"Υαλόπλεγμα & γωνιόκρανα", cat:"Μονώσεις", unit:"€/m²", price:"2–5", note:""},
+  render:{name:"Διακοσμητικό επίχρισμα (σοβάς προσόψεως)", cat:"Μονώσεις", unit:"€/m²", price:"8–18", note:"Ακρυλικό/σιλικονούχο."},
+  insulation_floor:{name:"Μόνωση δαπέδου", cat:"Μονώσεις", unit:"€/m²", price:"8–18", note:""},
+  membrane:{name:"Στεγανωτική μεμβράνη στέγης", cat:"Στέγη", unit:"€/m²", price:"5–14", note:""},
+  timber:{name:"Ξυλεία στέγης", cat:"Στέγη", unit:"€/m²", price:"25–55", note:"Δομική ξυλεία, τεγίδες."},
+  tiles:{name:"Κεραμίδια", cat:"Στέγη", unit:"€/m²", price:"12–30", note:"Ρωμαϊκά/γαλλικά, με τοποθέτηση περισσότερο."},
+  windows:{name:"Κουφώματα αλουμινίου/PVC", cat:"Κουφώματα", unit:"€/m²", price:"250–550", note:"Θερμοδιακοπή + διπλός/τριπλός υαλοπίνακας."},
+  glazing:{name:"Ενεργειακοί υαλοπίνακες", cat:"Κουφώματα", unit:"€/m²", price:"περιλαμβάνεται", note:"Low-e, τριπλός για premium."},
+  entry_door:{name:"Θωρακισμένη πόρτα εισόδου", cat:"Κουφώματα", unit:"€/τεμ", price:"800–2.500", note:""},
+  shutters:{name:"Ρολά / Παντζούρια / Σίτες", cat:"Κουφώματα", unit:"€/m²", price:"60–160", note:"Ηλεκτρικά ρολά ακριβότερα."},
+  pipes_water:{name:"Σωληνώσεις ύδρευσης (PPR/πολυστρωματικές)", cat:"Υδραυλικά", unit:"€/m", price:"3–8", note:""},
+  pipes_drain:{name:"Σωλήνες αποχέτευσης (PVC/Geberit)", cat:"Υδραυλικά", unit:"€/m", price:"4–12", note:""},
+  boiler:{name:"Μπόιλερ / Ηλιακός θερμοσίφωνας", cat:"Υδραυλικά", unit:"€/τεμ", price:"250–1.200", note:""},
+  fittings:{name:"Εξαρτήματα/συλλέκτες υδραυλικών", cat:"Υδραυλικά", unit:"σετ", price:"200–800", note:""},
+  cables:{name:"Καλώδια (NYM/NYY) & UTP", cat:"Ηλεκτρολογικά", unit:"€/m", price:"1–4", note:"Αναλόγως διατομής."},
+  panel:{name:"Πίνακας διανομής + αυτόματα/ρελέ", cat:"Ηλεκτρολογικά", unit:"€/τεμ", price:"250–900", note:"Με αντιηλεκτροπληξιακό ρελέ."},
+  sockets:{name:"Μηχανισμοί (πρίζες/διακόπτες)", cat:"Ηλεκτρολογικά", unit:"€/σημείο", price:"6–25", note:"Επώνυμες σειρές ακριβότερες."},
+  conduit:{name:"Σωλήνες/κουτιά ηλεκτρολογικών", cat:"Ηλεκτρολογικά", unit:"€/m", price:"1–3", note:""},
+  putty:{name:"Στόκος / Σπατουλαριστό", cat:"Χρωματισμοί", unit:"€/σακί", price:"8–20", note:""},
+  primer:{name:"Αστάρι", cat:"Χρωματισμοί", unit:"€/L", price:"3–8", note:""},
+  paint:{name:"Πλαστικό/ακρυλικό χρώμα", cat:"Χρωματισμοί", unit:"€/L", price:"4–15", note:"Οικολογικά low-VOC premium."},
+  varnish:{name:"Βερνίκι/Ντούκο", cat:"Χρωματισμοί", unit:"€/L", price:"8–25", note:""},
+  tiles_floor:{name:"Πλακίδια δαπέδου/τοίχου", cat:"Δάπεδα", unit:"€/m²", price:"12–50", note:"Γρανιτοπλακίδια, μεγάλες πλάκες."},
+  marble:{name:"Μάρμαρα / Φυσική πέτρα", cat:"Δάπεδα", unit:"€/m²", price:"40–150", note:"Με τοποθέτηση/κοπή περισσότερο."},
+  adhesive:{name:"Κόλλα πλακιδίων", cat:"Δάπεδα", unit:"€/σακί", price:"8–20", note:"Ελαστική για μεγάλα πλακίδια."},
+  grout:{name:"Αρμόστοκος", cat:"Δάπεδα", unit:"€/σακί", price:"6–18", note:"Εποξειδικός για υγρούς χώρους."},
+  laminate:{name:"Laminate / Ξύλινο δάπεδο", cat:"Δάπεδα", unit:"€/m²", price:"15–70", note:"Πολυστρωματικό/μασίφ."},
+  heatpump:{name:"Αντλία θερμότητας", cat:"Θέρμανση", unit:"€/τεμ", price:"3.500–9.000", note:"Αναλόγως ισχύος (kW)."},
+  underfloor:{name:"Ενδοδαπέδια θέρμανση", cat:"Θέρμανση", unit:"€/m²", price:"30–55", note:"Δίκτυο + συλλέκτες."},
+  radiators:{name:"Θερμαντικά σώματα", cat:"Θέρμανση", unit:"€/τεμ", price:"60–250", note:""},
+  ac_units:{name:"Κλιματιστικά (split/VRV)", cat:"Ψύξη", unit:"€/τεμ", price:"400–1.500", note:"Inverter, με τοποθέτηση."},
+  cabinets:{name:"Έπιπλα κουζίνας/ντουλάπες", cat:"Ξυλουργικά", unit:"€/μέτρο", price:"250–900", note:"Ανά τρέχον μέτρο πάγκου."},
+  countertop:{name:"Πάγκος (χαλαζίας/granite)", cat:"Ξυλουργικά", unit:"€/m", price:"150–500", note:""},
+  interior_doors:{name:"Εσωτερικές πόρτες", cat:"Ξυλουργικά", unit:"€/τεμ", price:"120–500", note:"Λάκα/καπλαμάς."},
+  hardware:{name:"Μηχανισμοί/μεντεσέδες soft-close", cat:"Ξυλουργικά", unit:"σετ", price:"περιλαμβάνεται", note:""},
+  sanitary:{name:"Είδη υγιεινής (λεκάνη/νιπτήρας)", cat:"Μπάνιο", unit:"σετ", price:"200–1.200", note:"Κρεμαστά/επιδαπέδια."},
+  faucets:{name:"Μπαταρίες/βρύσες", cat:"Μπάνιο", unit:"€/τεμ", price:"40–300", note:"Θερμοστατικές premium."},
+  shower:{name:"Ντουζιέρα/καμπίνα", cat:"Μπάνιο", unit:"σετ", price:"150–1.000", note:""},
+  pavers:{name:"Πλάκες/κυβόλιθοι αυλής", cat:"Εξωτερικά", unit:"€/m²", price:"20–60", note:""},
+  fence:{name:"Περίφραξη / Κάγκελα", cat:"Εξωτερικά", unit:"€/m", price:"40–150", note:"Μεταλλικά/αλουμινίου."},
+  outdoor_light:{name:"Εξωτερικός φωτισμός", cat:"Εξωτερικά", unit:"€/σημείο", price:"25–120", note:"LED, με αισθητήρες."},
+  plants:{name:"Φύτευση/ποτιστικό/χλοοτάπητας", cat:"Εξωτερικά", unit:"€/m²", price:"10–40", note:""},
+};
+
+// ΕΡΓΑΛΕΙΑ ανά κατηγορία (p = ενδεικτική τιμή αγοράς €, ή ενοικίαση όπου σημειώνεται)
+const TOOLS = [
+  {cat:"Μέτρηση & Χάραξη", em:"📏", items:[
+    {n:"Μέτρο laser / αποστασιόμετρο", u:"Ακριβείς μετρήσεις μήκους/επιφάνειας", p:"30–120"},
+    {n:"Αλφάδι (φυσαλίδας & laser)", u:"Οριζοντίωση/κατακόρυφο", p:"10–150"},
+    {n:"Νήμα στάθμης & μπλε νήμα (μολυβιά)", u:"Χάραξη ευθειών", p:"5–15"},
+    {n:"Γωνία / ψαλίδι μέτρησης", u:"Ορθές γωνίες", p:"5–20"},
+    {n:"Ρολομέτρι / μεζούρα 5-10m", u:"Γενικές μετρήσεις", p:"5–20"},
+    {n:"Τρίποδας laser level", u:"Στάθμες σε όλο τον χώρο", p:"40–200"},
+  ]},
+  {cat:"Χωματουργικά & Σκυρόδεμα", em:"🏗️", items:[
+    {n:"Εκσκαφέας / JCB", u:"Εκσκαφές θεμελίων", p:"ενοικ. 250–450/ημ (με χειριστή)"},
+    {n:"Μπετονιέρα / αναδευτήρας", u:"Ανάμιξη κονιαμάτων/μπετόν", p:"200–500 (ή ενοικ. 20–40/ημ)"},
+    {n:"Αντλία σκυροδέματος", u:"Παροχή μπετόν σε ύψος", p:"ενοικίαση (στην τιμή μπετόν)"},
+    {n:"Δονητής μπετόν (βιμπρατέρ)", u:"Συμπύκνωση σκυροδέματος", p:"150–400 (ή ενοικ.)"},
+    {n:"Κουρμπαδόρος / ψαλίδι σιδήρου", u:"Κάμψη/κοπή οπλισμού", p:"60–250"},
+    {n:"Πλάκα συμπύκνωσης (βίμπρα)", u:"Συμπύκνωση εδάφους", p:"ενοικ. 25–45/ημ"},
+    {n:"Καροτσάκι / φτυάρι / κασμάς", u:"Μεταφορά υλικών", p:"40–120 (σετ)"},
+  ]},
+  {cat:"Οικοδομικά (Χτίσιμο/Σοβάς)", em:"🧱", items:[
+    {n:"Μυστρί / σπάτουλα", u:"Στρώσιμο κονιάματος", p:"8–30"},
+    {n:"Πήχης αλουμινίου (οδηγός)", u:"Ισιάδα σοβάδων/πλακιδίων", p:"15–50"},
+    {n:"Τριβίδι / φραγκόφτυαρο", u:"Τελείωμα σοβά", p:"8–25"},
+    {n:"Κόφτης πλακιδίων / γωνιακός τροχός", u:"Κοπή πλακιδίων/υλικών", p:"40–300"},
+    {n:"Οδοντωτή σπάτουλα", u:"Άπλωμα κόλλας πλακιδίων", p:"8–20"},
+    {n:"Σταυροί αρμών & σφήνες", u:"Ίσοι αρμοί", p:"5–20"},
+  ]},
+  {cat:"Ηλεκτρικά Εργαλεία", em:"🔌", items:[
+    {n:"Δράπανο / κρουστικό / κατσαβίδι μπαταρίας", u:"Τρύπημα/βίδωμα", p:"50–250"},
+    {n:"Πιστολέτο (SDS)", u:"Διάτρηση μπετόν/πέτρας", p:"80–350"},
+    {n:"Γωνιακός τροχός (γκαζόν)", u:"Κοπή/λείανση", p:"30–150"},
+    {n:"Δισκοπρίονο / σέγα / φαλτσοπρίονο", u:"Κοπές ξύλου", p:"60–400"},
+    {n:"Τριβείο (παλμικό/έκκεντρο)", u:"Λείανση επιφανειών", p:"30–150"},
+    {n:"Ρούτερ / πλάνη", u:"Ξυλουργικές κατεργασίες", p:"60–300"},
+  ]},
+  {cat:"Υδραυλικά", em:"🚿", items:[
+    {n:"Κολλητήρι PPR (μούφα)", u:"Συγκόλληση σωλήνων ύδρευσης", p:"40–150"},
+    {n:"Κόφτης σωλήνων", u:"Κοπή σωλήνων", p:"10–40"},
+    {n:"Πρεσαριστικό πολυστρωματικών", u:"Συνδέσεις χωρίς κόλληση", p:"100–400"},
+    {n:"Σπιράλ αποφράξεων", u:"Καθαρισμός αποχετεύσεων", p:"15–120"},
+    {n:"Μανόμετρο δοκιμής πίεσης", u:"Έλεγχος στεγανότητας", p:"20–60"},
+    {n:"Γερμανικά/γαλλικά κλειδιά", u:"Σφίξιμο ρακόρ", p:"30–120 (σετ)"},
+  ]},
+  {cat:"Ηλεκτρολογικά", em:"⚡", items:[
+    {n:"Πολύμετρο / δοκιμαστικό", u:"Μετρήσεις τάσης/συνέχειας", p:"15–100"},
+    {n:"Απογυμνωτής/πρέσα ακροδεκτών", u:"Προετοιμασία καλωδίων", p:"15–60"},
+    {n:"Οδηγός καλωδίων (σύρμα)", u:"Πέρασμα καλωδίων σε σωλήνες", p:"10–40"},
+    {n:"Κατσαβίδια μονωμένα", u:"Ασφαλής εργασία", p:"15–60 (σετ)"},
+    {n:"Ανιχνευτής καλωδίων/μετάλλων", u:"Εντοπισμός δικτύων σε τοίχους", p:"20–80"},
+  ]},
+  {cat:"Χρωματισμοί", em:"🎨", items:[
+    {n:"Ρολά & πινέλα", u:"Εφαρμογή χρώματος", p:"15–50 (σετ)"},
+    {n:"Σπάτουλες στοκαρίσματος", u:"Σπατουλάρισμα", p:"8–30"},
+    {n:"Πιστόλι βαφής (airless)", u:"Γρήγορη/ομοιόμορφη βαφή", p:"80–400"},
+    {n:"Χαρτοταινία & νάιλον", u:"Προστασία επιφανειών", p:"10–30"},
+    {n:"Τηλεσκοπικός κοντός", u:"Βάψιμο σε ύψος", p:"10–40"},
+  ]},
+  {cat:"Ασφάλεια & Εργοτάξιο", em:"🦺", items:[
+    {n:"Κράνος / γάντια / γυαλιά", u:"Ατομική προστασία (ΜΑΠ)", p:"20–60 (σετ)"},
+    {n:"Παπούτσια ασφαλείας", u:"Προστασία ποδιών", p:"30–90"},
+    {n:"Ζώνη/σύστημα ανάσχεσης πτώσης", u:"Εργασία σε ύψος", p:"40–150"},
+    {n:"Ικριώματα / σκαλωσιές", u:"Πρόσβαση σε ύψος", p:"ενοικ. 5–15/m²·μήνα ή καβαλέτο 80–300"},
+    {n:"Πυροσβεστήρας & κιβώτιο Α' βοηθειών", u:"Ασφάλεια εργοταξίου", p:"40–100"},
+    {n:"Προβολείς εργασίας / μπαλαντέζες ασφαλείας", u:"Φωτισμός", p:"20–120"},
+  ]},
+];
+
+// ΜΑΣΤΟΡΕΣ / ΣΥΝΕΡΓΕΙΑ — μεροκάματα ενδεικτικά 2025-26 (€/ημέρα)
+const CREWS = {
+  engineer:{n:"Μηχανικός / Επιβλέπων", em:"👷", rate:"κατ' αποκοπή", role:"Μελέτες, άδεια, επίβλεψη, νομιμότητα."},
+  architect:{n:"Αρχιτέκτονας", em:"📐", rate:"κατ' αποκοπή", role:"Σχεδιασμός, αισθητική, λειτουργικότητα."},
+  topographer:{n:"Τοπογράφος", em:"🧭", rate:"250–600 €", role:"Τοπογραφικό διάγραμμα, χαράξεις."},
+  excavator_op:{n:"Χειριστής μηχανημάτων", em:"🚜", rate:"250–450 €/ημ", role:"Εκσκαφές, χωματουργικά (με μηχάνημα)."},
+  laborer:{n:"Εργάτης (ανειδίκευτος)", em:"💪", rate:"50–80 €/ημ", role:"Βοηθητικές εργασίες, μεταφορές."},
+  concrete_crew:{n:"Συνεργείο μπετόν (μπετατζήδες)", em:"🏗️", rate:"κατ' αποκοπή /m³ ή m²", role:"Καλούπια & σκυροδέτηση φέροντος."},
+  ironworker:{n:"Σιδεράς οπλισμού", em:"🔩", rate:"90–140 €/ημ", role:"Κοπή/κάμψη/τοποθέτηση οπλισμού."},
+  carpenter_form:{n:"Καλουπατζής", em:"🪚", rate:"90–140 €/ημ", role:"Ξυλότυποι φέροντος οργανισμού."},
+  mason:{n:"Χτίστης", em:"🧱", rate:"90–140 €/ημ", role:"Τοιχοποιίες, χτισίματα."},
+  plasterer:{n:"Σοβατζής", em:"🧴", rate:"100–150 €/ημ", role:"Επιχρίσματα, μαρμαροκονίες."},
+  roofer:{n:"Σκεπάς", em:"🏘️", rate:"110–160 €/ημ", role:"Στέγες, κεραμοσκεπές."},
+  carpenter:{n:"Ξυλουργός / Μαραγκός", em:"🪵", rate:"100–160 €/ημ", role:"Ξύλινες κατασκευές, στέγες."},
+  insulator:{n:"Μονωτής", em:"🧊", rate:"100–150 €/ημ", role:"Θερμο/υγρομονώσεις, θερμοπρόσοψη."},
+  aluminum_fitter:{n:"Αλουμινάς / Τοποθέτης κουφωμάτων", em:"🪟", rate:"110–160 €/ημ", role:"Κατασκευή/τοποθέτηση κουφωμάτων."},
+  plumber:{n:"Υδραυλικός", em:"🚿", rate:"120–180 €/ημ", role:"Ύδρευση, αποχέτευση, θέρμανση."},
+  electrician:{n:"Ηλεκτρολόγος", em:"⚡", rate:"120–180 €/ημ", role:"Ηλεκτρικές εγκαταστάσεις, πίνακες, ΥΔΕ."},
+  hvac_tech:{n:"Ψυκτικός / Τεχνικός HVAC", em:"🌡️", rate:"130–190 €/ημ", role:"Κλιματισμός, αντλίες θερμότητας."},
+  tiler:{n:"Πλακάς", em:"🔲", rate:"110–160 €/ημ", role:"Τοποθέτηση πλακιδίων."},
+  marble_worker:{n:"Μαρμαράς", em:"⬜", rate:"120–180 €/ημ", role:"Κοπή/τοποθέτηση μαρμάρων."},
+  painter:{n:"Ελαιοχρωματιστής", em:"🎨", rate:"90–140 €/ημ", role:"Στοκαρίσματα, βαφές."},
+  cabinetmaker:{n:"Επιπλοποιός", em:"🪑", rate:"κατ' αποκοπή", role:"Κουζίνες, ντουλάπες, έπιπλα."},
+  metalworker:{n:"Μεταλλουργός / Σιδεράς", em:"🔧", rate:"110–170 €/ημ", role:"Κάγκελα, μεταλλικές κατασκευές."},
+  landscaper:{n:"Κηπουρός / Διαμόρφωση", em:"🌳", rate:"80–130 €/ημ", role:"Περιβάλλων χώρος, φύτευση."},
+};
+
+/* ΕΠΙΠΛΩΣΗ & ΟΙΚΙΑΚΟΣ ΕΞΟΠΛΙΣΜΟΣ
+   scale: bedroom=ανά υπνοδωμάτιο, bath=ανά μπάνιο, living=ανά καθιστικό, fixed=1, m2=ανά τ.μ.
+   price: {econ, mid, premium} — ενδεικτικές λιανικής (με ΦΠΑ) 2025-26 */
+const FURN = [
+  // Υπνοδωμάτιο
+  {name:"Κρεβάτι + στρώμα", em:"🛏️", room:"Υπνοδωμάτιο", scale:"bedroom", price:{econ:400,mid:850,premium:1900}},
+  {name:"Ντουλάπα", em:"🚪", room:"Υπνοδωμάτιο", scale:"bedroom", price:{econ:350,mid:700,premium:1600}},
+  {name:"Κομοδίνα (ζεύγος)", em:"🗄️", room:"Υπνοδωμάτιο", scale:"bedroom", price:{econ:100,mid:220,premium:500}},
+  {name:"Συρταριέρα / Τουαλέτα", em:"🪞", room:"Υπνοδωμάτιο", scale:"bedroom", price:{econ:120,mid:280,premium:650}},
+  // Σαλόνι / Καθιστικό
+  {name:"Καναπές / σετ σαλονιού", em:"🛋️", room:"Σαλόνι", scale:"living", price:{econ:550,mid:1300,premium:3800}},
+  {name:"Πολυθρόνα", em:"💺", room:"Σαλόνι", scale:"living", price:{econ:120,mid:320,premium:900}},
+  {name:"Τραπεζάκι σαλονιού", em:"☕", room:"Σαλόνι", scale:"living", price:{econ:80,mid:200,premium:600}},
+  {name:"Σύνθετο TV / Βιβλιοθήκη", em:"📚", room:"Σαλόνι", scale:"living", price:{econ:200,mid:550,premium:1600}},
+  // Τραπεζαρία
+  {name:"Τραπέζι + καρέκλες (6)", em:"🍽️", room:"Τραπεζαρία", scale:"fixed", price:{econ:380,mid:950,premium:2600}},
+  {name:"Μπουφές / Vitrine", em:"🍶", room:"Τραπεζαρία", scale:"fixed", price:{econ:200,mid:520,premium:1400}},
+  // Κουζίνα – συσκευές
+  {name:"Ψυγείο", em:"❄️", room:"Κουζίνα (συσκευές)", scale:"fixed", price:{econ:400,mid:850,premium:2100}},
+  {name:"Κουζίνα/φούρνος + εστίες", em:"🔥", room:"Κουζίνα (συσκευές)", scale:"fixed", price:{econ:350,mid:750,premium:2200}},
+  {name:"Απορροφητήρας", em:"💨", room:"Κουζίνα (συσκευές)", scale:"fixed", price:{econ:100,mid:250,premium:700}},
+  {name:"Πλυντήριο πιάτων", em:"🍴", room:"Κουζίνα (συσκευές)", scale:"fixed", price:{econ:300,mid:560,premium:1200}},
+  {name:"Μικροσυσκευές κουζίνας", em:"🧇", room:"Κουζίνα (συσκευές)", scale:"fixed", price:{econ:150,mid:350,premium:800}},
+  {name:"Σκεύη & μαχαιροπίρουνα (σετ)", em:"🥘", room:"Κουζίνα (συσκευές)", scale:"fixed", price:{econ:200,mid:450,premium:1200}},
+  // Πλυσταριό
+  {name:"Πλυντήριο ρούχων", em:"🧺", room:"Πλυσταριό", scale:"fixed", price:{econ:320,mid:580,premium:1200}},
+  {name:"Στεγνωτήριο", em:"🌀", room:"Πλυσταριό", scale:"fixed", price:{econ:300,mid:560,premium:1100}},
+  // Μπάνιο
+  {name:"Έπιπλο μπάνιου + καθρέφτης", em:"🪞", room:"Μπάνιο (έπιπλα)", scale:"bath", price:{econ:150,mid:350,premium:900}},
+  {name:"Αξεσουάρ μπάνιου", em:"🧴", room:"Μπάνιο (έπιπλα)", scale:"bath", price:{econ:40,mid:90,premium:250}},
+  // Ηλεκτρονικά & λοιπά
+  {name:"Τηλεόραση(εις)", em:"📺", room:"Ηλεκτρονικά & λοιπά", scale:"fixed", price:{econ:350,mid:800,premium:2200}},
+  {name:"Οικιακές μικροσυσκευές (σκούπα/σίδερο)", em:"🧹", room:"Ηλεκτρονικά & λοιπά", scale:"fixed", price:{econ:150,mid:320,premium:750}},
+  // Φωτισμός & υφάσματα (ανά m²)
+  {name:"Φωτιστικά χώρων", em:"💡", room:"Φωτισμός & Υφάσματα", scale:"m2", price:{econ:6,mid:12,premium:25}},
+  {name:"Κουρτίνες / Ρόλερ / Λευκά είδη", em:"🪟", room:"Φωτισμός & Υφάσματα", scale:"m2", price:{econ:10,mid:20,premium:45}},
+  {name:"Χαλιά & Διακόσμηση", em:"🖼️", room:"Φωτισμός & Υφάσματα", scale:"m2", price:{econ:5,mid:12,premium:30}},
+];
+function furnQty(scale, ctx){
+  switch(scale){
+    case 'bedroom': return ctx.bedrooms;
+    case 'bath': return ctx.baths;
+    case 'living': return ctx.living;
+    case 'm2': return ctx.area;
+    default: return 1;
+  }
+}
+function computeFurnish(ctx, tier){
+  const items = FURN.map((f,idx)=>{
+    const qty = furnQty(f.scale, ctx);
+    const each = pfurn(idx,tier,f);
+    return {name:f.name, em:f.em, room:f.room, scale:f.scale, qty, each,
+      total:(f.scale==='m2'? ctx.area*each : qty*each)};
+  }).filter(i=>i.qty>0 && i.total>0);
+  const total = items.reduce((a,i)=>a+i.total,0);
+  return {items, total};
+}
+
+/* ============================================================
+   TABS / NAVIGATION
+   ============================================================ */
+const TABS = [
+  {id:"home", ic:"🏠", label:"Αρχική"},
+  {id:"solver", ic:"🧮", label:"Λύτης"},
+  {id:"compare", ic:"⚖️", label:"Σύγκριση"},
+  {id:"stages", ic:"📋", label:"Στάδια"},
+  {id:"methods", ic:"🏗️", label:"Ανέγερση"},
+  {id:"materials", ic:"🧱", label:"Υλικά"},
+  {id:"furnish", ic:"🛋️", label:"Επίπλωση"},
+  {id:"tools", ic:"🔨", label:"Εργαλεία"},
+  {id:"diy", ic:"🧑‍🔧", label:"DIY"},
+  {id:"crews", ic:"👷", label:"Μάστορες"},
+  {id:"checklist", ic:"✅", label:"Checklist"},
+  {id:"permits", ic:"📜", label:"Αδειοδότηση"},
+  {id:"prices", ic:"💰", label:"Τιμές"},
+];
+
+function buildTabs(){
+  document.getElementById('tabs').innerHTML = TABS.map(t=>
+    `<button data-tab="${t.id}" onclick="go('${t.id}')"><span class="ic">${t.ic}</span>${t.label}</button>`).join('');
+}
+/* PWA: service worker + κουμπί εγκατάστασης (μόνο όταν σερβίρεται μέσω http/https) */
+if('serviceWorker' in navigator && location.protocol.indexOf('http')===0){
+  window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+}
+let deferredPrompt=null;
+window.addEventListener('beforeinstallprompt',e=>{ e.preventDefault(); deferredPrompt=e; const b=document.getElementById('installBtn'); if(b) b.style.display='inline-flex'; });
+window.addEventListener('appinstalled',()=>{ const b=document.getElementById('installBtn'); if(b) b.style.display='none'; deferredPrompt=null; });
+function installApp(){
+  if(deferredPrompt){ deferredPrompt.prompt(); deferredPrompt.userChoice.finally(()=>{ deferredPrompt=null; const b=document.getElementById('installBtn'); if(b) b.style.display='none'; }); }
+  else { alert('Για εγκατάσταση ως εφαρμογή:\n• Android/Chrome: μενού ⋮ → «Εγκατάσταση εφαρμογής».\n• iPhone/iPad: «Κοινή χρήση» → «Προσθήκη στην αρχική οθόνη».\n\n(Χρειάζεται να ανοίξει από διεύθυνση web http/https, όχι ως τοπικό αρχείο.)'); }
+}
+function toggleFullscreen(){
+  const d=document, el=d.documentElement;
+  const isFs = d.fullscreenElement||d.webkitFullscreenElement||d.msFullscreenElement;
+  try{
+    if(!isFs){
+      const req = el.requestFullscreen||el.webkitRequestFullscreen||el.msRequestFullscreen;
+      if(req) req.call(el); else alert('Στο iPhone: πάτησε «Κοινή χρήση» → «Προσθήκη στην αρχική οθόνη» και άνοιξέ το από εκεί για πλήρη οθόνη.');
+    } else {
+      const ex = d.exitFullscreen||d.webkitExitFullscreen||d.msExitFullscreen;
+      if(ex) ex.call(d);
+    }
+  }catch(e){ alert('Η πλήρης οθόνη δεν υποστηρίζεται εδώ. Στο iPhone/iPad: «Προσθήκη στην αρχική οθόνη».'); }
+}
+document.addEventListener('fullscreenchange',()=>{ const b=document.getElementById('fsBtn'); if(b){ const fs=document.fullscreenElement; b.textContent = fs?'⤡':'⛶'; b.title = fs?'Έξοδος από πλήρη οθόνη':'Πλήρης οθόνη (F11)'; } });
+function go(id){
+  document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===id));
+  document.querySelectorAll('#tabs button').forEach(b=>b.classList.toggle('active',b.dataset.tab===id));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ============================================================
+   HELPERS
+   ============================================================ */
+const fmt = n => new Intl.NumberFormat('el-GR',{maximumFractionDigits:0}).format(Math.round(n));
+const eur = n => fmt(n)+' €';
+
+/* ============================================================
+   ΕΠΕΞΕΡΓΑΣΙΜΕΣ ΤΙΜΕΣ (αποθηκεύονται τοπικά)
+   ============================================================ */
+// Προφίλ/λίστες τιμών — κάθε λίστα κρατά τα δικά της overrides
+let PROFILES=null;
+try{ PROFILES=JSON.parse(localStorage.getItem('oikodomi_profiles')); }catch(e){}
+if(!PROFILES || !PROFILES.list || !Object.keys(PROFILES.list).length){
+  let old={}; try{ old=JSON.parse(localStorage.getItem('oikodomi_userprices')||'{}'); }catch(e){}
+  PROFILES={ list:{ "Βασική": old||{} }, active:"Βασική" };
+}
+if(!PROFILES.list[PROFILES.active]) PROFILES.active=Object.keys(PROFILES.list)[0];
+let USERP = PROFILES.list[PROFILES.active];
+function saveUserP(){ try{ localStorage.setItem('oikodomi_profiles',JSON.stringify(PROFILES)); }catch(e){} }
+function rerenderAll(){ renderMaterials(); renderPrices(); renderTools(); renderCrews(); renderFurnish(); renderDIY(); updateProfileTag(); if(LAST_PLAN) runSolver(); }
+function switchProfile(name){ if(!PROFILES.list[name]) return; PROFILES.active=name; USERP=PROFILES.list[name]; saveUserP(); rerenderAll(); }
+function newProfile(){ const n=(prompt('Όνομα νέας λίστας τιμών (ξεκινά ως αντίγραφο της τρέχουσας):','')||'').trim(); if(!n) return; if(PROFILES.list[n]){alert('Υπάρχει ήδη λίστα με αυτό το όνομα.');return;} PROFILES.list[n]=JSON.parse(JSON.stringify(USERP)); PROFILES.active=n; USERP=PROFILES.list[n]; saveUserP(); rerenderAll(); }
+function renameProfile(){ const o=PROFILES.active; const n=(prompt('Νέο όνομα:',o)||'').trim(); if(!n||n===o) return; if(PROFILES.list[n]){alert('Υπάρχει ήδη.');return;} PROFILES.list[n]=PROFILES.list[o]; delete PROFILES.list[o]; PROFILES.active=n; USERP=PROFILES.list[n]; saveUserP(); rerenderAll(); }
+function deleteProfile(){ if(Object.keys(PROFILES.list).length<=1){alert('Πρέπει να υπάρχει τουλάχιστον μία λίστα.');return;} if(!confirm('Διαγραφή της λίστας «'+PROFILES.active+'»;')) return; delete PROFILES.list[PROFILES.active]; PROFILES.active=Object.keys(PROFILES.list)[0]; USERP=PROFILES.list[PROFILES.active]; saveUserP(); rerenderAll(); }
+function exportPrices(){ const data=JSON.stringify({app:'OIKODOMI360',type:'prices',exported:new Date().toISOString(),profiles:PROFILES},null,2); downloadBlob(data,'oikodomi_times.json','application/json'); }
+function importPrices(file){ if(!file) return; const r=new FileReader();
+  r.onload=e=>{ try{ const d=JSON.parse(e.target.result); let inc;
+    if(d && d.profiles && d.profiles.list) inc=d.profiles.list; else if(d && d.list) inc=d.list;
+    else if(d && typeof d==='object') inc={'Εισαγωγή':d}; else { alert('Μη έγκυρο αρχείο.'); return; }
+    Object.keys(inc).forEach(n=>{ PROFILES.list[n]=inc[n]||{}; });
+    const first=Object.keys(inc)[0]; if(first){ PROFILES.active=first; USERP=PROFILES.list[first]; }
+    saveUserP(); rerenderAll(); alert('✅ Εισήχθησαν '+Object.keys(inc).length+' λίστα(ες) τιμών.');
+  }catch(err){ alert('Σφάλμα ανάγνωσης αρχείου.'); } };
+  r.readAsText(file); const el=document.getElementById('impPrices'); if(el) el.value='';
+}
+function profileBar(){
+  const names=Object.keys(PROFILES.list);
+  return `<div class="card" style="margin-bottom:16px">
+    <h3><span class="em">🗂️</span> Λίστες τιμών (προφίλ)</h3>
+    <div style="display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin-top:10px">
+      <select onchange="switchProfile(this.value)" style="max-width:230px">${names.map(n=>`<option ${n===PROFILES.active?'selected':''}>${n}</option>`).join('')}</select>
+      <button class="btn ghost no-print" onclick="newProfile()">➕ Νέα</button>
+      <button class="btn ghost no-print" onclick="renameProfile()">✏️ Μετονομασία</button>
+      <button class="btn ghost no-print" onclick="deleteProfile()">🗑️ Διαγραφή</button>
+      <button class="btn ghost no-print" onclick="exportPrices()">⬇️ Εξαγωγή</button>
+      <button class="btn ghost no-print" onclick="document.getElementById('impPrices').click()">⬆️ Εισαγωγή</button>
+      <input type="file" id="impPrices" accept="application/json,.json" style="display:none" onchange="importPrices(this.files[0])">
+    </div>
+    <p style="color:var(--muted);font-size:12.5px;margin:10px 0 0">Ενεργή: <b style="color:var(--amber2)">${PROFILES.active}</b>. Φτιάξε π.χ. «Οικονομικός προμηθευτής» & «Premium» και εναλλάσσου — η ενεργή τροφοδοτεί όλους τους υπολογισμούς. Η εξαγωγή σώζει <b>όλες</b> τις λίστες σε αρχείο.</p>
+  </div>`;
+}
+function updateProfileTag(){ const el=document.getElementById('plTag'); if(el) el.innerHTML=`💶 Λίστα: ${PROFILES.active}`; }
+
+/* Γρήγορη σύγκριση 2 λιστών τιμών */
+let CMPL={a:null,b:null};
+function withList(name,fn){ const bak=USERP; USERP=PROFILES.list[name]||{}; try{ return fn(); } finally { USERP=bak; } }
+function diffCell(a,b){ const d=b-a; if(Math.abs(d)<0.5) return '<span style="color:var(--dim)">—</span>'; const col=d>0?'var(--red2)':'var(--amber2)'; const pct=a>0?` <span style="opacity:.85">(${d>0?'+':''}${Math.round(d/a*100)}%)</span>`:''; return `<span style="color:${col};font-weight:700">${d>0?'+':''}${fmt(d)} €${pct}</span>`; }
+function setCmpL(side,name){ CMPL[side]=name; updateListCompare(); }
+function updateListCompare(){
+  const el=document.getElementById('listCmp'); if(!el) return;
+  const names=Object.keys(PROFILES.list);
+  if(names.length<2){ el.innerHTML=`<div class="card"><h3><span class="em">⚖️</span> Σύγκριση λιστών</h3>
+    <p style="color:var(--muted);margin-top:6px">Φτιάξε τουλάχιστον 2 λίστες τιμών (πάτησε <b>➕ Νέα</b> παραπάνω) για να τις συγκρίνεις δίπλα-δίπλα.</p></div>`; return; }
+  if(!CMPL.a||!PROFILES.list[CMPL.a]) CMPL.a=PROFILES.active;
+  if(!CMPL.b||!PROFILES.list[CMPL.b]||CMPL.b===CMPL.a) CMPL.b=names.find(n=>n!==CMPL.a)||names[0];
+  const sel=side=>`<select onchange="setCmpL('${side}',this.value)">${names.map(n=>`<option ${n===CMPL[side]?'selected':''}>${n}</option>`).join('')}</select>`;
+  const baseA=withList(CMPL.a,()=>P('base_m2')), baseB=withList(CMPL.b,()=>P('base_m2'));
+  let rows=`<tr><td><b>🏗️ Βάση Λύτη</b> <span style="color:var(--dim);font-size:11px">(€/m²)</span></td><td class="num">${fmt(baseA)} €</td><td class="num">${fmt(baseB)} €</td><td class="num">${diffCell(baseA,baseB)}</td></tr>`;
+  let sumA=0,sumB=0;
+  HOWTO.forEach(h=>{ const c=DIY_CALC[h.id]; if(!c) return; const v={}; c.inputs.forEach(i=>v[i.key]=i.def);
+    const a=withList(CMPL.a,()=>c.fn(v).mats.reduce((s,m)=>s+(m.cost||0),0));
+    const b=withList(CMPL.b,()=>c.fn(v).mats.reduce((s,m)=>s+(m.cost||0),0));
+    sumA+=a; sumB+=b;
+    const dims=c.inputs.filter(i=>i.type!=='check').map(i=>i.def+i.unit).join(' × ');
+    rows+=`<tr><td>${h.em} ${h.title} <span style="color:var(--dim);font-size:11px">(${dims})</span></td><td class="num">${eur(a)}</td><td class="num">${eur(b)}</td><td class="num">${diffCell(a,b)}</td></tr>`;
+  });
+  rows+=`<tr style="border-top:2px solid var(--red)"><td><b>Σύνολο υλικών (όλα τα DIY)</b></td><td class="num"><b>${eur(sumA)}</b></td><td class="num"><b>${eur(sumB)}</b></td><td class="num"><b>${diffCell(sumA,sumB)}</b></td></tr>`;
+  const cheaper = sumB<sumA?CMPL.b:(sumA<sumB?CMPL.a:null);
+  el.innerHTML=`<div class="card">
+    <h3><span class="em">⚖️</span> Γρήγορη σύγκριση 2 λιστών</h3>
+    <div class="grid g2" style="margin-top:10px">
+      <div><label style="font-size:12px;color:var(--muted);display:block;margin-bottom:5px">Λίστα Α</label>${sel('a')}</div>
+      <div><label style="font-size:12px;color:var(--muted);display:block;margin-bottom:5px">Λίστα Β</label>${sel('b')}</div>
+    </div>
+    <table style="margin-top:12px"><thead><tr><th>Εργασία <span style="color:var(--dim);font-size:10px">(προεπιλ. διαστάσεις)</span></th><th class="num">${CMPL.a}</th><th class="num">${CMPL.b}</th><th class="num">Διαφορά (Β−Α)</th></tr></thead><tbody>${rows}</tbody></table>
+    ${cheaper?`<div class="tip" style="margin-top:10px">💰 Συνολικά φθηνότερη σε υλικά DIY: <b>${cheaper}</b> (διαφορά ${eur(Math.abs(sumB-sumA))}${sumA>0?` · ${Math.round(Math.abs(sumB-sumA)/Math.max(sumA,sumB)*100)}%`:''}).</div>`:''}
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:12px" class="no-print">
+      <button class="btn ${PROFILES.active===CMPL.a?'amber':'ghost'}" onclick="switchProfile('${CMPL.a}')">${PROFILES.active===CMPL.a?'✅ Ενεργή: ':'✓ Κάνε ενεργή: '}${CMPL.a}</button>
+      <button class="btn ${PROFILES.active===CMPL.b?'amber':'ghost'}" onclick="switchProfile('${CMPL.b}')">${PROFILES.active===CMPL.b?'✅ Ενεργή: ':'✓ Κάνε ενεργή: '}${CMPL.b}</button>
+    </div>
+    <p style="color:var(--dim);font-size:12px;margin-top:8px">Κόστος υλικών ανά εργασία, μεσαία ποιότητα, στις προεπιλεγμένες διαστάσεις. Θετική διαφορά = η Β ακριβότερη.</p>
+  </div>`;
+}
+function PV(k,def){ return (USERP[k]!==undefined && USERP[k]!=='') ? USERP[k] : def; }
+// αριθμητικές τιμές DIY / βάσης
+const DIY_PRICES = {
+  base_m2:1450,
+  tile_m2:25, glue_bag:12, grout_bag:10, cross:8,
+  brick:0.45, cement_bag:6, sand_m3:30,
+  plaster_bag:7, corner:0.3,
+  paint_l:8, primer_l:5, putty:12, tape:10,
+  laminate_m2:25, underlay_m2:3, skirt_m:4,
+  concrete_m3:110, mesh_m2:4, formwork_m:3,
+  drywall_sheet:18, profile_m:2.5, screws:8, jointkit:14,
+  silicone_cart:6, tape_roll:3, anchor_set:0.4, hook:1.5, waste_skip:180,
+  lab_tiles:22, lab_wall:18, lab_plaster:14, lab_paint:8, lab_laminate:12,
+  lab_concrete:15, lab_drywall:20, lab_silicone:8, lab_anchor:10,
+};
+function P(k){ const u=USERP['diy_'+k]; return (u!==undefined && u!=='') ? (+u) : DIY_PRICES[k]; }
+function pfurn(idx,tier,f){ const u=USERP['furn_'+idx+'_'+tier]; return (u!==undefined && u!=='') ? (+u) : f.price[tier]; }
+function priceInput(key,def,num){
+  const v=PV(key,def);
+  return `<input class="pedit" value="${v}" ${num?'type="number" step="any"':''} onchange="setP('${key}',this.value,${num?'true':'false'})">`;
+}
+function setP(k,val,num){
+  USERP[k] = num ? (parseFloat(val)||0) : val;
+  saveUserP();
+  if(k.startsWith('diy_')){ HOWTO.forEach(h=>{ if(DIY_CALC[h.id]) diyCompute(h.id); }); if(k==='diy_base_m2' && LAST_PLAN) runSolver(); return; }
+  if(k.startsWith('furn_')){ renderFurnish(); if(LAST_PLAN) runSolver(); return; }
+  if(k.startsWith('mat_')){ renderMaterials(); renderPrices(); return; }
+  if(k.startsWith('work_')){ renderPrices(); return; }
+  if(k.startsWith('tool_')){ renderTools(); return; }
+  if(k.startsWith('crew_')){ renderCrews(); return; }
+}
+function resetPrices(){
+  if(!confirm('Επαναφορά της λίστας «'+PROFILES.active+'» στις προεπιλογές;')) return;
+  PROFILES.list[PROFILES.active]={}; USERP=PROFILES.list[PROFILES.active]; saveUserP();
+  rerenderAll();
+  alert('✅ Η λίστα «'+PROFILES.active+'» επανήλθε στις προεπιλογές.');
+}
+const PRICE_GROUPS = [
+  {t:"🏗️ Βάση Λύτη", ks:[["base_m2","Βασικό κόστος κατασκευής","€/m²"]]},
+  {t:"📦 Υλικά (DIY)", ks:[
+    ["tile_m2","Πλακίδια","€/m²"],["glue_bag","Κόλλα (σακί)","€"],["grout_bag","Αρμόστοκος (σακί)","€"],
+    ["brick","Τούβλο","€/τεμ"],["cement_bag","Τσιμέντο (σακί)","€"],["sand_m3","Άμμος","€/m³"],
+    ["plaster_bag","Σοβάς (σακί)","€"],["paint_l","Χρώμα","€/L"],["primer_l","Αστάρι","€/L"],["putty","Στόκος","€"],
+    ["laminate_m2","Laminate","€/m²"],["underlay_m2","Υπόστρωμα","€/m²"],["skirt_m","Σοβατεπί","€/m"],
+    ["concrete_m3","Σκυρόδεμα","€/m³"],["mesh_m2","Πλέγμα","€/m²"],["formwork_m","Ξυλότυποι","€/m"],
+    ["drywall_sheet","Γυψοσανίδα (φύλλο)","€"],["profile_m","Προφίλ","€/m"],["screws","Βίδες","€"],["jointkit","Ταινία+στόκος","€"],
+    ["silicone_cart","Σιλικόνη (φύσιγγα)","€"],["anchor_set","Ούπα+βίδα","€/σετ"],["hook","Γάντζος","€"],
+    ["waste_skip","Κάδος μπάζων","€"],
+  ]},
+  {t:"👷 Εργασία μάστορα", ks:[
+    ["lab_tiles","Πλακάκια","€/m²"],["lab_wall","Χτίσιμο","€/m²"],["lab_plaster","Σοβάς","€/m²"],["lab_paint","Βάψιμο","€/m²"],
+    ["lab_laminate","Laminate","€/m²"],["lab_concrete","Μπετόν","€/m²"],["lab_drywall","Γυψοσανίδα","€/m²"],
+    ["lab_silicone","Σιλικόνη","€/m"],["lab_anchor","Στήριξη","€/σημείο"],
+  ]},
+];
+function pricesEditor(){
+  const groups=PRICE_GROUPS.map(g=>`
+    <div style="margin-bottom:12px">
+      <div style="font-weight:700;color:var(--amber2);font-size:13px;margin-bottom:7px">${g.t}</div>
+      <div class="grid g3">${g.ks.map(([k,lbl,u])=>`
+        <div class="peditrow"><label>${lbl} <span style="color:var(--dim)">${u}</span></label>
+        <input class="pedit" type="number" step="any" value="${P(k)}" onchange="setP('diy_${k}',this.value,true)"></div>`).join('')}</div>
+    </div>`).join('');
+  return `<div class="accordion" style="margin-bottom:16px">
+    <div class="acc-head" onclick="this.parentElement.classList.toggle('open')">
+      <span class="em" style="font-size:19px">💶</span><span>Οι τιμές μου — άλλαξέ τες</span><span class="chev">▶</span></div>
+    <div class="acc-body">
+      <p style="color:var(--muted);margin-top:12px">Προσαρμόσε τις τιμές στην αγορά σου. Αποθηκεύονται τοπικά & ενημερώνουν αυτόματα τους υπολογισμούς (DIY & Λύτη).</p>
+      ${groups}
+      <button class="btn ghost no-print" onclick="resetPrices()">🔄 Επαναφορά προεπιλογών</button>
+    </div>
+  </div>`;
+}
+
+/* ============================================================
+   HOME
+   ============================================================ */
+function renderHome(){
+  const cards = TABS.filter(t=>t.id!=='home').map(t=>{
+    const d = {
+      solver:"Βάλε τις επιλογές σου και πάρε αυτόματα πλήρες πλάνο & προϋπολογισμό.",
+      compare:"Σύγκρινε 2 σενάρια δίπλα-δίπλα (π.χ. μπετόν vs προκάτ).",
+      stages:"Αναλυτικός οδηγός για κάθε στάδιο: τι, πώς, υλικά, εργαλεία, μάστορες.",
+      methods:"Σύγκριση τρόπων ανέγερσης: μπετόν, μεταλλικό, προκάτ, πέτρα, ξύλο, ICF.",
+      materials:"Κατάλογος υλικών με χρήση & ενδεικτικές τιμές αγοράς.",
+      furnish:"Έπιπλα, συσκευές & στυλ διακόσμησης/αρχιτεκτονικής.",
+      tools:"Ποια εργαλεία χρειάζεσαι ανά εργασία & το κόστος τους.",
+      diy:"Οδηγίες βήμα-βήμα: πλακάκια, χτίσιμο, βάψιμο & άλλα μόνος σου.",
+      crews:"Ειδικότητες μαστόρων, τι κάνουν & ενδεικτικά μεροκάματα.",
+      checklist:"Λίστα ελέγχου εργοταξίου με πρόοδο που αποθηκεύεται.",
+      permits:"Άδεια δόμησης, δικαιολογητικά, ΕΦΚΑ οικοδομής, «Εξοικονομώ».",
+      prices:"Τιμές μονάδας υλικών & εργασιών σε ένα σημείο.",
+    }[t.id];
+    return `<div class="tile" onclick="go('${t.id}')"><div class="big">${t.ic}</div><h4>${t.label}</h4><p>${d}</p></div>`;
+  }).join('');
+
+  document.getElementById('home').innerHTML = `
+    <div class="hero">
+      <h2>🏗️ Ο πλήρης οδηγός & υπολογιστής για την οικοδομή</h2>
+      <p>Από το οικόπεδο έως το κλειδί στο χέρι — όλα τα στάδια κατασκευής κατοικίας ή καταστήματος, με
+      κόστη, τρόπους ανέγερσης, υλικά, εργαλεία και μάστορες. Ο <b>Λύτης</b> παίρνει τις επιλογές σου
+      και βγάζει αυτόματα αναλυτικό πλάνο, προϋπολογισμό και χρονοδιάγραμμα.</p>
+      <div class="cta">
+        <button class="btn primary" onclick="go('solver')">🧮 Ξεκίνα τον Λύτη</button>
+        <button class="btn ghost" onclick="go('stages')">📋 Δες τα στάδια</button>
+        <button class="btn ghost" onclick="go('methods')">🏗️ Τρόποι ανέγερσης</button>
+      </div>
+    </div>
+
+    <div class="grid g4" style="margin-top:18px">
+      <div class="stat accent-red"><div class="k">Στάδια κατασκευής</div><div class="v">${STAGES.length}</div></div>
+      <div class="stat accent-amber"><div class="k">Τρόποι ανέγερσης</div><div class="v">${Object.keys(METHODS).length}</div></div>
+      <div class="stat accent-blue"><div class="k">Υλικά στη βάση</div><div class="v">${Object.keys(MATERIALS).length}</div></div>
+      <div class="stat"><div class="k">Ειδικότητες μαστόρων</div><div class="v">${Object.keys(CREWS).length}</div></div>
+    </div>
+
+    <div class="sectitle"><span class="em">🧭</span><h2>Ενότητες</h2></div>
+    <div class="grid g3">${cards}</div>
+
+    <div class="card" style="margin-top:20px">
+      <h3><span class="em">💡</span> Πώς λειτουργεί</h3>
+      <div class="grid g3" style="margin-top:6px">
+        <div><b style="color:var(--amber2)">1. Επιλογές</b><p style="color:var(--muted);margin:4px 0 0">Τύπος έργου, τετραγωνικά, ποιότητα, τρόπος ανέγερσης, περιοχή & extras.</p></div>
+        <div><b style="color:var(--amber2)">2. Αυτόματος υπολογισμός</b><p style="color:var(--muted);margin:4px 0 0">Κόστος ανά στάδιο, υλικά, μάστορες, χρονοδιάγραμμα & σύνολο με ΦΠΑ.</p></div>
+        <div><b style="color:var(--amber2)">3. Πλάνο & εκτύπωση</b><p style="color:var(--muted);margin:4px 0 0">Αποθήκευση έργου και εξαγωγή σε PDF/εκτύπωση.</p></div>
+      </div>
+    </div>`;
+}
+
+/* ============================================================
+   SOLVER
+   ============================================================ */
+let SOL = {
+  ptype:"house", quality:"mid", method:"concrete", region:"mainland",
+  area:120, floors:1, baths:2, bedrooms:3,
+  ex:{basement:false, pool:false, solar:true, heatpump:true, ac:true, smart:false, garden:true, elevator:false, furnish:true},
+  contingency:10
+};
+let LAST_PLAN = null;
+
+function chip(group, val, label, icon, sel, amber){
+  return `<div class="chip ${sel?'sel':''} ${amber?'amber':''}" onclick="pick('${group}','${val}')">${icon?`<span class="ci">${icon}</span>`:''}${label}</div>`;
+}
+function pick(group,val){ SOL[group]=val; renderSolverForm(); }
+function toggleEx(k){ SOL.ex[k]=!SOL.ex[k]; }
+function setNum(k,v){ SOL[k]=Math.max(0, +v||0); }
+
+function renderSolverForm(){
+  const ex = SOL.ex;
+  document.getElementById('solver').innerHTML = `
+    <div class="sectitle"><span class="em">🧮</span><h2>Ο Λύτης της Οικοδομής</h2>
+      <p>Συμπλήρωσε τα στοιχεία του έργου σου — το πλάνο, ο προϋπολογισμός και το χρονοδιάγραμμα βγαίνουν αυτόματα.</p></div>
+
+    <div class="grid g2">
+      <div class="card">
+        <h3><span class="em">🏠</span> Τύπος έργου</h3>
+        <div class="chips" style="margin-top:8px">
+          ${Object.entries(PTYPE).map(([k,v])=>chip('ptype',k,v.name,v.icon,SOL.ptype===k)).join('')}
+        </div>
+
+        <div class="field" style="margin-top:18px"><label>Επιφάνεια <span class="hint">(συνολικά m² δόμησης)</span></label>
+          <input type="number" value="${SOL.area}" min="10" oninput="setNum('area',this.value)"></div>
+        <div class="grid g3">
+          <div class="field"><label>Όροφοι</label>
+            <input type="number" value="${SOL.floors}" min="1" max="10" oninput="setNum('floors',this.value)"></div>
+          <div class="field"><label>Υπνοδωμάτια</label>
+            <input type="number" value="${SOL.bedrooms}" min="0" max="12" oninput="setNum('bedrooms',this.value)"></div>
+          <div class="field"><label>Μπάνια / WC</label>
+            <input type="number" value="${SOL.baths}" min="0" max="12" oninput="setNum('baths',this.value)"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3><span class="em">💎</span> Ποιότητα κατασκευής</h3>
+        <div class="chips" style="margin-top:8px">
+          ${Object.entries(QUALITY).map(([k,v])=>chip('quality',k,v.name,v.icon,SOL.quality===k,true)).join('')}
+        </div>
+        <p style="color:var(--muted);font-size:13px;margin-top:10px">${QUALITY[SOL.quality].desc}</p>
+
+        <h3 style="margin-top:16px"><span class="em">📍</span> Περιοχή</h3>
+        <div class="chips" style="margin-top:8px">
+          ${Object.entries(REGION).map(([k,v])=>chip('region',k,v.name,v.icon,SOL.region===k)).join('')}
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px">
+      <h3><span class="em">🏗️</span> Τρόπος ανέγερσης</h3>
+      <div class="chips" style="margin-top:8px">
+        ${Object.entries(METHODS).map(([k,v])=>chip('method',k,v.name,v.icon,SOL.method===k)).join('')}
+      </div>
+      <p style="color:var(--muted);font-size:13px;margin-top:10px">${METHODS[SOL.method].desc}</p>
+    </div>
+
+    <div class="card" style="margin-top:16px">
+      <h3><span class="em">⚙️</span> Πρόσθετα & εξοπλισμός</h3>
+      <div class="switchrow" style="margin-top:8px">
+        ${exToggle('basement','🕳️ Υπόγειο')}
+        ${exToggle('pool','🏊 Πισίνα')}
+        ${exToggle('solar','☀️ Φωτοβολταϊκά/Ηλιακός')}
+        ${exToggle('heatpump','🌡️ Αντλία θερμότητας')}
+        ${exToggle('ac','❄️ Κλιματισμός')}
+        ${exToggle('smart','📱 Smart home')}
+        ${exToggle('garden','🌳 Διαμόρφωση αυλής')}
+        ${exToggle('elevator','🛗 Ανελκυστήρας')}
+        ${exToggle('furnish','🛋️ Πλήρης επίπλωση & εξοπλισμός')}
+      </div>
+      <div class="field" style="margin-top:18px;max-width:320px">
+        <label>Απρόβλεπτα / περιθώριο <span class="hint">(% επί του κόστους)</span></label>
+        <input type="number" value="${SOL.contingency}" min="0" max="30" oninput="setNum('contingency',this.value)">
+      </div>
+    </div>
+
+    <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+      <button class="btn primary" onclick="runSolver()">⚡ Υπολόγισε το πλάνο</button>
+      <button class="btn ghost" onclick="saveProject()">💾 Αποθήκευση έργου</button>
+      <button class="btn ghost" onclick="loadProject()">📂 Φόρτωση</button>
+    </div>
+
+    <div id="solverResult"></div>`;
+  // restore checkbox states
+  Object.keys(ex).forEach(k=>{const el=document.getElementById('ex_'+k); if(el)el.checked=ex[k];});
+}
+function exToggle(k,label){
+  return `<label class="toggle"><input type="checkbox" id="ex_${k}" ${SOL.ex[k]?'checked':''} onchange="toggleEx('${k}')">${label}</label>`;
+}
+
+/* ---- Ο ΥΠΟΛΟΓΙΣΜΟΣ ---- */
+function computePlan(){
+  const q=QUALITY[SOL.quality], m=METHODS[SOL.method], r=REGION[SOL.region];
+  const area=Math.max(10,SOL.area), floors=Math.max(1,SOL.floors), baths=Math.max(0,SOL.baths);
+  const pw=PTYPE_WEIGHTS[SOL.ptype]||{};
+
+  // base cost pool
+  const globalMult = q.mult * m.mult * r.mult;
+
+  // floor factor: more floors slightly increase frame share efficiency but overall structure
+  const floorFactor = 1 + (floors-1)*0.03;
+
+  // per-stage
+  let stages = STAGES.map(s=>{
+    let w = s.w * (pw[s.id]!==undefined ? pw[s.id] : 1);
+    // per-stage multipliers
+    let sm = 1;
+    if(s.id==='frame') sm *= floorFactor * (SOL.method==='concrete'?1: (SOL.method==='steel'?0.95:0.9));
+    if(s.id==='found' && SOL.ex.basement) sm *= 1.6;
+    if(s.id==='sanit'||s.id==='plumb') sm *= (0.7 + baths*0.15);
+    if(s.id==='hvac'){ if(!SOL.ex.heatpump && !SOL.ex.ac) sm*=0.4; else sm *= (SOL.ex.heatpump?1.1:1)*(SOL.ex.ac?1.05:1); }
+    if(s.id==='ext' && !SOL.ex.garden) sm *= 0.3;
+    if(s.id==='elec' && SOL.ex.smart) sm *= 1.25;
+    let cost = P('base_m2') * (w/100) * STAGE_NORM * area * globalMult * sm;
+    let dur = Math.max(1, Math.round(s.dur * Math.sqrt(area/120) * (s.id==='frame'?floorFactor:1)));
+    return {...s, cost, dur, wEff:w};
+  }).filter(s=>s.wEff>0.01 && s.cost>1);
+
+  // extras as separate line items
+  let extras=[];
+  const addEx=(cond,name,em,cost,dur)=>{ if(cond) extras.push({name,em,cost:cost*r.mult,dur}); };
+  addEx(SOL.ex.solar,"Φωτοβολταϊκά / Ηλιακός","☀️", (SOL.quality==='premium'?9000:6000), 1);
+  addEx(SOL.ex.pool,"Πισίνα","🏊", (SOL.quality==='econ'?18000:SOL.quality==='mid'?28000:45000), 4);
+  addEx(SOL.ex.smart,"Σύστημα Smart Home","📱", 3000+area*15, 1);
+  addEx(SOL.ex.elevator,"Ανελκυστήρας","🛗", 12000+(floors-1)*3500, 2);
+
+  const stagesTotal = stages.reduce((a,s)=>a+s.cost,0);
+  const extrasTotal = extras.reduce((a,e)=>a+e.cost,0);
+  const subtotal = stagesTotal + extrasTotal;
+  const contingency = subtotal * (SOL.contingency/100);
+  const netTotal = subtotal + contingency;
+  const vat = netTotal * 0.24;
+  const grand = netTotal + vat;
+
+  // duration (sequential with ~35% overlap)
+  const rawWeeks = stages.reduce((a,s)=>a+s.dur,0) + extras.reduce((a,e)=>a+e.dur,0);
+  const weeks = Math.round(rawWeeks*0.65);
+  const months = Math.max(1, Math.round(weeks/4.33));
+
+  // crews involved
+  const crewSet = new Set();
+  stages.forEach(s=>(s.crews||[]).forEach(c=>crewSet.add(c)));
+
+  // material quantity estimates
+  const concreteM3 = area*floors*0.42*(SOL.ex.basement?1.25:1)*(SOL.method==='concrete'?1:SOL.method==='icf'?0.9:0.4);
+  const rebarKg = concreteM3*105;
+  const brickPieces = area*floors*1.15*30*(SOL.method==='prefab'||SOL.method==='timber'?0.3:1);
+  const cementBags = concreteM3*0.5 + area*0.8;
+  const wallArea = area*floors*1.15;
+  const floorArea = area;
+  const windowsArea = area*0.18;
+
+  // επίπλωση & εξοπλισμός
+  const living = Math.max(1, Math.round(area/100));
+  let furnish = {items:[], total:0};
+  if(SOL.ex.furnish) furnish = computeFurnish({area, bedrooms:Math.max(0,SOL.bedrooms||0), baths, living}, SOL.quality);
+  const grandAll = grand + furnish.total;
+
+  return {stages,extras,stagesTotal,extrasTotal,subtotal,contingency,netTotal,vat,grand,weeks,months,
+    furnish, grandAll, perM2All:grandAll/area,
+    crewSet:[...crewSet], perM2:grand/area,
+    qty:{concreteM3,rebarKg,brickPieces,cementBags,wallArea,floorArea,windowsArea},
+    globalMult, area, floors, baths, bedrooms:Math.max(0,SOL.bedrooms||0)};
+}
+
+function runSolver(){
+  const p = computePlan();
+  LAST_PLAN = p;
+  const maxCost = Math.max(...p.stages.map(s=>s.cost), ...p.extras.map(e=>e.cost),1);
+  const hasFurn = p.furnish.total>0;
+
+  // gantt scheduling (sequential-with-overlap)
+  let t=0; const totalW = p.stages.reduce((a,s)=>a+s.dur,0)||1;
+  const gantt = p.stages.map(s=>{ const start=t; t+= s.dur*0.65; return {name:s.name,em:s.em,start,dur:s.dur,end:start+s.dur}; });
+  const ganttMax = Math.max(...gantt.map(g=>g.end),1);
+
+  const stageRows = p.stages.map(s=>`
+    <div class="bar-row">
+      <div class="lbl" title="${s.name}">${s.em} ${s.name}</div>
+      <div class="bar-track"><div class="bar-fill" style="width:${Math.max(3,s.cost/maxCost*100)}%"></div></div>
+      <div class="val">${eur(s.cost)}</div>
+    </div>`).join('');
+
+  const extraRows = p.extras.length? p.extras.map(e=>`
+    <div class="bar-row">
+      <div class="lbl">${e.em} ${e.name}</div>
+      <div class="bar-track"><div class="bar-fill" style="width:${Math.max(3,e.cost/maxCost*100)}%;background:linear-gradient(90deg,var(--blue),var(--amber))"></div></div>
+      <div class="val">${eur(e.cost)}</div>
+    </div>`).join('') : '';
+
+  const tableRows = p.stages.map((s,i)=>`
+    <tr>
+      <td>${s.em} ${s.name}</td>
+      <td class="num">${(s.cost/p.grand*100).toFixed(1)}%</td>
+      <td class="num">${s.dur} εβδ.</td>
+      <td class="num"><b>${eur(s.cost)}</b></td>
+    </tr>`).join('') +
+    p.extras.map(e=>`<tr><td>${e.em} ${e.name} <span class="badge blue">extra</span></td>
+      <td class="num">${(e.cost/p.grand*100).toFixed(1)}%</td><td class="num">${e.dur} εβδ.</td>
+      <td class="num"><b>${eur(e.cost)}</b></td></tr>`).join('');
+
+  const ganttRows = gantt.map(g=>{
+    const left=g.start/ganttMax*100, width=Math.max(4,g.dur*0.65/ganttMax*100);
+    return `<div class="gantt-row"><div class="lbl">${g.em} ${g.name}</div>
+      <div class="gantt-track"><div class="gantt-bar" style="left:${left}%;width:${width}%">${g.dur}ε</div></div></div>`;
+  }).join('');
+
+  const crewCards = p.crewSet.map(c=>{const cr=CREWS[c];return cr?
+    `<div class="pill">${cr.em} ${cr.n} <span style="color:var(--dim)">· ${cr.rate}</span></div>`:''}).join('');
+
+  const q=SOL.qty;
+  const matRows = [
+    ['🏗️ Σκυρόδεμα', fmt(p.qty.concreteM3)+' m³', 'C20/25 έτοιμο'],
+    ['🔩 Χάλυβας οπλισμού', fmt(p.qty.rebarKg)+' kg', 'B500C'],
+    ['🧱 Τούβλα/τσιμεντόλιθοι', fmt(p.qty.brickPieces)+' τεμ.', 'τοιχοποιία'],
+    ['🪟 Κουφώματα', fmt(p.qty.windowsArea)+' m²', 'ενεργειακά'],
+    ['🔲 Δάπεδα/πλακίδια', fmt(p.qty.floorArea)+' m²', 'μικτή επιφάνεια'],
+    ['🎨 Επιφάνειες βαφής', fmt(p.qty.wallArea*2.4)+' m²', 'τοίχοι+οροφές'],
+  ].map(r=>`<tr><td>${r[0]}</td><td class="num"><b>${r[1]}</b></td><td style="color:var(--muted)">${r[2]}</td></tr>`).join('');
+
+  document.getElementById('solverResult').innerHTML = `
+    <div class="sectitle no-print" style="margin-top:28px"><span class="em">📊</span><h2>Το πλάνο του έργου σου</h2></div>
+
+    <div class="grid g4">
+      <div class="stat accent-red"><div class="k">${hasFurn?'Σύνολο (κατασκευή + επίπλωση)':'Συνολικό κόστος (με ΦΠΑ)'}</div><div class="v">${eur(p.grandAll)}</div></div>
+      <div class="stat accent-amber"><div class="k">Κόστος ανά m²</div><div class="v">${fmt(p.perM2All)} <small>€/m²</small></div></div>
+      <div class="stat accent-blue"><div class="k">Εκτ. διάρκεια</div><div class="v">${p.months} <small>μήνες</small></div></div>
+      <div class="stat"><div class="k">${hasFurn?'Επίπλωση/εξοπλισμός':'Ειδικότητες'}</div><div class="v">${hasFurn?eur(p.furnish.total):p.crewSet.length+' <small>συνεργεία</small>'}</div></div>
+    </div>
+
+    <div class="card" style="margin-top:16px">
+      <h3><span class="em">💰</span> Ανάλυση κόστους ανά στάδιο</h3>
+      <div style="margin-top:14px">${stageRows}${extraRows}</div>
+    </div>
+
+    <div class="grid g2" style="margin-top:16px">
+      <div class="card">
+        <h3><span class="em">🧾</span> Συγκεντρωτικός προϋπολογισμός</h3>
+        <table style="margin-top:8px">
+          <tr><td>Σύνολο σταδίων</td><td class="num">${eur(p.stagesTotal)}</td></tr>
+          ${p.extrasTotal>0?`<tr><td>Πρόσθετα/εξοπλισμός</td><td class="num">${eur(p.extrasTotal)}</td></tr>`:''}
+          <tr><td>Απρόβλεπτα (${SOL.contingency}%)</td><td class="num">${eur(p.contingency)}</td></tr>
+          <tr><td><b>Καθαρή αξία</b></td><td class="num"><b>${eur(p.netTotal)}</b></td></tr>
+          <tr><td>ΦΠΑ 24%</td><td class="num">${eur(p.vat)}</td></tr>
+          <tr style="border-top:2px solid var(--line2)"><td><b>${hasFurn?'Σύνολο κατασκευής (με ΦΠΑ)':'ΓΕΝΙΚΟ ΣΥΝΟΛΟ'}</b></td>
+            <td class="num"><b style="font-size:16px">${eur(p.grand)}</b></td></tr>
+          ${hasFurn?`<tr><td>🛋️ Επίπλωση & εξοπλισμός (με ΦΠΑ)</td><td class="num">${eur(p.furnish.total)}</td></tr>
+          <tr style="border-top:2px solid var(--red)"><td><b style="color:var(--red2)">ΤΕΛΙΚΟ ΣΥΝΟΛΟ (ΕΤΟΙΜΟ ΓΙΑ ΚΑΤΟΙΚΗΣΗ)</b></td>
+            <td class="num"><b style="color:var(--red2);font-size:17px">${eur(p.grandAll)}</b></td></tr>`:''}
+        </table>
+        <div class="tip" style="margin-top:12px">Ενδεικτικό εύρος: <b>${eur(p.grandAll*0.85)} – ${eur(p.grandAll*1.2)}</b> ανάλογα με προσφορές, τιμές υλικών & αγορά.</div>
+      </div>
+
+      <div class="card">
+        <h3><span class="em">📦</span> Εκτίμηση βασικών υλικών</h3>
+        <table style="margin-top:8px"><tbody>${matRows}</tbody></table>
+        <p style="color:var(--dim);font-size:12px;margin-top:8px">* Χονδρικές ποσότητες για προκαταρκτικό προγραμματισμό — η μελέτη δίνει ακριβείς.</p>
+      </div>
+    </div>
+
+    ${hasFurn?`<div class="card" style="margin-top:16px">
+      <h3><span class="em">🛋️</span> Επίπλωση & Οικιακός Εξοπλισμός</h3>
+      ${furnishTable(p.furnish)}
+      <div class="tip" style="margin-top:10px">💡 Για ${p.bedrooms} υπνοδωμάτια, ${p.baths} μπάνια · ποιότητα «${QUALITY[SOL.quality].name}». Οι τιμές είναι λιανικής (με ΦΠΑ).</div>
+    </div>`:''}
+
+    <div class="card" style="margin-top:16px">
+      <h3><span class="em">📅</span> Χρονοδιάγραμμα (ενδεικτικό)</h3>
+      <div class="gantt" style="margin-top:12px">${ganttRows}</div>
+    </div>
+
+    <div class="card" style="margin-top:16px">
+      <h3><span class="em">👷</span> Συνεργεία που θα χρειαστείς</h3>
+      <div class="pillrow" style="margin-top:10px">${crewCards}</div>
+    </div>
+
+    <div class="card" style="margin-top:16px">
+      <h3><span class="em">📋</span> Αναλυτικός πίνακας</h3>
+      <table style="margin-top:8px">
+        <thead><tr><th>Στάδιο</th><th class="num">% κόστους</th><th class="num">Διάρκεια</th><th class="num">Κόστος</th></tr></thead>
+        <tbody>${tableRows}</tbody>
+      </table>
+    </div>
+
+    <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap" class="no-print">
+      <button class="btn amber" onclick="window.print()">🖨️ Εκτύπωση / PDF</button>
+      <button class="btn ghost" onclick="exportExcel()">📊 Εξαγωγή Excel</button>
+      <button class="btn ghost" onclick="exportWord()">📄 Εξαγωγή Word</button>
+      <button class="btn ghost" onclick="saveProject()">💾 Αποθήκευση</button>
+    </div>
+
+    <div class="warn" style="margin-top:16px">⚠️ Οι υπολογισμοί είναι <b>ενδεικτικοί</b> για προκαταρκτικό προσανατολισμό. Το τελικό κόστος καθορίζεται από τη μελέτη μηχανικού, τις προσφορές συνεργείων και τις τρέχουσες τιμές υλικών.</div>
+  `;
+  document.getElementById('solverResult').scrollIntoView({behavior:'smooth'});
+}
+
+/* furnishing table grouped by room */
+function furnishTable(f){
+  const rooms=[...new Set(f.items.map(i=>i.room))];
+  let html='<table style="margin-top:8px"><thead><tr><th>Είδος</th><th class="num">Ποσ.</th><th class="num">Τιμή/μον.</th><th class="num">Σύνολο</th></tr></thead><tbody>';
+  rooms.forEach(rm=>{
+    const its=f.items.filter(i=>i.room===rm);
+    const sub=its.reduce((a,i)=>a+i.total,0);
+    html+=`<tr><td colspan="3" style="color:var(--amber2);font-weight:700;padding-top:12px">${rm}</td><td class="num" style="color:var(--amber2);font-weight:700;padding-top:12px">${eur(sub)}</td></tr>`;
+    its.forEach(i=>{
+      const q = i.scale==='m2'? `${fmt(i.qty)} m²` : `×${i.qty}`;
+      html+=`<tr><td>${i.em} ${i.name}</td><td class="num">${q}</td><td class="num" style="color:var(--muted)">${i.scale==='m2'?i.each+' €/m²':eur(i.each)}</td><td class="num"><b>${eur(i.total)}</b></td></tr>`;
+    });
+  });
+  html+=`<tr style="border-top:2px solid var(--red)"><td colspan="3"><b style="color:var(--red2)">ΣΥΝΟΛΟ ΕΠΙΠΛΩΣΗΣ</b></td><td class="num"><b style="color:var(--red2)">${eur(f.total)}</b></td></tr>`;
+  return html+'</tbody></table>';
+}
+
+/* ---- ΕΞΑΓΩΓΗ Excel / Word ---- */
+function planRows(p){
+  const rows=[['Στάδιο','% κόστους','Διάρκεια (εβδ.)','Κόστος (€)']];
+  p.stages.forEach(s=>rows.push([s.name,(s.cost/p.grandAll*100).toFixed(1)+'%',s.dur,Math.round(s.cost)]));
+  p.extras.forEach(e=>rows.push([e.name+' (extra)',(e.cost/p.grandAll*100).toFixed(1)+'%',e.dur,Math.round(e.cost)]));
+  return rows;
+}
+function downloadBlob(content,filename,mime){
+  const blob=new Blob([content],{type:mime});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=filename;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(()=>URL.revokeObjectURL(a.href),1500);
+}
+function projTitle(){ return `${PTYPE[SOL.ptype].name} ${SOL.area}m² · ${QUALITY[SOL.quality].name} · ${METHODS[SOL.method].name}`; }
+function exportExcel(){
+  if(!LAST_PLAN){alert('Τρέξε πρώτα τον υπολογισμό.');return;}
+  const p=LAST_PLAN;
+  let t='<table border="1"><tr><th colspan="4" style="background:#e63329;color:#fff">ΟΙΚΟΔΟΜΗ 360° — '+projTitle()+'</th></tr>';
+  planRows(p).forEach((r,i)=>{
+    t+='<tr>'+r.map(c=>`<${i===0?'th':'td'}>${c}</${i===0?'th':'td'}>`).join('')+'</tr>';
+  });
+  t+=`<tr><td colspan="3"><b>Σύνολο κατασκευής (με ΦΠΑ)</b></td><td><b>${Math.round(p.grand)}</b></td></tr>`;
+  if(p.furnish.total>0){
+    t+=`<tr><td colspan="4" style="background:#ffb020"><b>ΕΠΙΠΛΩΣΗ & ΕΞΟΠΛΙΣΜΟΣ</b></td></tr>`;
+    p.furnish.items.forEach(it=>{ t+=`<tr><td>${it.name}</td><td>${it.room}</td><td>${it.scale==='m2'?fmt(it.qty)+' m²':'×'+it.qty}</td><td>${Math.round(it.total)}</td></tr>`; });
+    t+=`<tr><td colspan="3"><b>Σύνολο επίπλωσης</b></td><td><b>${Math.round(p.furnish.total)}</b></td></tr>`;
+  }
+  t+=`<tr><td colspan="3" style="background:#e63329;color:#fff"><b>ΤΕΛΙΚΟ ΣΥΝΟΛΟ</b></td><td style="background:#e63329;color:#fff"><b>${Math.round(p.grandAll)}</b></td></tr></table>`;
+  downloadBlob('<html><head><meta charset="utf-8"></head><body>'+t+'</body></html>','Oikodomi_Proupologismos.xls','application/vnd.ms-excel');
+}
+function exportWord(){
+  if(!LAST_PLAN){alert('Τρέξε πρώτα τον υπολογισμό.');return;}
+  const p=LAST_PLAN;
+  let body=`<h1 style="color:#e63329">ΟΙΚΟΔΟΜΗ 360°</h1><h3>${projTitle()}</h3>`;
+  body+=`<p><b>Τελικό σύνολο (έτοιμο για κατοίκηση): ${eur(p.grandAll)}</b> — ${fmt(p.perM2All)} €/m² · Εκτ. διάρκεια ${p.months} μήνες</p>`;
+  body+='<h3>Ανάλυση ανά στάδιο</h3><table border="1" cellpadding="5" style="border-collapse:collapse;width:100%"><tr style="background:#eee"><th>Στάδιο</th><th>%</th><th>Εβδ.</th><th>Κόστος</th></tr>';
+  planRows(p).slice(1).forEach(r=>{ body+=`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td>${eur(r[3])}</td></tr>`; });
+  body+=`<tr><td colspan="3"><b>Σύνολο κατασκευής (με ΦΠΑ)</b></td><td><b>${eur(p.grand)}</b></td></tr></table>`;
+  if(p.furnish.total>0){
+    body+='<h3>Επίπλωση & Εξοπλισμός</h3><table border="1" cellpadding="5" style="border-collapse:collapse;width:100%"><tr style="background:#eee"><th>Είδος</th><th>Χώρος</th><th>Ποσ.</th><th>Σύνολο</th></tr>';
+    p.furnish.items.forEach(it=>{ body+=`<tr><td>${it.name}</td><td>${it.room}</td><td>${it.scale==='m2'?fmt(it.qty)+' m²':'×'+it.qty}</td><td>${eur(it.total)}</td></tr>`; });
+    body+=`<tr><td colspan="3"><b>Σύνολο επίπλωσης</b></td><td><b>${eur(p.furnish.total)}</b></td></tr></table>`;
+  }
+  body+=`<h2 style="color:#e63329">ΤΕΛΙΚΟ ΣΥΝΟΛΟ: ${eur(p.grandAll)}</h2>`;
+  body+='<p style="color:#888;font-size:11px">Ενδεικτικές τιμές (αγορά Ελλάδας 2025–26). Δεν αντικαθιστούν προσφορά μηχανικού/εργολάβου.</p>';
+  const html='<html xmlns:w="urn:schemas-microsoft-com:office:word"><head><meta charset="utf-8"></head><body style="font-family:Calibri,Arial">'+body+'</body></html>';
+  downloadBlob(html,'Oikodomi_Proupologismos.doc','application/msword');
+}
+
+/* save/load */
+function saveProject(){
+  try{ localStorage.setItem('oikodomi_project', JSON.stringify(SOL)); alert('✅ Το έργο αποθηκεύτηκε τοπικά στον browser.'); }
+  catch(e){ alert('Αποτυχία αποθήκευσης.'); }
+}
+function loadProject(){
+  try{ const s=localStorage.getItem('oikodomi_project'); if(!s){alert('Δεν υπάρχει αποθηκευμένο έργο.');return;}
+    SOL=Object.assign(SOL,JSON.parse(s)); renderSolverForm(); alert('📂 Φορτώθηκε το αποθηκευμένο έργο.'); }
+  catch(e){ alert('Αποτυχία φόρτωσης.'); }
+}
+
+/* ============================================================
+   STAGES GUIDE
+   ============================================================ */
+function renderStages(){
+  const accs = STAGES.map((s,i)=>{
+    const mats=(s.mats||[]).map(m=>MATERIALS[m]?`<span class="pill">${MATERIALS[m].name}</span>`:'').join('');
+    const tools=(s.tools||[]).map(t=>`<span class="pill">${toolName(t)}</span>`).join('');
+    const crews=(s.crews||[]).map(c=>CREWS[c]?`<span class="pill">${CREWS[c].em} ${CREWS[c].n}</span>`:'').join('');
+    return `
+    <div class="accordion" data-name="${s.name.toLowerCase()}">
+      <div class="acc-head" onclick="this.parentElement.classList.toggle('open')">
+        <span class="num">${i+1}</span>
+        <span class="em" style="font-size:20px">${s.em}</span>
+        <span>${s.name}</span>
+        <span class="cost">~${s.w}% · ${s.dur} εβδ.</span>
+        <span class="chev">▶</span>
+      </div>
+      <div class="acc-body">
+        <p style="color:var(--muted);margin-top:14px">${s.what}</p>
+        <h5>🔧 Πώς γίνεται</h5><ul>${s.how.map(h=>`<li>${h}</li>`).join('')}</ul>
+        ${mats?`<h5>🧱 Υλικά</h5><div class="pillrow">${mats}</div>`:''}
+        ${tools?`<h5>🔨 Εργαλεία</h5><div class="pillrow">${tools}</div>`:''}
+        ${crews?`<h5>👷 Μάστορες</h5><div class="pillrow">${crews}</div>`:''}
+        ${(s.tips||[]).map(t=>`<div class="tip">💡 ${t}</div>`).join('')}
+        ${(s.warn||[]).map(w=>`<div class="warn">⚠️ ${w}</div>`).join('')}
+      </div>
+    </div>`;
+  }).join('');
+
+  document.getElementById('stages').innerHTML = `
+    <div class="sectitle"><span class="em">📋</span><h2>Τα στάδια της οικοδομής</h2>
+      <p>Ολόκληρη η διαδρομή, με τη σειρά — τι είναι κάθε στάδιο, πώς γίνεται, τι υλικά, εργαλεία & μάστορες χρειάζονται.</p></div>
+    <div class="search"><span class="si">🔍</span><input type="text" placeholder="Αναζήτηση σταδίου..." oninput="filterAcc('stages',this.value)"></div>
+    ${accs}`;
+}
+function toolName(t){
+  const map={laser_meter:"Μέτρο laser",laptop:"Η/Υ μελετών",excavator:"Εκσκαφέας",level:"Αλφάδι",string:"Νήμα χάραξης",
+    vibrator:"Δονητής μπετόν",pump:"Αντλία σκυροδέματος",bender:"Κουρμπαδόρος",wheelbarrow:"Καροτσάκι",
+    scaffold:"Ικριώματα",crane:"Γερανός",trowel:"Μυστρί",mixer:"Μπετονιέρα",line:"Νήμα στάθμης",
+    nailer:"Καρφωτικό",saw:"Πριόνι",torch:"Φλόγιστρο μεμβράνης",foam_gun:"Πιστόλι αφρού",drill:"Δράπανο",
+    welder_ppr:"Κολλητήρι PPR",pipe_cutter:"Κόφτης σωλήνων",tester:"Μανόμετρο δοκιμής",fish_tape:"Οδηγός καλωδίων",
+    tester_elec:"Πολύμετρο",screwdriver:"Κατσαβίδια",cutter:"Κόφτης",hawk:"Σανίδα σοβά",straightedge:"Πήχης αλουμινίου",
+    notched_trowel:"Οδοντωτή σπάτουλα",tile_cutter:"Κόφτης πλακιδίων",grinder:"Τροχός",roller:"Ρολό βαφής",
+    brush:"Πινέλο",spray:"Πιστόλι βαφής",sander:"Τριβείο",refrig_tools:"Εργαλεία ψυκτικού",welder_copper:"Κόλληση χαλκού",
+    vacuum_pump:"Αντλία κενού",router:"Ρούτερ",clamps:"Σφιγκτήρες",jig:"Οδηγοί ξυλουργικής",silicone_gun:"Πιστόλι σιλικόνης",
+    wrench:"Κλειδιά",compactor:"Πλάκα συμπύκνωσης",welder:"Ηλεκτροκόλληση",cleaning:"Εξοπλισμός καθαρισμού"};
+  return map[t]||t;
+}
+function filterAcc(view,q){
+  q=q.toLowerCase().trim();
+  document.querySelectorAll('#'+view+' .accordion').forEach(a=>{
+    a.style.display = a.dataset.name.includes(q)?'':'none';
+  });
+}
+
+/* ============================================================
+   METHODS
+   ============================================================ */
+function renderMethods(){
+  const bars=(v)=>`<div class="meter"><i style="width:${v*20}%"></i></div>`;
+  const cards=Object.values(METHODS).map(m=>`
+    <div class="method-card">
+      <div class="mh"><span class="em">${m.icon}</span><h3 style="margin:0">${m.name}</h3></div>
+      <p style="color:var(--muted);font-size:13.5px">${m.desc}</p>
+      <div style="margin:8px 0">
+        <div style="font-size:12px;color:var(--muted)">Ταχύτητα ${bars(m.speed)}</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:6px">Ανθεκτικότητα ${bars(m.durab)}</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:6px">Ενεργειακά ${bars(m.energy)}</div>
+      </div>
+      <div class="prosc">
+        <div><h6 class="pl">✔ Πλεονεκτήματα</h6><ul>${m.pros.map(p=>`<li>${p}</li>`).join('')}</ul></div>
+        <div><h6 class="mn">✘ Μειονεκτήματα</h6><ul>${m.cons.map(c=>`<li>${c}</li>`).join('')}</ul></div>
+      </div>
+      <div class="tip" style="margin-top:auto">🎯 <b>Ιδανικό για:</b> ${m.best}</div>
+      <div style="margin-top:8px"><span class="badge amber">Σχετικό κόστος ×${m.mult.toFixed(2)}</span></div>
+    </div>`).join('');
+  document.getElementById('methods').innerHTML=`
+    <div class="sectitle"><span class="em">🏗️</span><h2>Τρόποι ανέγερσης</h2>
+      <p>Σύγκριση των βασικών μεθόδων δόμησης — διάλεξε αυτή που ταιριάζει στο έργο, το budget και τον χρόνο σου.</p></div>
+    <div class="grid g3">${cards}</div>`;
+}
+
+/* ============================================================
+   MATERIALS
+   ============================================================ */
+function renderMaterials(){
+  const cats=[...new Set(Object.values(MATERIALS).map(m=>m.cat))];
+  const blocks=cats.map(cat=>{
+    const rows=Object.entries(MATERIALS).filter(([k,m])=>m.cat===cat).map(([k,m])=>`
+      <tr data-name="${(m.name+' '+m.cat).toLowerCase()}">
+        <td><b>${m.name}</b>${m.note?`<div style="color:var(--dim);font-size:12px">${m.note}</div>`:''}</td>
+        <td style="color:var(--muted)">${m.unit}</td>
+        <td class="num">${priceInput('mat_'+k,m.price,false)}</td>
+      </tr>`).join('');
+    return `<div class="card" style="margin-bottom:16px" data-cat="${cat.toLowerCase()}">
+      <h3><span class="em">🧱</span> ${cat}</h3>
+      <table style="margin-top:8px"><thead><tr><th>Υλικό</th><th>Μονάδα</th><th class="num">Τιμή (€) ✏️</th></tr></thead><tbody>${rows}</tbody></table>
+    </div>`;
+  }).join('');
+  document.getElementById('materials').innerHTML=`
+    <div class="sectitle"><span class="em">🧱</span><h2>Υλικά κατασκευής</h2>
+      <p>Κατάλογος δομικών υλικών ανά κατηγορία, με χρήση & τιμές αγοράς (Ελλάδα 2025–26). ✏️ <b>Οι τιμές είναι επεξεργάσιμες</b> & αποθηκεύονται.</p></div>
+    <div class="search"><span class="si">🔍</span><input type="text" placeholder="Αναζήτηση υλικού..." oninput="filterRows('materials',this.value)"></div>
+    ${blocks}`;
+}
+function filterRows(view,q){
+  q=q.toLowerCase().trim();
+  document.querySelectorAll('#'+view+' tbody tr').forEach(tr=>{
+    tr.style.display=(tr.dataset.name||'').includes(q)?'':'none';
+  });
+  document.querySelectorAll('#'+view+' .card').forEach(c=>{
+    const any=[...c.querySelectorAll('tbody tr')].some(tr=>tr.style.display!=='none');
+    c.style.display=any?'':'none';
+  });
+}
+
+/* ============================================================
+   TOOLS
+   ============================================================ */
+function renderTools(){
+  const cards=TOOLS.map((g,gi)=>`
+    <div class="card">
+      <h3><span class="em">${g.em}</span> ${g.cat}</h3>
+      <table style="margin-top:6px"><thead><tr><th>Εργαλείο</th><th>Χρήση</th><th class="num">Τιμή € ✏️</th></tr></thead><tbody>
+        ${g.items.map((it,ii)=>`<tr data-name="${(it.n+' '+it.u).toLowerCase()}"><td><b>${it.n}</b></td><td style="color:var(--muted)">${it.u}</td><td class="num">${priceInput('tool_'+gi+'_'+ii,it.p,false)}</td></tr>`).join('')}
+      </tbody></table>
+    </div>`).join('');
+  document.getElementById('tools').innerHTML=`
+    <div class="sectitle"><span class="em">🔨</span><h2>Εργαλεία & Κόστη</h2>
+      <p>Τι εργαλεία χρειάζεσαι ανά κατηγορία, η χρήση τους & ενδεικτικές τιμές αγοράς. Τα βαριά μηχανήματα συνήθως <b>ενοικιάζονται</b>.</p></div>
+    <div class="search"><span class="si">🔍</span><input type="text" placeholder="Αναζήτηση εργαλείου..." oninput="filterRows('tools',this.value)"></div>
+    <div class="card" style="margin-bottom:16px">
+      <h3><span class="em">🧰</span> Βασική εργαλειοθήκη DIY (starter kit)</h3>
+      <p style="color:var(--muted);margin:6px 0 0">Για μικροεργασίες & ανακαινίσεις: δράπανο/κατσαβίδι, τροχός, αλφάδι, μέτρο, μυστρί & σπάτουλες, οδοντωτή σπάτουλα, κόφτης πλακιδίων, σετ κατσαβίδια/κλειδιά, ρολά & πινέλα, ΜΑΠ (γάντια/γυαλιά).
+      <br><b style="color:var(--amber2)">Ενδεικτικό κόστος βασικού σετ: ~250–600 €</b> (μεσαία ποιότητα). Δες αναλυτικές οδηγίες στο <a onclick="go('diy')" style="cursor:pointer">🧑‍🔧 Φτιάξ' το μόνος σου</a>.</p>
+    </div>
+    <div class="grid g2">${cards}</div>`;
+}
+
+/* ============================================================
+   CREWS
+   ============================================================ */
+function renderCrews(){
+  const rows=Object.entries(CREWS).map(([k,c])=>`
+    <tr data-name="${(c.n+' '+c.role).toLowerCase()}">
+      <td style="font-size:20px">${c.em}</td>
+      <td><b>${c.n}</b></td>
+      <td style="color:var(--muted)">${c.role}</td>
+      <td class="num">${priceInput('crew_'+k,c.rate,false)}</td>
+    </tr>`).join('');
+  document.getElementById('crews').innerHTML=`
+    <div class="sectitle"><span class="em">👷</span><h2>Μάστορες & Συνεργεία</h2>
+      <p>Οι ειδικότητες που εμπλέκονται στην οικοδομή, τι κάνει η καθεμία & μεροκάματα (2025–26). ✏️ <b>Επεξεργάσιμα κόστη</b>.</p></div>
+    <div class="search"><span class="si">🔍</span><input type="text" placeholder="Αναζήτηση ειδικότητας..." oninput="filterRows('crews',this.value)"></div>
+    <div class="card">
+      <table><thead><tr><th></th><th>Ειδικότητα</th><th>Ρόλος</th><th class="num">Κόστος ✏️</th></tr></thead>
+      <tbody>${rows}</tbody></table>
+    </div>
+    <div class="tip" style="margin-top:14px">💡 Τα μεροκάματα ποικίλλουν ανά περιοχή & εποχή. Πολλές εργασίες δίνονται <b>κατ' αποκοπή</b> (π.χ. €/m², €/m³) — συχνά συμφερότερο. Ζήτα πάντα γραπτή προσφορά & τιμολόγιο.</div>`;
+}
+
+/* ============================================================
+   PRICES (τιμοκατάλογος συγκεντρωτικός)
+   ============================================================ */
+function renderPrices(){
+  const workRates=[
+    ["Σκυροδέτηση (υλικά+εργασία)","€/m³","150–200"],
+    ["Τοιχοποιία τούβλο","€/m²","25–45"],
+    ["Επίχρισμα (σοβάς) 3 στρώσεων","€/m²","12–20"],
+    ["Θερμοπρόσοψη ολοκληρωμένη","€/m²","45–75"],
+    ["Τοποθέτηση πλακιδίων","€/m²","15–35"],
+    ["Τοποθέτηση μαρμάρου","€/m²","35–70"],
+    ["Ηλεκτρολογική εγκατάσταση","€/m²","35–60"],
+    ["Υδραυλική εγκατάσταση","€/m²","30–55"],
+    ["Χρωματισμοί (στοκ+αστάρι+2 χέρια)","€/m²","10–18"],
+    ["Ενδοδαπέδια θέρμανση","€/m²","30–55"],
+    ["Γυψοσανίδες","€/m²","20–40"],
+    ["Στεγανοποίηση δώματος","€/m²","15–35"],
+  ];
+  const rows=workRates.map((r,i)=>`<tr data-name="${r[0].toLowerCase()}"><td><b>${r[0]}</b></td><td style="color:var(--muted)">${r[1]}</td><td class="num">${priceInput('work_'+i,r[2],false)}</td></tr>`).join('');
+
+  // full material list
+  const matRows=Object.entries(MATERIALS).map(([k,m])=>`<tr data-name="${m.name.toLowerCase()}"><td><b>${m.name}</b></td><td style="color:var(--muted)">${m.cat}</td><td style="color:var(--muted)">${m.unit}</td><td class="num">${priceInput('mat_'+k,m.price,false)}</td></tr>`).join('');
+
+  document.getElementById('prices').innerHTML=`
+    <div class="sectitle"><span class="em">💰</span><h2>Τιμοκατάλογος</h2>
+      <p>Τιμές μονάδας εργασιών & υλικών σε ένα σημείο. ✏️ <b>Όλες οι τιμές είναι επεξεργάσιμες</b> & αποθηκεύονται τοπικά.</p></div>
+    <div style="margin-bottom:14px"><button class="btn ghost no-print" onclick="resetPrices()">🔄 Επαναφορά όλων των τιμών</button></div>
+    <div class="search"><span class="si">🔍</span><input type="text" placeholder="Αναζήτηση εργασίας/υλικού..." oninput="filterRows('prices',this.value)"></div>
+    <div class="card" style="margin-bottom:16px">
+      <h3><span class="em">🔧</span> Εργασίες (τιμές μονάδας) ✏️</h3>
+      <table style="margin-top:8px"><thead><tr><th>Εργασία</th><th>Μονάδα</th><th class="num">Τιμή</th></tr></thead><tbody>${rows}</tbody></table>
+    </div>
+    <div class="card">
+      <h3><span class="em">🧱</span> Υλικά (πλήρης λίστα) ✏️</h3>
+      <table style="margin-top:8px"><thead><tr><th>Υλικό</th><th>Κατηγορία</th><th>Μονάδα</th><th class="num">Τιμή</th></tr></thead><tbody>${matRows}</tbody></table>
+    </div>`;
+}
+
+/* ============================================================
+   ΣΥΓΚΡΙΣΗ ΣΕΝΑΡΙΩΝ
+   ============================================================ */
+let CMP = {a:{method:"concrete",quality:"mid"}, b:{method:"prefab",quality:"mid"}};
+function planWith(ov){
+  const bak = JSON.parse(JSON.stringify(SOL));
+  Object.assign(SOL, ov);
+  const p = computePlan();
+  SOL = bak;
+  return p;
+}
+function setCmp(side,field,val){ CMP[side][field]=val; renderCompare(); }
+function renderCompare(){
+  const pa = planWith({method:CMP.a.method, quality:CMP.a.quality});
+  const pb = planWith({method:CMP.b.method, quality:CMP.b.quality});
+  const maxT = Math.max(pa.grandAll, pb.grandAll,1);
+  const sel=(side,field,map,cur)=>`<select onchange="setCmp('${side}','${field}',this.value)">${
+    Object.entries(map).map(([k,v])=>`<option value="${k}" ${cur===k?'selected':''}>${v.icon||v.em||''} ${v.name}</option>`).join('')}</select>`;
+
+  const col=(side,p,cfg)=>{
+    const cheaper = (side==='a'? pa.grandAll<=pb.grandAll : pb.grandAll<pa.grandAll);
+    return `<div class="card" style="${cheaper?'border-color:var(--amber);box-shadow:0 0 0 1px var(--amber)':''}">
+      <h3><span class="em">${METHODS[cfg.method].icon}</span> Σενάριο ${side.toUpperCase()} ${cheaper?'<span class="badge amber">οικονομικότερο</span>':''}</h3>
+      <div class="field" style="margin-top:10px"><label>Τρόπος ανέγερσης</label>${sel(side,'method',METHODS,cfg.method)}</div>
+      <div class="field"><label>Ποιότητα</label>${sel(side,'quality',QUALITY,cfg.quality)}</div>
+      <table style="margin-top:6px">
+        <tr><td>Κατασκευή (με ΦΠΑ)</td><td class="num"><b>${eur(p.grand)}</b></td></tr>
+        ${p.furnish.total>0?`<tr><td>Επίπλωση</td><td class="num">${eur(p.furnish.total)}</td></tr>`:''}
+        <tr style="border-top:2px solid var(--red)"><td><b style="color:var(--red2)">Τελικό σύνολο</b></td><td class="num"><b style="color:var(--red2);font-size:16px">${eur(p.grandAll)}</b></td></tr>
+        <tr><td>Ανά m²</td><td class="num">${fmt(p.perM2All)} €/m²</td></tr>
+        <tr><td>Διάρκεια</td><td class="num">${p.months} μήνες</td></tr>
+      </table>
+      <div class="bar-track" style="margin-top:10px"><div class="bar-fill" style="width:${p.grandAll/maxT*100}%"></div></div>
+    </div>`;
+  };
+
+  const diff = Math.abs(pa.grandAll-pb.grandAll);
+  const pct = (diff/Math.max(pa.grandAll,pb.grandAll)*100).toFixed(1);
+  const winner = pa.grandAll<pb.grandAll?'Α':'Β';
+
+  document.getElementById('compare').innerHTML=`
+    <div class="sectitle"><span class="em">⚖️</span><h2>Σύγκριση σεναρίων</h2>
+      <p>Ίδιο έργο (${PTYPE[SOL.ptype].name}, ${SOL.area}m², ${SOL.bedrooms} υπν., ${SOL.baths} μπάνια) — άλλαξε μέθοδο & ποιότητα και δες τη διαφορά κόστους/χρόνου.</p></div>
+    <div class="grid g2">${col('a',pa,CMP.a)}${col('b',pb,CMP.b)}</div>
+    <div class="card" style="margin-top:16px">
+      <h3><span class="em">📊</span> Διαφορά</h3>
+      <p style="margin-top:6px">Το <b>Σενάριο ${winner}</b> είναι οικονομικότερο κατά <b style="color:var(--amber2)">${eur(diff)}</b> (${pct}%).
+      Άλλαξε και τις παραμέτρους του έργου από τον <a onclick="go('solver')" style="cursor:pointer">🧮 Λύτη</a> (τετραγωνικά, δωμάτια, extras) — η σύγκριση τα ακολουθεί.</p>
+    </div>`;
+}
+
+/* ============================================================
+   ΕΠΙΠΛΩΣΗ & ΣΤΥΛ ΔΙΑΚΟΣΜΗΣΗΣ/ΑΡΧΙΤΕΚΤΟΝΙΚΗΣ
+   ============================================================ */
+const DECO_STYLES = [
+  {name:"Μοντέρνο / Contemporary", em:"🛋️", pal:"Λευκό, γκρι, μαύρο + 1 τονισμός", feat:"Καθαρές γραμμές, ανοιχτοί χώροι, γυαλί & μέταλλο, λιτά έπιπλα.", arch:"Επίπεδες στέγες, μεγάλα κουφώματα, γεωμετρικοί όγκοι."},
+  {name:"Μινιμαλ", em:"◻️", pal:"Μονοχρωμία, φυσικοί τόνοι", feat:"«Λιγότερο είναι περισσότερο», κρυφός αποθηκευτικός χώρος, τάξη.", arch:"Απλότητα όγκων, κρυφός φωτισμός, απουσία περιττής διακόσμησης."},
+  {name:"Industrial", em:"🏭", pal:"Γκρι μπετόν, μαύρο, σκουριά, καφέ", feat:"Εμφανές μπετόν/τούβλο, μεταλλικά, παλαιωμένο ξύλο, ανοιχτές σωληνώσεις.", arch:"Loft, ψηλά ταβάνια, εμφανή δομικά στοιχεία."},
+  {name:"Σκανδιναβικό", em:"🌿", pal:"Λευκό, ανοιχτό ξύλο, παστέλ", feat:"Ζεστό & φωτεινό, φυσικά υλικά, hygge, λειτουργικότητα.", arch:"Άφθονο φυσικό φως, ανοιχτές κατόψεις."},
+  {name:"Μεσογειακό / Κυκλαδίτικο", em:"🏝️", pal:"Λευκό & μπλε, ώχρα, terracotta", feat:"Πατητή τσιμεντοκονία, ξύλο, λινά, χειροποίητα.", arch:"Καμπύλες, θολωτά, πέργκολες, εξωτερικοί χώροι διαβίωσης."},
+  {name:"Κλασικό / Νεοκλασικό", em:"🏛️", pal:"Κρεμ, χρυσό, βαθιά ξύλα", feat:"Γύψινα, πολυτελή υφάσματα, συμμετρία, λεπτομέρεια.", arch:"Κορνίζες, κολώνες, υψηλές οροφές, συμμετρικές όψεις."},
+  {name:"Boho / Rustic", em:"🪴", pal:"Γήινα, ζεστά, πολύχρωμα", feat:"Φυτά, μακραμέ, vintage, ανάμιξη υφών & μοτίβων.", arch:"Φυσικά υλικά, πέτρα & ξύλο, χαλαρή αίσθηση."},
+  {name:"Βιοκλιματικό / Πράσινο*", em:"☀️", pal:"Φυσικά υλικά & χρώματα", feat:"Ενεργειακή αυτονομία, φυσικός φωτισμός/αερισμός, οικολογικά υλικά.", arch:"Νότιος προσανατολισμός, σκίαση, θερμική μάζα, φωτοβολταϊκά."},
+];
+function renderFurnish(){
+  const rooms=[...new Set(FURN.map(f=>f.room))];
+  const catalog=rooms.map(rm=>{
+    const rows=FURN.map((f,idx)=>({f,idx})).filter(o=>o.f.room===rm).map(({f,idx})=>`
+      <tr data-name="${(f.name+' '+f.room).toLowerCase()}">
+        <td><b>${f.em} ${f.name}</b>${f.scale==='m2'?' <span style="color:var(--dim);font-size:11px">(/m²)</span>':''}</td>
+        <td class="num">${priceInput('furn_'+idx+'_econ',f.price.econ,true)}</td>
+        <td class="num">${priceInput('furn_'+idx+'_mid',f.price.mid,true)}</td>
+        <td class="num">${priceInput('furn_'+idx+'_premium',f.price.premium,true)}</td>
+      </tr>`).join('');
+    return `<div class="card" style="margin-bottom:14px">
+      <h3><span class="em">🛋️</span> ${rm}</h3>
+      <table style="margin-top:6px"><thead><tr><th>Είδος</th><th class="num">Οικονομικό ✏️</th><th class="num">Μεσαίο ✏️</th><th class="num">Premium ✏️</th></tr></thead><tbody>${rows}</tbody></table>
+    </div>`;
+  }).join('');
+
+  const styles=DECO_STYLES.map(s=>`
+    <div class="method-card">
+      <div class="mh"><span class="em">${s.em}</span><h3 style="margin:0;font-size:15.5px">${s.name}</h3></div>
+      <div style="font-size:13px"><b style="color:var(--amber2)">Παλέτα:</b> <span style="color:var(--muted)">${s.pal}</span></div>
+      <div style="font-size:13px;margin-top:6px"><b style="color:var(--amber2)">Χαρακτηριστικά:</b> <span style="color:var(--muted)">${s.feat}</span></div>
+      <div style="font-size:13px;margin-top:6px"><b style="color:var(--amber2)">Αρχιτεκτονική:</b> <span style="color:var(--muted)">${s.arch}</span></div>
+    </div>`).join('');
+
+  document.getElementById('furnish').innerHTML=`
+    <div class="sectitle"><span class="em">🛋️</span><h2>Επίπλωση, Εξοπλισμός & Διακόσμηση</h2>
+      <p>Όλα όσα χρειάζεται το σπίτι για να κατοικηθεί — έπιπλα, λευκές συσκευές, φωτισμός, υφάσματα — και στυλ διακόσμησης/αρχιτεκτονικής. Ο <a onclick="go('solver')" style="cursor:pointer">🧮 Λύτης</a> τα υπολογίζει αυτόματα.</p></div>
+
+    <div class="sectitle"><span class="em">🎨</span><h2>Στυλ διακόσμησης & αρχιτεκτονικής</h2></div>
+    <div class="grid g3">${styles}</div>
+    <p style="color:var(--dim);font-size:12px;margin:8px 0 0">* Το «Πράσινο» εδώ αφορά βιοκλιματικό σχεδιασμό (ενέργεια/υλικά), όχι χρώμα.</p>
+
+    <div class="sectitle"><span class="em">📦</span><h2>Κατάλογος επίπλων & συσκευών</h2>
+      <p>Τιμές λιανικής (με ΦΠΑ) σε 3 επίπεδα ποιότητας. ✏️ <b>Επεξεργάσιμες</b> — ενημερώνουν αυτόματα τον Λύτη.</p></div>
+    <div class="search"><span class="si">🔍</span><input type="text" placeholder="Αναζήτηση είδους..." oninput="filterRows('furnish',this.value)"></div>
+    ${catalog}`;
+}
+
+/* ============================================================
+   CHECKLIST ΕΡΓΟΤΑΞΙΟΥ
+   ============================================================ */
+let CHECK = {};
+try{ CHECK = JSON.parse(localStorage.getItem('oikodomi_checklist')||'{}'); }catch(e){ CHECK={}; }
+function saveCheck(){ try{ localStorage.setItem('oikodomi_checklist',JSON.stringify(CHECK)); }catch(e){} }
+function toggleCheck(key,el){ CHECK[key]=el.checked; saveCheck(); updateCheckProgress(); }
+function resetCheck(){ if(confirm('Μηδενισμός όλης της λίστας ελέγχου;')){ CHECK={}; saveCheck(); renderChecklist(); } }
+function checkStats(){
+  let total=0, done=0;
+  STAGES.forEach(s=>s.how.forEach((h,i)=>{ total++; if(CHECK[s.id+':'+i]) done++; }));
+  return {total,done,pct: total?Math.round(done/total*100):0};
+}
+function updateCheckProgress(){
+  const st=checkStats();
+  const bar=document.getElementById('checkBar'); if(bar) bar.style.width=st.pct+'%';
+  const lbl=document.getElementById('checkLbl'); if(lbl) lbl.textContent=`${st.done}/${st.total} εργασίες · ${st.pct}%`;
+  STAGES.forEach(s=>{
+    const tot=s.how.length; let d=0; s.how.forEach((h,i)=>{ if(CHECK[s.id+':'+i]) d++; });
+    const b=document.getElementById('sb_'+s.id); if(b) b.textContent=`${d}/${tot}`;
+  });
+}
+function renderChecklist(){
+  const st=checkStats();
+  const accs=STAGES.map((s,idx)=>{
+    const items=s.how.map((h,i)=>{
+      const key=s.id+':'+i;
+      return `<label class="toggle" style="width:100%;margin-bottom:6px"><input type="checkbox" ${CHECK[key]?'checked':''} onchange="toggleCheck('${key}',this)">${h}</label>`;
+    }).join('');
+    return `<div class="accordion">
+      <div class="acc-head" onclick="this.parentElement.classList.toggle('open')">
+        <span class="num">${idx+1}</span><span class="em" style="font-size:19px">${s.em}</span><span>${s.name}</span>
+        <span class="cost" id="sb_${s.id}"></span><span class="chev">▶</span>
+      </div>
+      <div class="acc-body"><div style="margin-top:12px">${items}</div></div>
+    </div>`;
+  }).join('');
+  document.getElementById('checklist').innerHTML=`
+    <div class="sectitle"><span class="em">✅</span><h2>Checklist εργοταξίου</h2>
+      <p>Παρακολούθησε την πρόοδο ανά στάδιο. Οι επιλογές σου αποθηκεύονται αυτόματα στον browser.</p></div>
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+        <b>Συνολική πρόοδος</b><span id="checkLbl" class="badge amber">${st.done}/${st.total} εργασίες · ${st.pct}%</span>
+      </div>
+      <div class="bar-track" style="height:16px"><div class="bar-fill" id="checkBar" style="width:${st.pct}%"></div></div>
+      <div style="margin-top:12px"><button class="btn ghost no-print" onclick="resetCheck()">🔄 Μηδενισμός</button></div>
+    </div>
+    <div style="margin-top:16px">${accs}</div>`;
+  updateCheckProgress();
+}
+
+/* ============================================================
+   ΑΔΕΙΟΔΟΤΗΣΗ
+   ============================================================ */
+function renderPermits(){
+  const acc=(t,em,body)=>`<div class="accordion"><div class="acc-head" onclick="this.parentElement.classList.toggle('open')">
+    <span class="em" style="font-size:20px">${em}</span><span>${t}</span><span class="chev">▶</span></div>
+    <div class="acc-body">${body}</div></div>`;
+  document.getElementById('permits').innerHTML=`
+    <div class="sectitle"><span class="em">📜</span><h2>Αδειοδότηση & Υποχρεώσεις</h2>
+      <p>Τα βασικά βήματα & δικαιολογητικά για να χτίσεις νόμιμα στην Ελλάδα. Γενική ενημέρωση — η μελέτη/υποβολή γίνεται πάντα από μηχανικό.</p></div>
+
+    ${acc("Άδεια Δόμησης (e-Άδειες)","🏛️",`
+      <p style="color:var(--muted);margin-top:12px">Η άδεια εκδίδεται ηλεκτρονικά μέσω του συστήματος <b>e-Άδειες</b> του ΤΕΕ από τον μηχανικό σου.</p>
+      <h5>📋 Τυπική ροή</h5><ul>
+        <li>Έλεγχος όρων δόμησης & αρτιότητας οικοπέδου</li>
+        <li><b>Έγκριση Δόμησης</b> (τι & πού επιτρέπεται) → <b>Άδεια Δόμησης</b> (άδεια έναρξης εργασιών)</li>
+        <li>Ανάρτηση στοιχείων, καταβολή εισφορών & κρατήσεων</li>
+        <li>Ισχύς άδειας & δυνατότητα αναθεώρησης</li>
+      </ul>
+      <div class="tip">💡 Μικρές εργασίες μπορεί να καλύπτονται από <b>Έγκριση Εργασιών Μικρής Κλίμακας</b> ή <b>48ωρη</b> — ρώτησε τον μηχανικό.</div>`)}
+
+    ${acc("Δικαιολογητικά & Μελέτες","📑",`
+      <h5 style="margin-top:14px">Συνήθως απαιτούνται</h5><ul>
+        <li>Τίτλοι ιδιοκτησίας & πιστοποιητικά (μεταγραφή, κτηματολόγιο)</li>
+        <li>Τοπογραφικό διάγραμμα (εξαρτημένο ΕΓΣΑ87)</li>
+        <li>Αρχιτεκτονική, Στατική, Η/Μ μελέτες</li>
+        <li>Μελέτη ενεργειακής απόδοσης (ΚΕΝΑΚ) & ΠΕΑ</li>
+        <li>ΣΑΥ-ΦΑΥ (ασφάλεια & υγεία), μελέτη παθητικής πυροπροστασίας</li>
+        <li>Εγκρίσεις κατά περίπτωση: Δασαρχείο, Αρχαιολογία, Συμβούλιο Αρχιτεκτονικής, ακτή/ρέμα</li>
+        <li>Φορολογικά/αμοιβές μηχανικών & εισφορές</li>
+      </ul>`)}
+
+    ${acc("ΕΦΚΑ Οικοδομής (πρώην ΙΚΑ)","👷",`
+      <p style="color:var(--muted);margin-top:12px">Για κάθε οικοδομικό έργο υπάρχει υποχρέωση ασφάλισης των εργαζομένων στον <b>e-ΕΦΚΑ</b> (οικοδομοτεχνικά έργα).</p>
+      <ul>
+        <li>Απογραφή έργου & <b>ΑΜΟΕ</b> (Αριθμός Μητρώου Οικοδομοτεχνικού Έργου)</li>
+        <li>Υπολογισμός <b>ελάχιστων ημερομισθίων</b> βάσει επιφάνειας & είδους εργασιών (πίνακες ΕΦΚΑ)</li>
+        <li>Καταβολή εισφορών — απαραίτητη για σύνδεση με ΔΕΗ/ρεύμα & αποπεράτωση</li>
+        <li>Για περιστασιακά συνεργεία: <b>εργόσημο</b></li>
+      </ul>
+      <div class="warn">⚠️ Χωρίς τακτοποίηση ΕΦΚΑ δεν ολοκληρώνεται η σύνδεση με ΔΕΚΟ.</div>`)}
+
+    ${acc("Επιδότηση «Εξοικονομώ»","♻️",`
+      <p style="color:var(--muted);margin-top:12px">Πρόγραμμα επιδότησης <b>ενεργειακής αναβάθμισης κατοικιών</b> (μόνωση, κουφώματα, αντλία θερμότητας, φωτοβολταϊκά/ΑΠΕ, smart).</p>
+      <ul>
+        <li>Απαιτείται <b>Πιστοποιητικό Ενεργειακής Απόδοσης (ΠΕΑ)</b> πριν & μετά</li>
+        <li>Ποσοστό επιδότησης βάσει <b>εισοδηματικών κριτηρίων</b> & ενεργειακής αναβάθμισης</li>
+        <li>Επιλέξιμες δαπάνες: κέλυφος, συστήματα θέρμανσης/ψύξης, ΖΝΧ, ΑΠΕ</li>
+        <li>Ισχύει κυρίως για <b>υφιστάμενες</b> κατοικίες (ανακαίνιση/αναβάθμιση)</li>
+      </ul>
+      <div class="tip">💡 Οι κύκλοι/όροι αλλάζουν ανά έτος — έλεγξε την τρέχουσα προκήρυξη πριν προγραμματίσεις εργασίες.</div>`)}
+
+    ${acc("Μετά την κατασκευή","🔑",`
+      <ul style="margin-top:12px">
+        <li><b>ΥΔΕ</b> (Υπεύθυνη Δήλωση Εγκαταστάτη ηλεκτρολόγου) για σύνδεση ρεύματος</li>
+        <li>Συνδέσεις ΔΕΗ/ΔΕΔΔΗΕ, ΕΥΔΑΠ/ύδρευση, φυσικό αέριο</li>
+        <li>Δήλωση περαίωσης / <b>Πιστοποιητικό Ελέγχου Κατασκευής</b></li>
+        <li>Τακτοποίηση ΕΦΚΑ & κλείσιμο έργου</li>
+        <li>Καταχώρηση τετραγωνικών στον Δήμο (ΤΑΠ)</li>
+      </ul>`)}
+
+    <div class="warn" style="margin-top:16px">⚠️ Οι διαδικασίες & τα κόστη αλλάζουν βάσει νομοθεσίας, περιοχής και είδους έργου. Επιβεβαίωσε πάντα με τον <b>μηχανικό</b> σου.</div>`;
+}
+
+/* ============================================================
+   DIY — «ΦΤΙΑΞ' ΤΟ ΜΟΝΟΣ ΣΟΥ» (οδηγοί βήμα-βήμα)
+   ============================================================ */
+const HOWTO = [
+  {id:"tiles", title:"Πώς βάζεις πλακάκια", em:"🔲", diff:3, time:"~8–10 m²/ημέρα",
+    toolCost:"~90–350 €", matCost:"Κόλλα ~8–20 €/σακί, αρμόστοκος 6–18 €/σακί + πλακίδια",
+    tools:["Οδοντωτή σπάτουλα","Κόφτης πλακιδίων ή τροχός","Αλφάδι","Σταυροί & σφήνες αρμών","Λαστιχένιο σφυρί","Κουβάς & σφουγγάρι","Δράπανο με αναδευτήρα"],
+    mats:["Κόλλα πλακιδίων (ελαστική για μεγάλα)","Πλακίδια (+10% φύρα)","Αρμόστοκος","Σιλικόνη","Αστάρι (αν χρειάζεται)"],
+    steps:[
+      "Προετοίμασε: το υπόστρωμα πρέπει να είναι καθαρό, επίπεδο, στεγνό & σταθερό (αστάρι σε απορροφητικές επιφάνειες).",
+      "Χάραξε: βρες το κέντρο/άξονα ώστε οι κομμένες πλάκες να πέσουν στις λιγότερο ορατές άκρες. Ξεκίνα δοκιμαστικά «στεγνά».",
+      "Ανακάτεψε την κόλλα με δράπανο μέχρι κρέμα, άφησέ την 5' και ξαναανακάτεψε.",
+      "Άπλωσε κόλλα σε μικρή επιφάνεια (~1 m²) με την οδοντωτή σπάτουλα σε γωνία ~60°.",
+      "Πάτησε το πλακίδιο με ελαφρύ στρίψιμο, χτύπα με λαστιχένιο σφυρί, έλεγξε αλφάδι.",
+      "Βάλε σταυρούς/σφήνες για ίσους αρμούς. Σε μεγάλες πλάκες βάλε κόλλα & στην πλάτη (back-buttering).",
+      "Κόψε τις πλάκες στις άκρες/σε σωλήνες με κόφτη ή τροχό.",
+      "Μετά 24h: αρμολόγησε διαγώνια με λαστιχένια σπάτουλα, καθάρισε με υγρό σφουγγάρι.",
+      "Σιλικόνη στις εσωτερικές γωνίες & στις επαφές με είδη υγιεινής."],
+    tips:["Ανακάτεψε πλακίδια από διαφορετικά κουτιά για ομοιόμορφο τόνο.","Σε δάπεδα άφησε αρμό διαστολής στην περίμετρο.","Στα μπάνια πρώτα στεγανοποίησε το δάπεδο/ντουζιέρα."],
+    safety:["Γυαλιά & γάντια στην κοπή","Μάσκα για τη σκόνη","Γονατάκια για την πλάτη/γόνατα"]},
+
+  {id:"wall", title:"Πώς χτίζεις τοίχο με τούβλα", em:"🧱", diff:3, time:"~1,5 m² ύψος/μέρα",
+    toolCost:"~60–200 €", matCost:"Τούβλα 0,30–0,70 €/τεμ, τσιμέντο 5–8 €/σακί, άμμος",
+    tools:["Μυστρί","Αλφάδι","Νήμα οδηγός & πήχης","Κουβάς/σκάφη ή μπετονιέρα","Φτυάρι"],
+    mats:["Τούβλα/τσιμεντόλιθοι","Τσιμέντο","Άμμος","Ασβέστη ή βελτιωτικό","Νερό"],
+    steps:[
+      "Ετοίμασε κονίαμα: ~1 μέρος τσιμέντο, 3 άμμος, νερό μέχρι πλαστική μάζα (ή έτοιμο κονίαμα).",
+      "Βεβαιώσου ότι η βάση είναι ίσια & αλφαδιασμένη. Χάραξε τη θέση του τοίχου.",
+      "Στρώσε την 1η σειρά προσεκτικά — αυτή καθορίζει όλο τον τοίχο. Έλεγξε αλφάδι & γωνίες.",
+      "Τέντωσε νήμα οδηγό στο ύψος κάθε σειράς.",
+      "Σε κάθε τούβλο: βάλε κονίαμα στη βάση & στο πλάι, πάτα & χτύπα ελαφρά, έλεγξε αλφάδι.",
+      "«Δέσε» τους αρμούς: κάθε σειρά μετατοπισμένη ~μισό τούβλο (όχι ευθεία μεταξύ σειρών).",
+      "Καθάρισε το πλεονάζον κονίαμα με το μυστρί.",
+      "Πάνω από πόρτες/παράθυρα τοποθέτησε πρέκι/σενάζ."],
+    tips:["Βρέξε ελαφρά τα τούβλα σε ζέστη ώστε να μη «ρουφήξουν» το νερό.","Μη χτίζεις πάνω από ~1–1,5 m/μέρα — άσε το κονίαμα να τραβήξει.","Κράτα σταθερό πάχος αρμού ~1 cm."],
+    safety:["Γάντια","Προσοχή στη μέση (σωστό σήκωμα βαρών)","Παπούτσια ασφαλείας"]},
+
+  {id:"plaster", title:"Πώς σοβατίζεις (επίχρισμα)", em:"🧴", diff:4, time:"~10–15 m²/μέρα",
+    toolCost:"~40–120 €", matCost:"Έτοιμος σοβάς 5–9 €/σακί ή τσιμέντο+άμμος+ασβέστης",
+    tools:["Μυστρί & σανίδα (φραγκόφτυαρο)","Πήχης αλουμινίου (οδηγός)","Τριβίδι","Οδηγοί σοβά (καλάμια)","Μπετονιέρα/σκάφη"],
+    mats:["Πεταχτό (πρόσφυση)","Λάσπωμα (κορμός)","Τριφτό/μαρμαροκονία (τελικό)","Γωνιόκρανα"],
+    steps:[
+      "1η στρώση – πεταχτό: πέταξε αραιό κονίαμα για πρόσφυση, άφησέ το να τραβήξει 1–2 μέρες.",
+      "Τοποθέτησε κατακόρυφους οδηγούς (καλάμια) αλφαδιασμένους ανά ~1 m.",
+      "2η στρώση – λάσπωμα: γέμισε ανάμεσα στους οδηγούς, ίσιωσε με τον πήχη τραβώντας προς τα πάνω.",
+      "Πρόσθεσε γωνιόκρανα στις ακμές.",
+      "3η στρώση – τριφτό: λεπτή τελική στρώση, δούλεψέ την με το τριβίδι κυκλικά για λεία επιφάνεια.",
+      "Άφησε να στεγνώσει καλά (μέρες) πριν βάψεις."],
+    tips:["Δύσκολη δουλειά — για μεγάλες επιφάνειες προτίμησε μάστορα.","Κράτα τις επιφάνειες υγρές σε ζέστη για να μη «καεί» ο σοβάς.","Γυψοσανίδα είναι πιο εύκολη DIY εναλλακτική."],
+    safety:["Γάντια (το τσιμέντο ερεθίζει)","Γυαλιά","Μάσκα"]},
+
+  {id:"paint", title:"Πώς βάφεις έναν χώρο", em:"🎨", diff:2, time:"1 δωμάτιο ~1 μέρα",
+    toolCost:"~40–120 €", matCost:"Στόκος 8–20 €, αστάρι 3–8 €/L, χρώμα 4–15 €/L",
+    tools:["Ρολά (διάφορα) & πινέλα","Σπάτουλες στοκαρίσματος","Τηλεσκοπικός κοντός","Χαρτοταινία & νάιλον","Σκάλα","Τριβείο/γυαλόχαρτο"],
+    mats:["Στόκος/σπατουλαριστό","Αστάρι","Πλαστικό/ακρυλικό χρώμα","Χαρτοταινία"],
+    steps:[
+      "Προστασία: μάζεψε/κάλυψε έπιπλα & δάπεδο με νάιλον, χαρτοταινία σε κάσες/διακόπτες.",
+      "Επιδιόρθωση: στοκάρισε τρύπες/ρωγμές, άσε να στεγνώσει, τρίψε με γυαλόχαρτο.",
+      "Καθάρισε τη σκόνη με νωπό πανί.",
+      "Αστάρωσε (ειδικά νέους σοβάδες, στόκους ή σκούρα χρώματα).",
+      "1ο χέρι χρώμα: πρώτα οι γωνίες/άκρες με πινέλο (cutting-in), μετά οι επιφάνειες με ρολό σε σχήμα «W».",
+      "Άφησε να στεγνώσει (2–4h) και πέρασε 2ο (& 3ο αν χρειάζεται) χέρι.",
+      "Ξεκόλλησε τη χαρτοταινία όσο το χρώμα είναι ελαφρώς νωπό."],
+    tips:["Μη φορτώνεις πολύ το ρολό — απόφυγε τις σταγόνες.","Δούλεψε «νωπό σε νωπό» για να μη φαίνονται ενώσεις.","Αντιμουχλικό χρώμα σε μπάνια/υπόγεια."],
+    safety:["Αερισμός χώρου","Προτίμησε χρώματα χαμηλών VOC","Σταθερή σκάλα"]},
+
+  {id:"laminate", title:"Πώς στρώνεις laminate δάπεδο", em:"🪵", diff:2, time:"~20 m²/μέρα",
+    toolCost:"~40–120 €", matCost:"Laminate 15–40 €/m², υπόστρωμα 2–5 €/m²",
+    tools:["Σέγα/φαλτσοπρίονο","Μέτρο & μολύβι","Σφήνες διαστολής","Κόφτης/γωνία","Σφυρί & τάκος"],
+    mats:["Πλακάκια laminate (click)","Υπόστρωμα (μεμβράνη/αφρώδες)","Σοβατεπί","Προφίλ μετάβασης"],
+    steps:[
+      "Άφησε τα πακέτα 48h στον χώρο να «κλιματιστούν».",
+      "Το δάπεδο πρέπει να είναι καθαρό, ίσιο & στεγνό. Στρώσε το υπόστρωμα.",
+      "Ξεκίνα από μια γωνία, με την «πένα» προς τον τοίχο. Βάλε σφήνες διαστολής ~8–10 mm στην περίμετρο.",
+      "Κούμπωσε (click) την κάθε σανίδα υπό γωνία και πάτα κάτω.",
+      "Στο τέλος κάθε σειράς κόψε στο μέτρο· χρησιμοποίησε το κομμάτι για να ξεκινήσεις την επόμενη (σταγγρωτά).",
+      "Χτύπα απαλά με τάκο για σφιχτές ενώσεις.",
+      "Βγάλε τις σφήνες & τοποθέτησε σοβατεπί (βιδωμένα στον τοίχο, όχι στο δάπεδο)."],
+    tips:["ΠΟΤΕ χωρίς αρμό διαστολής — αλλιώς θα «καμπουριάσει».","Σε υγρούς χώρους διάλεξε αδιάβροχο SPC/vinyl.","Μετατόπισε τις ενώσεις τουλάχιστον 30 cm μεταξύ σειρών."],
+    safety:["Γυαλιά στην κοπή","Γάντια"]},
+
+  {id:"concrete", title:"Πώς ρίχνεις μικρή πλάκα μπετόν", em:"🏗️", diff:4, time:"1 μέρα (μικρή)",
+    toolCost:"~100–300 €", matCost:"Έτοιμο μπετόν ~95–120 €/m³ ή τσιμέντο+άμμος+γαρμπίλι",
+    tools:["Μπετονιέρα (ή έτοιμο μπετόν)","Πήχης ισοπέδωσης","Μυστρί & τριβίδι","Καροτσάκι","Πλαστικό (καλούπι)"],
+    mats:["Τσιμέντο","Άμμος & γαρμπίλι (ή έτοιμο μπετόν)","Πλέγμα οπλισμού","Ξυλότυποι/τάβλες"],
+    steps:[
+      "Ετοίμασε τη βάση: εκσκαφή, στρώση σκύρα ~10 cm, συμπύκνωση.",
+      "Στήσε ξυλότυπους (καλούπι) στο ύψος & τις κλίσεις που θες.",
+      "Τοποθέτησε πλέγμα οπλισμού πάνω σε αποστάτες (να «κάθεται» μέσα στο μπετόν).",
+      "Ρίξε το μπετόν, απλωσέ το με φτυάρι, γέμισε τις γωνίες.",
+      "Ισοπέδωσε τραβώντας τον πήχη με πριονωτή κίνηση πάνω στους οδηγούς.",
+      "Δούλεψε την επιφάνεια με το τριβίδι· για αντιολισθηρό, τράβα σκούπα.",
+      "Συντήρηση: κράτα το υγρό (κάλυψη/ψέκασμα) για μέρες ώστε να πάρει αντοχή."],
+    tips:["Δούλεψε γρήγορα — το μπετόν αρχίζει να πήζει σε ~1–2h.","Μην προσθέτεις πολύ νερό (μειώνει την αντοχή).","Πρόβλεψε ελαφριά κλίση για απορροή νερού."],
+    safety:["Γάντια & μπότες (το τσιμέντο καίει το δέρμα)","Γυαλιά","Προσοχή στη μέση"]},
+
+  {id:"drywall", title:"Πώς τοποθετείς γυψοσανίδα", em:"⬜", diff:3, time:"~15–20 m²/μέρα",
+    toolCost:"~60–200 €", matCost:"Γυψοσανίδα ~9–18 €/m², προφίλ, στόκος αρμών",
+    tools:["Δράπανο/κατσαβίδι","Κοπίδι & πήχης","Ψαλίδι λαμαρίνας","Αλφάδι","Σπάτουλες αρμολόγησης"],
+    mats:["Γυψοσανίδες (κοινές/ανθυγρές)","Μεταλλικά προφίλ (οδηγοί & ορθοστάτες)","Βίδες γυψοσανίδας","Ταινία & στόκος αρμών","Μονωτικό (προαιρετικά)"],
+    steps:[
+      "Στερέωσε τους οδηγούς (U) πάνω/κάτω και ορθοστάτες (C) ανά 40–60 cm, αλφαδιασμένους.",
+      "Πέρασε καλωδιώσεις/σωλήνες & μόνωση στο κενό αν χρειάζεται.",
+      "Κόψε τις γυψοσανίδες (χάραξη με κοπίδι & σπάσιμο) στα μέτρα.",
+      "Βίδωσε τις σανίδες στους ορθοστάτες, κεφαλή βίδας ελαφρώς μέσα (όχι σκίσιμο χαρτιού).",
+      "Στοκάρισε τους αρμούς: ταινία + 2–3 στρώσεις στόκου, τρίβοντας ενδιάμεσα.",
+      "Αστάρι & βάψιμο."],
+    tips:["Ανθυγρή (πράσινη/μπλε) σε μπάνια/κουζίνες, πυράντοχη κοντά σε εστίες.","Διπλή σανίδα = καλύτερη ηχομόνωση.","Ειδικά ούπα γυψοσανίδας για κρέμασμα βάρους."],
+    safety:["Μάσκα στο τρίψιμο στόκου","Γάντια","Γυαλιά"]},
+
+  {id:"silicone", title:"Πώς σιλικονάρεις (μπάνιο/κουζίνα)", em:"🧴", diff:1, time:"~30–60'",
+    toolCost:"~10–25 €", matCost:"Σιλικόνη αντιμουχλική 4–10 €/φύσιγγα",
+    tools:["Πιστόλι σιλικόνης","Κοπίδι","Εργαλείο φινιρίσματος αρμού (ή δάχτυλο+σαπουνόνερο)","Χαρτοταινία"],
+    mats:["Αντιμουχλική σιλικόνη","Καθαριστικό/οινόπνευμα","Χαρτοταινία"],
+    steps:[
+      "Αφαίρεσε την παλιά σιλικόνη με κοπίδι & καθάρισε/στέγνωσε καλά τον αρμό (οινόπνευμα).",
+      "Κόλλησε χαρτοταινία εκατέρωθεν του αρμού για καθαρές γραμμές.",
+      "Κόψε το ρύγχος υπό γωνία στο πλάτος του αρμού.",
+      "Πέρασε συνεχή γραμμή σιλικόνης με σταθερή πίεση.",
+      "Λείανε τον αρμό με το εργαλείο (ή δάχτυλο βρεγμένο σε σαπουνόνερο).",
+      "Ξεκόλλησε τη χαρτοταινία αμέσως & άσε να στεγνώσει 24h πριν το νερό."],
+    tips:["Πάντα αντιμουχλική σε υγρούς χώρους.","Μη βρέξεις τον αρμό για 1 μέρα.","Λίγη ποσότητα — δουλειά με ηρεμία."],
+    safety:["Αερισμός","Γάντια"]},
+
+  {id:"anchor", title:"Πώς κρεμάς αντικείμενα σε τοίχο", em:"🔩", diff:1, time:"λίγα λεπτά",
+    toolCost:"~50–150 €", matCost:"Ούπα & βίδες: λίγα €",
+    tools:["Δράπανο/κρουστικό","Τρυπάνια (πέτρας/μετάλλου)","Ανιχνευτής καλωδίων","Αλφάδι","Κατσαβίδι"],
+    mats:["Ούπα κατάλληλα (τοίχου/γυψοσανίδας)","Βίδες","Γάντζοι/βάσεις"],
+    steps:[
+      "Έλεγξε με ανιχνευτή για καλώδια/σωλήνες πριν τρυπήσεις!",
+      "Σημάδεψε τα σημεία με αλφάδι για ίσια τοποθέτηση.",
+      "Διάλεξε τρυπάνι στο πάχος του ούπα· σε μπετόν/τούβλο βάλε κρουστική λειτουργία.",
+      "Τρύπησε στο σωστό βάθος, καθάρισε τη σκόνη.",
+      "Βάλε το ούπα, βίδωσε — για βαριά αντικείμενα σε γυψοσανίδα χρησιμοποίησε ειδικά ούπα (πεταλούδα/molly)."],
+    tips:["Σωστό ούπα ανά υλικό τοίχου = κρατάει το βάρος.","Για ράφια/ντουλάπια στήριξε σε τουλάχιστον 2 σημεία & αλφάδιασε."],
+    safety:["Γυαλιά","Ανιχνευτής καλωδίων ΠΑΝΤΑ πριν το τρύπημα"]},
+];
+/* Υπολογιστές ανά οδηγό DIY: διαστάσεις → υλικά (ποσότητες+κόστος) & χρόνος */
+function timeStr(days){
+  if(days>=1) return (Math.round(days*10)/10)+' ημέρες εργασίας';
+  const h=Math.max(1,Math.round(days*8)); return h+(h===1?' ώρα':' ώρες');
+}
+const DIY_CALC = {
+  tiles:{ inputs:[
+      {key:'l',label:'Μήκος',unit:'m',def:4},{key:'w',label:'Πλάτος',unit:'m',def:3},{key:'h',label:'Ύψος (τοίχων)',unit:'m',def:2.6},
+      {key:'floor',label:'🔲 Δάπεδο',def:true,type:'check'},
+      {key:'walls',label:'🧱 Τοίχοι (π.χ. μπάνιου)',def:false,type:'check'},
+    ], fn:v=>{
+    const floor=v.floor?v.l*v.w:0, walls=v.walls?2*(v.l+v.w)*v.h:0; const a=Math.max(0,floor+walls);
+    const glu=Math.ceil(a*5/25)||1, grt=Math.ceil(a*0.5/5)||1;
+    const parts=[]; if(floor) parts.push('δάπεδο '+floor.toFixed(1)+' m²'); if(walls) parts.push('τοίχοι '+walls.toFixed(1)+' m²');
+    return {mats:[
+      {n:'🔲 Πλακίδια (+10% φύρα)', q:(a*1.1).toFixed(1)+' m²', cost:a*1.1*P('tile_m2')},
+      {n:'🪣 Κόλλα πλακιδίων (σακί 25kg)', q:glu+' σακιά', cost:glu*P('glue_bag')},
+      {n:'🧴 Αρμόστοκος (σακί 5kg)', q:grt+' σακιά', cost:grt*P('grout_bag')},
+      {n:'➕ Σταυροί/σφήνες αρμών', q:'1 σακουλάκι', cost:P('cross')},
+    ], time:timeStr(a/9), note:`Επιφάνεια: <b>${a.toFixed(1)} m²</b> (${parts.join(' + ')||'—'})`}; } },
+
+  wall:{ inputs:[{key:'l',label:'Μήκος τοίχου',unit:'m',def:4},{key:'h',label:'Ύψος',unit:'m',def:2.6}], fn:v=>{ const a=v.l*v.h;
+    const br=Math.ceil(a*30), cem=Math.ceil(a*8/25)||1;
+    return {mats:[
+      {n:'🧱 Τούβλα', q:br+' τεμ.', cost:br*P('brick')},
+      {n:'🪨 Τσιμέντο (σακί 25kg)', q:cem+' σακιά', cost:cem*P('cement_bag')},
+      {n:'⛰️ Άμμος', q:(a*0.02).toFixed(2)+' m³', cost:a*0.02*P('sand_m3')},
+    ], time:timeStr(a/5), note:`Επιφάνεια τοίχου: ${a.toFixed(1)} m²`}; } },
+
+  plaster:{ inputs:[
+      {key:'l',label:'Μήκος δωματίου',unit:'m',def:4},{key:'w',label:'Πλάτος δωματίου',unit:'m',def:3.5},{key:'h',label:'Ύψος',unit:'m',def:2.7},
+      {key:'ceil',label:'🔲 Και το ταβάνι',def:false,type:'check'},
+      {key:'openings',label:'➖ Αφαίρεση ανοιγμάτων',def:true,type:'check'},
+    ], fn:v=>{
+    const walls=2*(v.l+v.w)*v.h, ceil=v.ceil?v.l*v.w:0; let a=walls+ceil; if(v.openings)a*=0.88; a=Math.max(0,a);
+    const bags=Math.ceil(a)||1;
+    return {mats:[
+      {n:'🧴 Έτοιμος σοβάς (σακί ~30kg)', q:bags+' σακιά', cost:bags*P('plaster_bag')},
+      {n:'📐 Γωνιόκρανα', q:'κατ’ εκτίμηση', cost:a*P('corner')},
+    ], time:timeStr(a/12),
+      note:`Επιφάνεια: <b>${a.toFixed(1)} m²</b> (τοίχοι ${walls.toFixed(1)} m²${v.ceil?` + ταβάνι ${ceil.toFixed(1)} m²`:''}${v.openings?', −12% ανοίγματα':''})`}; } },
+
+  paint:{ inputs:[
+      {key:'l',label:'Μήκος δωματίου',unit:'m',def:4},
+      {key:'w',label:'Πλάτος δωματίου',unit:'m',def:3.5},
+      {key:'h',label:'Ύψος',unit:'m',def:2.7},
+      {key:'ceil',label:'🔲 Και το ταβάνι',def:true,type:'check'},
+      {key:'openings',label:'➖ Αφαίρεση πόρτας/παραθύρων',def:true,type:'check'},
+    ], fn:v=>{
+    const walls=2*(v.l+v.w)*v.h, ceil=v.ceil?v.l*v.w:0;
+    let a=walls+ceil; if(v.openings) a*=0.88; a=Math.max(0,a);
+    const pl=a*0.2, pr=a*0.1;
+    return {mats:[
+      {n:'🎨 Χρώμα (2 χέρια)', q:pl.toFixed(1)+' L', cost:pl*P('paint_l')},
+      {n:'⚪ Αστάρι', q:pr.toFixed(1)+' L', cost:pr*P('primer_l')},
+      {n:'🩹 Στόκος/σπατουλαριστό', q:'1 συσκ.', cost:P('putty')},
+      {n:'🩹 Χαρτοταινία & νάιλον', q:'σετ', cost:P('tape')},
+    ], time:timeStr(a/40),
+      note:`Επιφάνεια βαφής: <b>${a.toFixed(1)} m²</b> (τοίχοι ${walls.toFixed(1)} m²${v.ceil?` + ταβάνι ${ceil.toFixed(1)} m²`:' (χωρίς ταβάνι)'}${v.openings?', −12% ανοίγματα':''})`}; } },
+
+  laminate:{ inputs:[{key:'l',label:'Μήκος δωματίου',unit:'m',def:5},{key:'w',label:'Πλάτος δωματίου',unit:'m',def:4}], fn:v=>{ const a=v.l*v.w; const sk=2*(v.l+v.w);
+    return {mats:[
+      {n:'🪵 Laminate (+8% φύρα)', q:(a*1.08).toFixed(1)+' m²', cost:a*1.08*P('laminate_m2')},
+      {n:'📄 Υπόστρωμα', q:a.toFixed(1)+' m²', cost:a*P('underlay_m2')},
+      {n:'📏 Σοβατεπί (περίμετρος)', q:sk.toFixed(1)+' m', cost:sk*P('skirt_m')},
+    ], time:timeStr(a/20), note:`Επιφάνεια δαπέδου: <b>${a.toFixed(1)} m²</b> · περίμετρος ${sk.toFixed(1)} m`}; } },
+
+  concrete:{ inputs:[{key:'l',label:'Μήκος',unit:'m',def:4},{key:'w',label:'Πλάτος',unit:'m',def:3},{key:'t',label:'Πάχος',unit:'cm',def:12}], fn:v=>{
+    const vol=v.l*v.w*v.t/100, area=v.l*v.w, per=2*(v.l+v.w);
+    return {mats:[
+      {n:'🏗️ Έτοιμο σκυρόδεμα (+5%)', q:(vol*1.05).toFixed(2)+' m³', cost:vol*1.05*P('concrete_m3')},
+      {n:'🔩 Πλέγμα οπλισμού', q:area.toFixed(1)+' m²', cost:area*P('mesh_m2')},
+      {n:'🪵 Ξυλότυποι (περίμετρος)', q:per.toFixed(1)+' m', cost:per*P('formwork_m')},
+    ], time:timeStr(Math.max(0.5,vol/2)), note:`Όγκος: ${vol.toFixed(2)} m³`}; } },
+
+  drywall:{ inputs:[
+      {key:'l',label:'Μήκος',unit:'m',def:4},{key:'w',label:'Πλάτος',unit:'m',def:3},{key:'h',label:'Ύψος',unit:'m',def:2.7},
+      {key:'ceil',label:'🔲 Και ταβάνι/οροφή',def:false,type:'check'},
+    ], fn:v=>{
+    const walls=2*(v.l+v.w)*v.h, ceil=v.ceil?v.l*v.w:0; const a=Math.max(0,walls+ceil);
+    const sh=Math.ceil(a*1.1/3)||1, prof=a*3, scr=Math.ceil(a*20);
+    return {mats:[
+      {n:'⬜ Γυψοσανίδες (φύλλο ~3m²)', q:sh+' φύλλα', cost:sh*P('drywall_sheet')},
+      {n:'📏 Μεταλλικά προφίλ', q:prof.toFixed(1)+' m', cost:prof*P('profile_m')},
+      {n:'🔩 Βίδες γυψοσανίδας', q:scr+' τεμ.', cost:P('screws')},
+      {n:'🩹 Ταινία & στόκος αρμών', q:'1 σετ', cost:P('jointkit')},
+    ], time:timeStr(a/18),
+      note:`Επιφάνεια: <b>${a.toFixed(1)} m²</b> (τοίχοι ${walls.toFixed(1)} m²${v.ceil?` + ταβάνι ${ceil.toFixed(1)} m²`:''})`}; } },
+
+  silicone:{ inputs:[{key:'l',label:'Μήκος αρμού',unit:'m',def:6}], fn:v=>{ const l=v.l; const c=Math.ceil(l/9)||1;
+    return {mats:[
+      {n:'🧴 Αντιμουχλική σιλικόνη (φύσιγγα)', q:c+' τεμ.', cost:c*P('silicone_cart')},
+      {n:'🩹 Χαρτοταινία', q:'1 ρολό', cost:P('tape_roll')},
+    ], time:Math.max(15,Math.round(l/20*60))+'′'}; } },
+
+  anchor:{ inputs:[{key:'n',label:'Πλήθος σημείων',unit:'τεμ.',def:4}], fn:v=>{ const n=Math.round(v.n)||1;
+    return {mats:[
+      {n:'🔩 Ούπα & βίδες (κατάλληλα)', q:n+' σετ', cost:n*P('anchor_set')},
+      {n:'🪝 Γάντζοι/βάσεις', q:n+' τεμ.', cost:n*P('hook')},
+    ], time:Math.max(5,n*5)+'′'}; } },
+};
+// Κόστος εργασίας μάστορα (εργασία μόνο) ανά οδηγό — για τη σύγκριση «μόνος σου vs μάστορας»
+const DIY_LABOR = {
+  tiles: v=>{ const floor=v.floor?v.l*v.w:0, walls=v.walls?2*(v.l+v.w)*v.h:0; return Math.max(0,floor+walls)*P('lab_tiles'); }, wall: v=>v.l*v.h*P('lab_wall'),
+  plaster: v=>{ const walls=2*(v.l+v.w)*v.h, ceil=v.ceil?v.l*v.w:0; let a=walls+ceil; if(v.openings)a*=0.88; return Math.max(0,a)*P('lab_plaster'); },
+  paint: v=>{ const walls=2*(v.l+v.w)*v.h, ceil=v.ceil?v.l*v.w:0; let a=walls+ceil; if(v.openings)a*=0.88; return Math.max(0,a)*P('lab_paint'); },
+  laminate: v=>v.l*v.w*P('lab_laminate'), concrete: v=>v.l*v.w*P('lab_concrete'),
+  drywall: v=>{ const walls=2*(v.l+v.w)*v.h, ceil=v.ceil?v.l*v.w:0; return Math.max(0,walls+ceil)*P('lab_drywall'); },
+  silicone: v=>Math.max(30,v.l*P('lab_silicone')), anchor: v=>Math.max(30,(Math.round(v.n)||1)*P('lab_anchor')),
+};
+const DIY_Q = {}; // ποιότητα υλικών ανά οδηγό
+let RENO = null;   // τελευταία ανακαίνιση (για εξαγωγή)
+const QMULT = {econ:0.72, mid:1, premium:1.6};
+const QLBL = {econ:"💶 Οικονομικό", mid:"🏠 Μεσαίο", premium:"💎 Premium"};
+function setDiyQ(id,q){
+  DIY_Q[id]=q;
+  document.querySelectorAll(`#diyq_${id} .chip`).forEach(c=>c.classList.toggle('sel',c.dataset.q===q));
+  if(id==='reno') renoCompute(); else diyCompute(id);
+}
+function parseDays(s){ if(!s) return 0; if(s.indexOf('ημέρ')>=0) return parseFloat(s)||0; if(s.indexOf('ώρ')>=0) return (parseFloat(s)||0)/8; if(s.indexOf('′')>=0) return (parseFloat(s)||0)/(8*60); return 0; }
+function renoCard(){
+  const q=DIY_Q['reno']||'mid';
+  const chips=['econ','mid','premium'].map(k=>`<div class="chip ${q===k?'sel':''} amber" data-q="${k}" onclick="setDiyQ('reno','${k}')">${QLBL[k]}</div>`).join('');
+  return `<div class="card" style="margin-bottom:16px;border-color:var(--red)">
+    <h3><span class="em">🏚️</span> Ανακαίνιση ολόκληρου δωματίου</h3>
+    <p style="color:var(--muted);margin:4px 0 10px;font-size:13.5px">Βάλε διαστάσεις & διάλεξε εργασίες — αθροίζει υλικά, κόστος DIY, χρόνο & πόσα γλιτώνεις έναντι μάστορα.</p>
+    <div class="grid g3">
+      <div class="field" style="margin-bottom:8px"><label>Μήκος <span class="hint">(m)</span></label><input type="number" id="reno_l" value="4" step="any" min="0" oninput="renoCompute()"></div>
+      <div class="field" style="margin-bottom:8px"><label>Πλάτος <span class="hint">(m)</span></label><input type="number" id="reno_w" value="3.5" step="any" min="0" oninput="renoCompute()"></div>
+      <div class="field" style="margin-bottom:8px"><label>Ύψος <span class="hint">(m)</span></label><input type="number" id="reno_h" value="2.7" step="any" min="0" oninput="renoCompute()"></div>
+    </div>
+    <div class="switchrow" style="margin:2px 0 10px">
+      <label class="toggle"><input type="checkbox" id="reno_paint" checked onchange="renoCompute()">🎨 Βάψιμο</label>
+      <label class="toggle"><input type="checkbox" id="reno_plaster" onchange="renoCompute()">🧴 Σοβάς τοίχων</label>
+      <label class="toggle"><input type="checkbox" id="reno_drywall" onchange="renoCompute()">⬜ Γυψοσανίδα</label>
+      <label class="toggle"><input type="checkbox" id="reno_ceil" checked onchange="renoCompute()">🔲 Να συμπεριληφθεί ταβάνι</label>
+      <label class="toggle"><input type="checkbox" id="reno_consum" checked onchange="renoCompute()">🧰 Αναλώσιμα (+8%)</label>
+      <label class="toggle"><input type="checkbox" id="reno_waste" checked onchange="renoCompute()">🗑️ Απομάκρυνση μπάζων</label>
+    </div>
+    <div class="field" style="max-width:280px;margin-bottom:8px"><label>Δάπεδο</label>
+      <select id="reno_floor" onchange="renoCompute()">
+        <option value="none">— Χωρίς δάπεδο —</option>
+        <option value="tiles" selected>🔲 Πλακάκια</option>
+        <option value="laminate">🪵 Laminate</option>
+      </select></div>
+    <div style="margin:2px 0 2px;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px">Ποιότητα υλικών</div>
+    <div class="chips" id="diyq_reno">${chips}</div>
+    <div id="renoRes" style="margin-top:12px"></div>
+  </div>`;
+}
+function renoCompute(){
+  const el=document.getElementById('renoRes'); if(!el) return;
+  const g=id=>document.getElementById(id);
+  const l=parseFloat(g('reno_l').value)||0, w=parseFloat(g('reno_w').value)||0, h=parseFloat(g('reno_h').value)||0;
+  const ceil=g('reno_ceil').checked, doPaint=g('reno_paint').checked, doPlaster=g('reno_plaster').checked, doDrywall=g('reno_drywall').checked, floorType=g('reno_floor').value;
+  const qm=QMULT[DIY_Q['reno']||'mid'];
+  const tasks=[];
+  const add=(id,label,v)=>{ const c=DIY_CALC[id]; if(!c) return; const r=c.fn(v);
+    const mat=r.mats.reduce((s,m)=>s+(m.cost||0),0)*qm; const lab=DIY_LABOR[id]?DIY_LABOR[id](v):0;
+    tasks.push({label, mat, lab, days:parseDays(r.time)}); };
+  if(doPaint)   add('paint','🎨 Βάψιμο (τοίχοι'+(ceil?'+ταβάνι':'')+')',{l,w,h,ceil,openings:true});
+  if(doPlaster) add('plaster','🧴 Σοβάς τοίχων',{l,w,h,ceil:false,openings:true});
+  if(doDrywall) add('drywall','⬜ Γυψοσανίδα',{l,w,h,ceil:false});
+  if(floorType==='tiles')    add('tiles','🔲 Πλακάκια δαπέδου',{l,w,h,floor:true,walls:false});
+  if(floorType==='laminate') add('laminate','🪵 Laminate δάπεδο',{l,w});
+  if(!tasks.length){ el.innerHTML=`<div class="tip">Διάλεξε τουλάχιστον μία εργασία για να δεις το άθροισμα.</div>`; RENO=null; return; }
+  const matWork=tasks.reduce((a,t)=>a+t.mat,0), labSum=tasks.reduce((a,t)=>a+t.lab,0), daysSum=tasks.reduce((a,t)=>a+t.days,0);
+  const consum = g('reno_consum').checked ? matWork*0.08 : 0;
+  const waste  = g('reno_waste').checked ? P('waste_skip') : 0;
+  const matSum = matWork + consum + waste;          // μόνος σου (υλικά + αναλώσιμα + κάδος)
+  const proSum = matSum + labSum;                    // με μάστορα
+  let rows=tasks.map(t=>`<tr><td>${t.label}</td><td class="num">${eur(t.mat)}</td><td class="num" style="color:var(--muted)">${eur(t.mat+t.lab)}</td></tr>`).join('');
+  if(consum>0) rows+=`<tr><td>🧰 Μικροϋλικά/αναλώσιμα (8%)</td><td class="num">${eur(consum)}</td><td class="num" style="color:var(--muted)">${eur(consum)}</td></tr>`;
+  if(waste>0)  rows+=`<tr><td>🗑️ Απομάκρυνση μπάζων (κάδος)</td><td class="num">${eur(waste)}</td><td class="num" style="color:var(--muted)">${eur(waste)}</td></tr>`;
+  RENO={l,w,h,tasks,consum,waste,matSum,labSum,proSum,daysSum,quality:QLBL[DIY_Q['reno']||'mid']};
+  el.innerHTML=`
+    <table><thead><tr><th>Εργασία</th><th class="num">Υλικά (μόνος σου)</th><th class="num">Με μάστορα</th></tr></thead>
+    <tbody>${rows}
+      <tr style="border-top:2px solid var(--red)"><td><b>ΣΥΝΟΛΟ</b></td><td class="num"><b style="color:var(--red2)">${eur(matSum)}</b></td><td class="num"><b>${eur(proSum)}</b></td></tr>
+    </tbody></table>
+    <div class="grid g3" style="margin-top:12px">
+      <div class="stat accent-amber"><div class="k">🧑‍🔧 Μόνος σου</div><div class="v">${eur(matSum)}</div><div style="font-size:11px;color:var(--muted)">υλικά + αναλώσιμα + μπάζα</div></div>
+      <div class="stat"><div class="k">👷 Με μάστορα</div><div class="v">${eur(proSum)}</div><div style="font-size:11px;color:var(--muted)">υλικά + εργασία</div></div>
+      <div class="stat accent-red"><div class="k">💰 Γλιτώνεις</div><div class="v">${eur(labSum)}</div><div style="font-size:11px;color:var(--muted)">${proSum>0?Math.round(labSum/proSum*100):0}% φθηνότερα</div></div>
+    </div>
+    <div class="tip" style="margin-top:10px">⏱️ Συνολικός χρόνος (μόνος σου): <b>${timeStr(daysSum)}</b> για ${tasks.length} εργασίες.</div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:12px" class="no-print">
+      <button class="btn amber" onclick="printReno()">🖨️ Εκτύπωση / PDF</button>
+      <button class="btn ghost" onclick="exportRenoWord()">📄 Εξαγωγή Word</button>
+    </div>`;
+}
+function renoHTML(){
+  if(!RENO) return '<p>Δεν υπάρχουν δεδομένα.</p>';
+  const R=RENO;
+  let t=`<h1 style="color:#e63329">Ανακαίνιση δωματίου</h1>
+  <p><b>Διαστάσεις:</b> ${R.l} × ${R.w} × ${R.h} m &nbsp;·&nbsp; <b>Ποιότητα:</b> ${R.quality}</p>
+  <table border="1" cellpadding="6" style="border-collapse:collapse;width:100%;font-family:Calibri,Arial">
+  <tr style="background:#eee"><th align="left">Εργασία</th><th align="right">Υλικά (μόνος σου)</th><th align="right">Με μάστορα</th></tr>`;
+  R.tasks.forEach(x=>{ t+=`<tr><td>${x.label}</td><td align="right">${eur(x.mat)}</td><td align="right">${eur(x.mat+x.lab)}</td></tr>`; });
+  if(R.consum>0) t+=`<tr><td>Μικροϋλικά/αναλώσιμα (8%)</td><td align="right">${eur(R.consum)}</td><td align="right">${eur(R.consum)}</td></tr>`;
+  if(R.waste>0)  t+=`<tr><td>Απομάκρυνση μπάζων (κάδος)</td><td align="right">${eur(R.waste)}</td><td align="right">${eur(R.waste)}</td></tr>`;
+  t+=`<tr style="background:#f7dcda"><td><b>ΣΥΝΟΛΟ</b></td><td align="right"><b>${eur(R.matSum)}</b></td><td align="right"><b>${eur(R.proSum)}</b></td></tr></table>
+  <p style="font-size:15px"><b>Μόνος σου:</b> ${eur(R.matSum)} &nbsp;·&nbsp; <b>Με μάστορα:</b> ${eur(R.proSum)} &nbsp;·&nbsp; <b style="color:#e63329">Γλιτώνεις: ${eur(R.labSum)}</b></p>
+  <p><b>Εκτιμώμενος χρόνος (μόνος σου):</b> ${timeStr(R.daysSum)}</p>
+  <p style="color:#888;font-size:11px">ΟΙΚΟΔΟΜΗ 360° · Ενδεικτικές τιμές — δεν αντικαθιστούν προσφορά μάστορα.</p>`;
+  return t;
+}
+function printReno(){
+  if(!RENO){ alert('Υπολόγισε πρώτα την ανακαίνιση.'); return; }
+  const w=window.open('','_blank');
+  if(!w){ alert('Επίτρεψε τα αναδυόμενα παράθυρα για εκτύπωση.'); return; }
+  w.document.write('<html><head><meta charset="utf-8"><title>Ανακαίνιση δωματίου</title></head><body style="font-family:Calibri,Arial;padding:20px">'+renoHTML()+'</body></html>');
+  w.document.close(); w.focus(); setTimeout(()=>{ w.print(); },250);
+}
+function exportRenoWord(){
+  if(!RENO){ alert('Υπολόγισε πρώτα την ανακαίνιση.'); return; }
+  const html='<html xmlns:w="urn:schemas-microsoft-com:office:word"><head><meta charset="utf-8"></head><body style="font-family:Calibri,Arial">'+renoHTML()+'</body></html>';
+  downloadBlob(html,'Oikodomi_Anakainisi.doc','application/msword');
+}
+function calcBox(h){
+  const c=DIY_CALC[h.id]; if(!c) return '';
+  const cols = c.inputs.length>=3?'g3':(c.inputs.length===2?'g2':'');
+  const fields=c.inputs.map(inp=>{
+    if(inp.type==='check'){
+      return `<div class="field" style="margin-bottom:8px;display:flex;align-items:flex-end">
+        <label class="toggle" style="width:100%"><input type="checkbox" id="diyin_${h.id}_${inp.key}" ${inp.def?'checked':''} onchange="diyCompute('${h.id}')">${inp.label}</label></div>`;
+    }
+    return `<div class="field" style="margin-bottom:8px">
+      <label>${inp.label} <span class="hint">(${inp.unit})</span></label>
+      <input type="number" id="diyin_${h.id}_${inp.key}" value="${inp.def}" min="0" step="any" oninput="diyCompute('${h.id}')"></div>`;
+  }).join('');
+  const q=DIY_Q[h.id]||'mid';
+  const chips=['econ','mid','premium'].map(k=>`<div class="chip ${q===k?'sel':''} amber" data-q="${k}" onclick="setDiyQ('${h.id}','${k}')">${QLBL[k]}</div>`).join('');
+  return `<div class="card" style="background:var(--bg2);border-color:var(--amber);margin-top:14px">
+    <h5 style="margin:0 0 8px;color:var(--amber2)">🧮 Βάλε τις διαστάσεις σου → αυτόματα υλικά, εργαλεία & χρόνος</h5>
+    <div class="grid ${cols}">${fields}</div>
+    <div style="margin:4px 0 2px;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px">Ποιότητα υλικών</div>
+    <div class="chips" id="diyq_${h.id}">${chips}</div>
+    <div id="diyres_${h.id}" style="margin-top:10px"></div>
+  </div>`;
+}
+function diyCompute(id){
+  const h=HOWTO.find(x=>x.id===id), c=DIY_CALC[id]; if(!c) return;
+  const v={}; c.inputs.forEach(inp=>{ const el=document.getElementById(`diyin_${id}_${inp.key}`);
+    if(inp.type==='check'){ v[inp.key]= el?el.checked:!!inp.def; }
+    else { v[inp.key]= el?(parseFloat(el.value)||0):inp.def; } });
+  const r=c.fn(v);
+  const qm=QMULT[DIY_Q[id]||'mid'];
+  const matTotal=r.mats.reduce((a,m)=>a+(m.cost||0)*qm,0);
+  const labor=DIY_LABOR[id]?DIY_LABOR[id](v):0;
+  const proTotal=matTotal+labor;
+  let html='';
+  if(r.note) html+=`<div style="color:var(--muted);font-size:13px;margin-bottom:6px">${r.note}</div>`;
+  html+='<table><thead><tr><th>Υλικό</th><th class="num">Ποσότητα</th><th class="num">~Κόστος</th></tr></thead><tbody>';
+  r.mats.forEach(m=>{ html+=`<tr><td>${m.n}</td><td class="num"><b>${m.q}</b></td><td class="num" style="color:var(--muted)">${m.cost?eur(m.cost*qm):'—'}</td></tr>`; });
+  html+=`<tr style="border-top:2px solid var(--red)"><td colspan="2"><b>Σύνολο υλικών</b></td><td class="num"><b style="color:var(--red2)">${eur(matTotal)}</b></td></tr>`;
+  html+='</tbody></table>';
+  html+=`<div class="tip" style="margin-top:10px">⏱️ Εκτιμώμενος χρόνος (μόνος σου): <b>${r.time}</b></div>`;
+  if(labor>0){
+    html+=`<div class="grid g3" style="margin-top:12px">
+      <div class="stat accent-amber"><div class="k">🧑‍🔧 Μόνος σου</div><div class="v">${eur(matTotal)}</div><div style="font-size:11px;color:var(--muted)">μόνο υλικά</div></div>
+      <div class="stat"><div class="k">👷 Με μάστορα</div><div class="v">${eur(proTotal)}</div><div style="font-size:11px;color:var(--muted)">υλικά + εργασία</div></div>
+      <div class="stat accent-red"><div class="k">💰 Γλιτώνεις</div><div class="v">${eur(labor)}</div><div style="font-size:11px;color:var(--muted)">${matTotal>0?Math.round(labor/proTotal*100):0}% φθηνότερα</div></div>
+    </div>`;
+  }
+  html+=`<div style="margin-top:10px"><b style="color:var(--amber2);font-size:12.5px">🔨 ΕΡΓΑΛΕΙΑ ΠΟΥ ΘΑ ΧΡΕΙΑΣΤΕΙΣ</b><div class="pillrow" style="margin-top:5px">${h.tools.map(t=>`<span class="pill">${t}</span>`).join('')}</div></div>`;
+  document.getElementById(`diyres_${id}`).innerHTML=html;
+}
+function stars(n){ return '★'.repeat(n)+'☆'.repeat(5-n); }
+function renderDIY(){
+  const cards=HOWTO.map((h,i)=>`
+    <div class="accordion" data-name="${h.title.toLowerCase()}">
+      <div class="acc-head" onclick="this.parentElement.classList.toggle('open')">
+        <span class="em" style="font-size:20px">${h.em}</span>
+        <span>${h.title}</span>
+        <span class="cost" style="color:var(--amber2)">${stars(h.diff)}</span>
+        <span class="chev">▶</span>
+      </div>
+      <div class="acc-body">
+        <div class="pillrow" style="margin-top:14px">
+          <span class="pill">⏱️ ${h.time}</span>
+          <span class="pill">🔧 Εργαλεία: ${h.toolCost}</span>
+          <span class="pill">📦 Υλικά: ${h.matCost}</span>
+          <span class="pill">📊 Δυσκολία: ${stars(h.diff)}</span>
+        </div>
+        ${calcBox(h)}
+        <h5>🔨 Εργαλεία</h5><div class="pillrow">${h.tools.map(t=>`<span class="pill">${t}</span>`).join('')}</div>
+        <h5>📦 Υλικά</h5><div class="pillrow">${h.mats.map(m=>`<span class="pill">${m}</span>`).join('')}</div>
+        <h5>📋 Βήματα</h5><ol style="margin:6px 0;padding-left:22px;color:var(--muted)">${h.steps.map(s=>`<li style="margin-bottom:6px">${s}</li>`).join('')}</ol>
+        ${h.tips.map(t=>`<div class="tip">💡 ${t}</div>`).join('')}
+        ${h.safety.length?`<h5>🦺 Ασφάλεια</h5><div class="pillrow">${h.safety.map(s=>`<span class="pill" style="border-color:rgba(230,51,41,.4)">${s}</span>`).join('')}</div>`:''}
+      </div>
+    </div>`).join('');
+  document.getElementById('diy').innerHTML=`
+    <div class="sectitle"><span class="em">🧑‍🔧</span><h2>Φτιάξ' το μόνος σου (DIY)</h2>
+      <p>Αναλυτικές οδηγίες βήμα-βήμα για τις πιο συχνές εργασίες — τι εργαλεία & υλικά θέλεις, πόσο κοστίζουν, πώς γίνεται σωστά & με ασφάλεια.</p></div>
+    <div class="card" style="margin-bottom:16px">
+      <h3><span class="em">📊</span> Δυσκολία</h3>
+      <p style="color:var(--muted);margin:6px 0 0">★☆☆☆☆ πανεύκολο · ★★★☆☆ μέτριο (θέλει εμπειρία) · ★★★★★ δύσκολο — καλύτερα με μάστορα. Ξεκίνα από εύκολες δουλειές για να πάρεις το χέρι σου.</p>
+    </div>
+    ${renoCard()}
+    ${profileBar()}
+    <div id="listCmp" style="margin-bottom:16px"></div>
+    ${pricesEditor()}
+    <div class="search"><span class="si">🔍</span><input type="text" placeholder="Αναζήτηση οδηγού (π.χ. πλακάκια, βάψιμο)..." oninput="filterAcc('diy',this.value)"></div>
+    ${cards}
+    <div class="warn" style="margin-top:16px">⚠️ Οι εργασίες σε <b>ηλεκτρολογικά, φυσικό αέριο & φέροντα στοιχεία</b> απαιτούν αδειούχο τεχνικό — μην τις κάνεις μόνος σου. Το DIY ταιριάζει σε φινιρίσματα & μικροεπισκευές.</div>`;
+  HOWTO.forEach(h=>{ if(DIY_CALC[h.id]) diyCompute(h.id); });
+  renoCompute();
+  updateListCompare();
+  updateProfileTag();
+}
+
+/* ============================================================
+   INIT
+   ============================================================ */
+STAGE_NORM = 100 / STAGES.reduce((a,s)=>a+s.w,0);
+CMP.a.quality = CMP.b.quality = SOL.quality; CMP.a.method = SOL.method;
+buildTabs();
+renderHome();
+renderSolverForm();
+renderStages();
+renderMethods();
+renderMaterials();
+renderTools();
+renderCrews();
+renderPrices();
+renderCompare();
+renderFurnish();
+renderChecklist();
+renderPermits();
+renderDIY();
+</script>
+</body>
+</html>

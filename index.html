@@ -2236,6 +2236,7 @@ function renderDIY(){
         <span class="em" style="font-size:20px">${h.em}</span>
         <span>${h.title}</span>
         <span class="cost" style="color:var(--amber2)">${stars(h.diff)}</span>
+        ${photoBtn(HOWTO_PHOTO[h.id]||h.title, h.title)}
         <span class="chev">▶</span>
       </div>
       <div class="acc-body">
@@ -2472,6 +2473,11 @@ const STAGE_PHOTO = {
   paint:"house painting wall roller", hvac:"air conditioning heat pump installation",
   kitchen:"kitchen cabinets installation", sanit:"bathroom sink toilet installation",
   ext:"garden landscaping paving", clean:"finished house construction"
+};
+const HOWTO_PHOTO = {
+  tiles:"tiling floor installation", wall:"bricklaying brick wall", plaster:"plastering wall trowel",
+  paint:"painting wall roller", laminate:"laminate flooring installation", concrete:"pouring concrete slab",
+  drywall:"drywall installation", silicone:"applying silicone sealant", anchor:"wall plug drilling"
 };
 function escAttr(s){ return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;'); }
 function photoBtn(query,title){

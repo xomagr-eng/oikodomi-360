@@ -1675,7 +1675,7 @@ function renderFurnish(){
   const catalog=rooms.map(rm=>{
     const rows=FURN.map((f,idx)=>({f,idx})).filter(o=>o.f.room===rm).map(({f,idx})=>`
       <tr data-name="${(f.name+' '+f.room).toLowerCase()}">
-        <td><b>${f.em} ${f.name}</b>${f.scale==='m2'?' <span style="color:var(--dim);font-size:11px">(/m²)</span>':''}</td>
+        <td><b>${f.em} ${f.name}</b>${f.scale==='m2'?' <span style="color:var(--dim);font-size:11px">(/m²)</span>':''} ${photoBtn(FURN_PHOTO[f.name]||f.name, f.name)}</td>
         <td class="num">${priceInput('furn_'+idx+'_econ',f.price.econ,true)}</td>
         <td class="num">${priceInput('furn_'+idx+'_mid',f.price.mid,true)}</td>
         <td class="num">${priceInput('furn_'+idx+'_premium',f.price.premium,true)}</td>
@@ -2473,6 +2473,17 @@ const STAGE_PHOTO = {
   paint:"house painting wall roller", hvac:"air conditioning heat pump installation",
   kitchen:"kitchen cabinets installation", sanit:"bathroom sink toilet installation",
   ext:"garden landscaping paving", clean:"finished house construction"
+};
+const FURN_PHOTO = {
+  "Κρεβάτι + στρώμα":"bed mattress bedroom","Ντουλάπα":"wardrobe closet","Κομοδίνα (ζεύγος)":"nightstand bedside table",
+  "Συρταριέρα / Τουαλέτα":"chest of drawers dresser","Καναπές / σετ σαλονιού":"sofa couch","Πολυθρόνα":"armchair",
+  "Τραπεζάκι σαλονιού":"coffee table","Σύνθετο TV / Βιβλιοθήκη":"tv stand bookshelf","Τραπέζι + καρέκλες (6)":"dining table chairs",
+  "Μπουφές / Vitrine":"sideboard buffet furniture","Ψυγείο":"refrigerator","Κουζίνα/φούρνος + εστίες":"kitchen stove oven",
+  "Απορροφητήρας":"kitchen range hood","Πλυντήριο πιάτων":"dishwasher","Μικροσυσκευές κουζίνας":"kitchen small appliances",
+  "Σκεύη & μαχαιροπίρουνα (σετ)":"cookware cutlery set","Πλυντήριο ρούχων":"washing machine","Στεγνωτήριο":"clothes dryer",
+  "Έπιπλο μπάνιου + καθρέφτης":"bathroom vanity mirror","Αξεσουάρ μπάνιου":"bathroom accessories","Τηλεόραση(εις)":"television",
+  "Οικιακές μικροσυσκευές (σκούπα/σίδερο)":"vacuum cleaner iron","Φωτιστικά χώρων":"ceiling light fixture",
+  "Κουρτίνες / Ρόλερ / Λευκά είδη":"curtains window","Χαλιά & Διακόσμηση":"rug carpet home"
 };
 const HOWTO_PHOTO = {
   tiles:"tiling floor installation", wall:"bricklaying brick wall", plaster:"plastering wall trowel",

@@ -1497,7 +1497,7 @@ function renderMaterials(){
   const blocks=cats.map(cat=>{
     const rows=Object.entries(MATERIALS).filter(([k,m])=>m.cat===cat).map(([k,m])=>`
       <tr data-name="${(m.name+' '+m.cat).toLowerCase()}">
-        <td><b>${m.name}</b>${m.note?`<div style="color:var(--dim);font-size:12px">${m.note}</div>`:''}</td>
+        <td><b>${m.name}</b> ${photoBtn(MAT_PHOTO[k]||m.name, m.name)}${m.note?`<div style="color:var(--dim);font-size:12px">${m.note}</div>`:''}</td>
         <td style="color:var(--muted)">${m.unit}</td>
         <td class="num">${priceInput('mat_'+k,m.price,false)}</td>
       </tr>`).join('');
@@ -2484,6 +2484,22 @@ const FURN_PHOTO = {
   "Έπιπλο μπάνιου + καθρέφτης":"bathroom vanity mirror","Αξεσουάρ μπάνιου":"bathroom accessories","Τηλεόραση(εις)":"television",
   "Οικιακές μικροσυσκευές (σκούπα/σίδερο)":"vacuum cleaner iron","Φωτιστικά χώρων":"ceiling light fixture",
   "Κουρτίνες / Ρόλερ / Λευκά είδη":"curtains window","Χαλιά & Διακόσμηση":"rug carpet home"
+};
+const MAT_PHOTO = {
+  design:"engineering blueprint drawing", concrete:"ready mix concrete truck", rebar:"steel rebar reinforcement",
+  formwork:"concrete formwork wood", bricks:"clay bricks pile", mortar:"mortar bag construction", cement:"cement bag",
+  sand:"construction sand pile", gravel:"gravel aggregate", lime:"lime plaster", plaster_ready:"plasterboard drywall sheet",
+  waterproof:"waterproofing membrane roof", insulation_roof:"roof thermal insulation", eps:"expanded polystyrene insulation facade",
+  mesh:"fiberglass mesh plaster", render:"facade render plaster", insulation_floor:"floor insulation board", membrane:"roofing membrane",
+  timber:"roof timber beams", tiles:"roof tiles clay", windows:"aluminium window", glazing:"double glazing window",
+  entry_door:"security entrance door", shutters:"window roller shutter", pipes_water:"water supply pipes", pipes_drain:"pvc drainage pipes",
+  boiler:"water heater boiler", fittings:"plumbing fittings manifold", cables:"electrical cable wire", panel:"electrical distribution panel",
+  sockets:"electrical socket switch", conduit:"electrical conduit pipe", putty:"wall putty filler", primer:"paint primer can",
+  paint:"paint bucket", varnish:"wood varnish", tiles_floor:"ceramic floor tiles", marble:"marble slab", adhesive:"tile adhesive bag",
+  grout:"tile grout", laminate:"laminate flooring", heatpump:"heat pump unit", underfloor:"underfloor heating pipes",
+  radiators:"radiator heating", ac_units:"air conditioner split unit", cabinets:"kitchen cabinets", countertop:"kitchen countertop quartz",
+  interior_doors:"interior door", hardware:"cabinet hinges hardware", sanitary:"toilet sink bathroom", faucets:"faucet tap",
+  shower:"shower enclosure", pavers:"garden paving stones", fence:"metal fence", outdoor_light:"garden light fixture", plants:"garden plants landscaping"
 };
 const CREW_PHOTO = {
   engineer:"civil engineer construction site", architect:"architect blueprint drawing", topographer:"land surveyor theodolite",

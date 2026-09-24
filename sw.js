@@ -1,5 +1,5 @@
 /* ΟΙΚΟΔΟΜΗ 360° — Service Worker (offline cache) */
-const CACHE = 'oikodomi-360-v5';
+const CACHE = 'oikodomi-360-v6';
 const ASSETS = ['./', './index.html', './manifest.webmanifest', './icon.svg'];
 
 self.addEventListener('install', e => {

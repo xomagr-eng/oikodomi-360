@@ -1467,9 +1467,9 @@ function filterAcc(view,q){
    ============================================================ */
 function renderMethods(){
   const bars=(v)=>`<div class="meter"><i style="width:${v*20}%"></i></div>`;
-  const cards=Object.values(METHODS).map(m=>`
+  const cards=Object.entries(METHODS).map(([mk,m])=>`
     <div class="method-card">
-      <div class="mh"><span class="em">${m.icon}</span><h3 style="margin:0">${m.name}</h3></div>
+      <div class="mh"><span class="em">${m.icon}</span><h3 style="margin:0">${m.name}</h3> ${photoBtn(METHOD_PHOTO[mk]||m.name, m.name)}</div>
       <p style="color:var(--muted);font-size:13.5px">${m.desc}</p>
       <div style="margin:8px 0">
         <div style="font-size:12px;color:var(--muted)">Ταχύτητα ${bars(m.speed)}</div>
@@ -1629,7 +1629,7 @@ function renderCompare(){
     const cheaper = (side==='a'? pa.grandAll<=pb.grandAll : pb.grandAll<pa.grandAll);
     return `<div class="card" style="${cheaper?'border-color:var(--amber);box-shadow:0 0 0 1px var(--amber)':''}">
       <h3><span class="em">${METHODS[cfg.method].icon}</span> Σενάριο ${side.toUpperCase()} ${cheaper?'<span class="badge amber">οικονομικότερο</span>':''}</h3>
-      <div class="field" style="margin-top:10px"><label>Τρόπος ανέγερσης</label>${sel(side,'method',METHODS,cfg.method)}</div>
+      <div class="field" style="margin-top:10px"><label>Τρόπος ανέγερσης ${photoBtn(METHOD_PHOTO[cfg.method]||METHODS[cfg.method].name, METHODS[cfg.method].name)}</label>${sel(side,'method',METHODS,cfg.method)}</div>
       <div class="field"><label>Ποιότητα</label>${sel(side,'quality',QUALITY,cfg.quality)}</div>
       <table style="margin-top:6px">
         <tr><td>Κατασκευή (με ΦΠΑ)</td><td class="num"><b>${eur(p.grand)}</b></td></tr>
@@ -2484,6 +2484,11 @@ const FURN_PHOTO = {
   "Έπιπλο μπάνιου + καθρέφτης":"bathroom vanity mirror","Αξεσουάρ μπάνιου":"bathroom accessories","Τηλεόραση(εις)":"television",
   "Οικιακές μικροσυσκευές (σκούπα/σίδερο)":"vacuum cleaner iron","Φωτιστικά χώρων":"ceiling light fixture",
   "Κουρτίνες / Ρόλερ / Λευκά είδη":"curtains window","Χαλιά & Διακόσμηση":"rug carpet home"
+};
+const METHOD_PHOTO = {
+  concrete:"reinforced concrete building construction", steel:"steel frame building construction",
+  prefab:"prefabricated modular house", stone:"stone masonry house", timber:"timber frame house construction",
+  icf:"insulated concrete form icf construction"
 };
 const TOOL_PHOTO = {
   "Μέτρο laser / αποστασιόμετρο":"laser distance meter","Αλφάδι (φυσαλίδας & laser)":"spirit level tool",

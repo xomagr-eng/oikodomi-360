@@ -1336,7 +1336,7 @@ function furnishTable(f){
   rooms.forEach(rm=>{
     const its=f.items.filter(i=>i.room===rm);
     const sub=its.reduce((a,i)=>a+i.total,0);
-    html+=`<tr><td colspan="3" style="color:var(--amber2);font-weight:700;padding-top:12px">${rm}</td><td class="num" style="color:var(--amber2);font-weight:700;padding-top:12px">${eur(sub)}</td></tr>`;
+    html+=`<tr><td colspan="3" style="color:var(--amber2);font-weight:700;padding-top:12px">${rm} ${photoBtn(PHOTO_Q[rm]||rm, rm)}</td><td class="num" style="color:var(--amber2);font-weight:700;padding-top:12px">${eur(sub)}</td></tr>`;
     its.forEach(i=>{
       const q = i.scale==='m2'? `${fmt(i.qty)} m²` : `×${i.qty}`;
       html+=`<tr><td>${i.em} ${i.name}</td><td class="num">${q}</td><td class="num" style="color:var(--muted)">${i.scale==='m2'?i.each+' €/m²':eur(i.each)}</td><td class="num"><b>${eur(i.total)}</b></td></tr>`;

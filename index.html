@@ -246,6 +246,16 @@
   @media(max-width:380px){
     .grid.g4{grid-template-columns:1fr}
   }
+  /* Photo button + modal */
+  .photob{display:inline-flex;align-items:center;gap:4px;background:var(--bg2);border:1px solid var(--line2);color:var(--amber2);border-radius:8px;padding:3px 9px;font-size:11.5px;font-weight:700;cursor:pointer;white-space:nowrap}
+  .photob:hover{border-color:var(--amber);color:var(--amber)}
+  .pmodal{display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.75);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:18px}
+  .pmodal.open{display:flex}
+  .pmodal-in{background:var(--panel);border:1px solid var(--line2);border-radius:14px;max-width:720px;width:100%;max-height:88vh;overflow:auto;box-shadow:var(--shadow)}
+  .pmodal-head{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--panel)}
+  .pmodal-head h3{margin:0;font-size:16px;flex:1}
+  .pmodal-head button{background:var(--bg2);border:1px solid var(--line2);color:var(--txt);width:32px;height:32px;border-radius:8px;cursor:pointer;font-size:16px}
+  .pmodal-body{padding:16px;text-align:center}
   .toprint{display:none}
   @media print{
     header.top,nav.tabs,.no-print,.hero .cta{display:none!important}
@@ -307,6 +317,15 @@
   <section class="view" id="permits"></section>
   <!-- DIY -->
   <section class="view" id="diy"></section>
+  <!-- TECHNIQUES -->
+  <section class="view" id="tech"></section>
+
+  <div class="pmodal" id="photoModal" onclick="if(event.target===this)closePhoto()">
+    <div class="pmodal-in">
+      <div class="pmodal-head"><h3 id="photoTitle">Φωτογραφία</h3><button onclick="closePhoto()" aria-label="Κλείσιμο">✕</button></div>
+      <div class="pmodal-body" id="photoBody"></div>
+    </div>
+  </div>
 
   <div class="footer">
     ΟΙΚΟΔΟΜΗ 360° · Offline εργαλείο εκτίμησης & οδηγός κατασκευής · Οι τιμές είναι <b>ενδεικτικές</b> (αγορά Ελλάδας 2025–2026) και δεν αντικαθιστούν προσφορά μηχανικού/εργολάβου.
@@ -741,6 +760,7 @@ const TABS = [
   {id:"furnish", ic:"🛋️", label:"Επίπλωση"},
   {id:"tools", ic:"🔨", label:"Εργαλεία"},
   {id:"diy", ic:"🧑‍🔧", label:"DIY"},
+  {id:"tech", ic:"🔧", label:"Τεχνικές"},
   {id:"crews", ic:"👷", label:"Μάστορες"},
   {id:"checklist", ic:"✅", label:"Checklist"},
   {id:"permits", ic:"📜", label:"Αδειοδότηση"},
@@ -963,6 +983,7 @@ function renderHome(){
       furnish:"Έπιπλα, συσκευές & στυλ διακόσμησης/αρχιτεκτονικής.",
       tools:"Ποια εργαλεία χρειάζεσαι ανά εργασία & το κόστος τους.",
       diy:"Οδηγίες βήμα-βήμα: πλακάκια, χτίσιμο, βάψιμο & άλλα μόνος σου.",
+      tech:"Τεχνικές & μερεμέτια: τοιχοποιία, στέγες, δάπεδα, ηλεκτρολογικά, έντομα.",
       crews:"Ειδικότητες μαστόρων, τι κάνουν & ενδεικτικά μεροκάματα.",
       checklist:"Λίστα ελέγχου εργοταξίου με πρόοδο που αποθηκεύεται.",
       permits:"Άδεια δόμησης, δικαιολογητικά, ΕΦΚΑ οικοδομής, «Εξοικονομώ».",
@@ -1400,6 +1421,7 @@ function renderStages(){
         <span class="em" style="font-size:20px">${s.em}</span>
         <span>${s.name}</span>
         <span class="cost">~${s.w}% · ${s.dur} εβδ.</span>
+        ${photoBtn(STAGE_PHOTO[s.id]||s.name, s.name)}
         <span class="chev">▶</span>
       </div>
       <div class="acc-body">
@@ -1480,7 +1502,7 @@ function renderMaterials(){
         <td class="num">${priceInput('mat_'+k,m.price,false)}</td>
       </tr>`).join('');
     return `<div class="card" style="margin-bottom:16px" data-cat="${cat.toLowerCase()}">
-      <h3><span class="em">🧱</span> ${cat}</h3>
+      <h3><span class="em">🧱</span> ${cat} ${photoBtn(PHOTO_Q[cat]||cat, cat)}</h3>
       <table style="margin-top:8px"><thead><tr><th>Υλικό</th><th>Μονάδα</th><th class="num">Τιμή (€) ✏️</th></tr></thead><tbody>${rows}</tbody></table>
     </div>`;
   }).join('');
@@ -1507,7 +1529,7 @@ function filterRows(view,q){
 function renderTools(){
   const cards=TOOLS.map((g,gi)=>`
     <div class="card">
-      <h3><span class="em">${g.em}</span> ${g.cat}</h3>
+      <h3><span class="em">${g.em}</span> ${g.cat} ${photoBtn(PHOTO_Q[g.cat]||g.cat, g.cat)}</h3>
       <table style="margin-top:6px"><thead><tr><th>Εργαλείο</th><th>Χρήση</th><th class="num">Τιμή € ✏️</th></tr></thead><tbody>
         ${g.items.map((it,ii)=>`<tr data-name="${(it.n+' '+it.u).toLowerCase()}"><td><b>${it.n}</b></td><td style="color:var(--muted)">${it.u}</td><td class="num">${priceInput('tool_'+gi+'_'+ii,it.p,false)}</td></tr>`).join('')}
       </tbody></table>
@@ -1659,7 +1681,7 @@ function renderFurnish(){
         <td class="num">${priceInput('furn_'+idx+'_premium',f.price.premium,true)}</td>
       </tr>`).join('');
     return `<div class="card" style="margin-bottom:14px">
-      <h3><span class="em">🛋️</span> ${rm}</h3>
+      <h3><span class="em">🛋️</span> ${rm} ${photoBtn(PHOTO_Q[rm]||rm, rm)}</h3>
       <table style="margin-top:6px"><thead><tr><th>Είδος</th><th class="num">Οικονομικό ✏️</th><th class="num">Μεσαίο ✏️</th><th class="num">Premium ✏️</th></tr></thead><tbody>${rows}</tbody></table>
     </div>`;
   }).join('');
@@ -2252,6 +2274,236 @@ function renderDIY(){
 }
 
 /* ============================================================
+   ΤΕΧΝΙΚΕΣ & ΕΠΙΣΚΕΥΕΣ (από «Όλα μόνος σου»: Οικοδομικές/Τεχνικά/Ηλεκτρολογικά)
+   ============================================================ */
+const TECHNIQUES = [
+  {group:"🧱 Τοιχοποιία & Σοβάς", items:[
+    {t:"Αναλογίες κονιαμάτων", q:"cement mortar mixing", body:[
+      "<b>Λάσπη χτισίματος:</b> ~1 μέρος τσιμέντο : 3–4 άμμος + νερό (πλαστική μάζα). Προσθήκη ασβέστη/βελτιωτικού για δουλευσιμότητα.",
+      "<b>Σοβάς 3 στρώσεις:</b> πεταχτό (πρόσφυση) → λάσπωμα (κορμός, με οδηγούς) → τριφτό/μαρμαροκονία.",
+      "<b>Γαρμπιλομπετόν/βάση δαπέδου:</b> ~1 τσιμέντο : 2 άμμος : 3 γαρμπίλι.",
+      "💡 Ανακάτεψε μικρές ποσότητες — το κονίαμα «δένει» σε 1–2 ώρες."]},
+    {t:"Κόψιμο τούβλου / πλακιδίου", q:"cutting brick tool", body:[
+      "Ακριβείας: χάραξη με κοπίδι/δισκάκι σε όλη τη γραμμή, μετά χτύπημα για καθαρό σπάσιμο.",
+      "Απλό/γρήγορο: γωνιακός τροχός με δίσκο δομικών (γυαλιά & μάσκα).",
+      "Βρέξε ελαφρά το τούβλο για λιγότερη σκόνη."]},
+    {t:"Δέσιμο τοίχων & γωνία", q:"brick wall corner bond", body:[
+      "Οι σειρές μπαίνουν «σταυρωτά» (μισό τούβλο μετατόπιση) — ποτέ ευθεία αρμός πάνω σε αρμό.",
+      "Στη συνένωση νέου με παλιό τοίχο: άφησε «δόντια» ή βάλε αναμονές/οπλισμό στους αρμούς.",
+      "Στη γωνία εναλλάσσεις τη φορά των τούβλων ανά σειρά για μπλόκο."]},
+    {t:"Άνοιγμα πόρτας σε τοίχο", q:"door opening wall lintel", body:[
+      "⚠️ Σε <b>φέροντα</b> τοίχο: ΠΡΩΤΑ τοποθετείς πρέκι/υποστύλωση από πάνω και μετά κόβεις — απαιτείται στατικός έλεγχος.",
+      "Σε απλό μεσότοιχο: χάραξη, κόψιμο, τοποθέτηση πρεκιού, μερεμέτι παρειών.",
+      "Πάντα προστασία & έλεγχος για κρυφά δίκτυα (ρεύμα/νερό)."],
+      warn:"Μην κόβεις ποτέ φέροντα τοίχο χωρίς μηχανικό."},
+    {t:"Τοιχίο στήριξης (αντιστήριξη)", q:"retaining wall drainage", body:[
+      "Ισχυρό θεμέλιο & ελαφριά κλίση προς τα πίσω.",
+      "Πίσω πλευρά: στραγγιστήριο (χαλίκι + σωλήνας) & «μπαρμπακάνες» για να φεύγει το νερό.",
+      "Χωρίς αποστράγγιση, η υδροστατική πίεση γκρεμίζει το τοιχίο."]},
+    {t:"Πυρίμαχο τζάκι", q:"fireplace firebrick", body:[
+      "Εσωτερική επένδυση εστίας με πυρότουβλα (σαμότ) & πυρίμαχη λάσπη.",
+      "Σωστή διατομή & ύψος καμινάδας για καλό «τράβηγμα»."]},
+  ]},
+  {group:"🏘️ Στέγες & Ταράτσες", items:[
+    {t:"Αντικατάσταση σπασμένου κεραμιδιού", q:"replacing roof tile", body:[
+      "Σήκωσε προσεκτικά τα διπλανά κεραμίδια, βγάλε το σπασμένο, πέρασε καινούριο ίδιου τύπου.",
+      "Πάτα μόνο πάνω από δοκούς/τεγίδες, με σανίδα κατανομής βάρους & πρόσδεση ασφαλείας."]},
+    {t:"Επισκευή κορφιά / κορυφής", q:"roof ridge repair", body:[
+      "Καθάρισε τα παλιά κονιάματα, ξαναστερέωσε τα κολυμπαράκια/κορφιάδες με κονίαμα ή ειδικά κλιπ.",
+      "Έλεγξε τα σημεία ένωσης με καμινάδες (τσόλια/φλάντζες)."]},
+    {t:"Στεγανοποίηση ταράτσας", q:"roof waterproofing membrane", body:[
+      "Καθάρισε & διόρθωσε ρωγμές, δώσε σωστές κλίσεις προς τις υδρορροές.",
+      "Αστάρι → ασφαλτική μεμβράνη (με φλόγιστρο) ή επαλειφόμενο στεγανωτικό (2 στρώσεις σταυρωτά).",
+      "Ενίσχυση με υαλόπλεγμα στις γωνίες & στα σιφόνια."]},
+    {t:"Υδρορρόες", q:"rain gutter cleaning", body:[
+      "Καθάρισε φύλλα/φερτά, έλεγξε την κλίση προς την κατακόρυφη.",
+      "Ξαναστερέωσε χαλαρά στηρίγματα, σφράγισε διαρροές στους αρμούς."]},
+    {t:"Καπνοδόχος που δεν τραβάει", q:"chimney draft", body:[
+      "Αιτίες: χαμηλό ύψος, εμπόδιο/φωλιά, κακό καπέλο, αντίθετα ρεύματα.",
+      "Λύσεις: αύξηση ύψους, καθαρισμός, ανεμοκαπέλο, εξασφάλιση παροχής αέρα στον χώρο."]},
+  ]},
+  {group:"🚿 Αποχέτευση & Εξωτερικά", items:[
+    {t:"Φρεάτιο (κατασκευή & ξεβούλωμα)", q:"drainage manhole", body:[
+      "Κατασκευή: εκσκαφή, τσιμεντόλιθοι/μπετόν, λείο πυθμένα με κλίση, καπάκι.",
+      "Ξεβούλωμα: σπιράλ αποφράξεων ή πίεση νερού· έλεγξε την κλίση των σωλήνων (≥1–2%)."]},
+    {t:"Πλακόστρωτο / μονοπάτι", q:"garden paving path", body:[
+      "Υπόβαση από συμπυκνωμένο 3Α, στρώση άμμου, πλάκες με μικρή κλίση απορροής.",
+      "Αρμοί με άμμο ή κονίαμα· κοπή πλακών με τροχό."]},
+    {t:"Εξωτερική σκάλα", q:"outdoor concrete stairs", body:[
+      "Άνετη αναλογία: ρίχτι ~16–18 cm, πάτημα ~28–30 cm.",
+      "Ελαφριά κλίση πατημάτων προς τα έξω για να φεύγει το νερό· αντιολισθηρό τελείωμα."]},
+    {t:"Περίφραξη", q:"fence posts construction", body:[
+      "Θεμέλια/μπετόν στα κολονάκια (βάθος ανάλογα ύψους & εδάφους).",
+      "Αλφάδιασμα & ίση απόσταση στύλων· μετά η πλήρωση (κάγκελα/πλέγμα/τοιχίο)."]},
+  ]},
+  {group:"🪵 Δάπεδα & Εσωτερικά", items:[
+    {t:"Αντικατάσταση σπασμένου πλακιδίου", q:"replacing broken tile", body:[
+      "Άνοιξε τους αρμούς γύρω, σπάσε προσεκτικά από το κέντρο προς τα έξω (χωρίς να χτυπήσεις τα γειτονικά).",
+      "Καθάρισε την κόλλα, τοποθέτησε νέο ίδιο πλακίδιο, αρμολόγησε."]},
+    {t:"Παρκέ / Laminate: τρίψιμο & σανίδα", q:"parquet floor sanding", body:[
+      "Ξύλινο παρκέ: τρίψιμο με τριβείο δαπέδου (χοντρό→ψιλό), βερνίκι/λάδι 2–3 χέρια.",
+      "Αντικατάσταση σανίδας: κόψε τη χαλασμένη, καθάρισε, κούμπωσε/κόλλησε νέα."]},
+    {t:"Μάρμαρο: γυάλισμα & κηλίδες", q:"marble polishing", body:[
+      "Κηλίδες: ήπιο καθαριστικό pH-ουδέτερο (όχι ξίδι/λεμόνι — χαράζουν).",
+      "Θάμπωμα: γυάλισμα με ειδική πάστα/κρύσταλλο μαρμάρου."]},
+    {t:"Σοβατεπί", q:"skirting board installation", body:[
+      "Κόψε τις γωνίες στις 45° (φαλτσοκόφτης), στερέωσε με βίδες/κόλλα στον τοίχο (όχι στο δάπεδο).",
+      "Σφράγισε τον άνω αρμό με ακρυλικό & βάψε."]},
+    {t:"Ρωγμές ταβανιού / ξεκόλλημα σοβά", q:"ceiling crack repair", body:[
+      "«Άνοιξε» τη ρωγμή σε V, καθάρισε, γέμισε με στόκο & γάζα (fiber tape), τρίψε & βάψε.",
+      "Σαθρός σοβάς: αφαίρεση, αστάρι πρόσφυσης, νέο επίχρισμα."]},
+    {t:"Ταπετσαρία τοίχου", q:"wallpaper hanging", body:[
+      "Λείος/ασταρωμένος τοίχος. Κόψε λωρίδες +5 cm, άλειψε κόλλα, ταίριαξε το σχέδιο.",
+      "Δίπλωσε, τοποθέτησε από πάνω, «σπρώξε» τις φυσαλίδες με σπάτουλα, κόψε το περίσσιο.",
+      "Δύσκολα σημεία: γωνίες, πρίζες (κλείσε ρεύμα), κάσες."]},
+    {t:"Γύψινες κορνίζες / διακοσμητικά", q:"plaster cornice ceiling", body:[
+      "Μέτρησε & κόψε στις γωνίες, κόλλα γύψου, στήριξη μέχρι να πιάσει, στοκάρισμα αρμών."]},
+  ]},
+  {group:"⚡ Ηλεκτρολογικά DIY (με ασφάλεια)", items:[
+    {t:"⚠️ Κανόνες ασφαλείας", q:"electrical safety", body:[
+      "ΠΑΝΤΑ κλείσε τον γενικό διακόπτη & επιβεβαίωσε με δοκιμαστικό/πολύμετρο ότι δεν έχει ρεύμα.",
+      "Μονωμένα εργαλεία, στεγνά χέρια/χώρος.",
+      "Νέα εγκατάσταση/πίνακας/γείωση → μόνο αδειούχος ηλεκτρολόγος (υποχρεωτική ΥΔΕ)."],
+      warn:"Σοβαρές εργασίες ρεύματος = κίνδυνος ζωής & φωτιάς. Μόνο μικροεπεμβάσεις μόνος σου."},
+    {t:"Αλλαγή πρίζας / διακόπτη", q:"replacing electrical socket", body:[
+      "Κλείσε ρεύμα. Ξεβίδωσε το πλαίσιο, φωτογράφισε τη συνδεσμολογία.",
+      "Μετάφερε τα καλώδια στους ίδιους ακροδέκτες (φάση/ουδέτερο/γείωση), σφίξε καλά, στερέωσε."]},
+    {t:"Αντικατάσταση φις", q:"replacing electric plug", body:[
+      "Κόψε το χαλασμένο, ξεγύμνωσε τα καλώδια, σύνδεσε στους σωστούς ακροδέκτες (γείωση στη μέση/ειδικό), σφίξε τον οδηγό καλωδίου."]},
+    {t:"Βλάβη φθορισμού (φωσάκι)", q:"fluorescent lamp starter", body:[
+      "Δεν ανάβει/τρεμοπαίζει: άλλαξε πρώτα το starter (φωτιστικά με starter), μετά τη λάμπα.",
+      "Αν σβήνει/βουίζει: πιθανό ballast/μπάλαστ. Νέα φωτιστικά: LED χωρίς starter."]},
+    {t:"Λάμπα αλογόνου", q:"halogen bulb replacement", body:[
+      "Κλείσε & άσε να κρυώσει. ΜΗΝ αγγίζεις το γυαλί με γυμνά δάχτυλα (λιπαρότητα = κάψιμο) — χρησιμοποίησε πανί."]},
+    {t:"Ασφάλειες & ρελέ διαρροής", q:"circuit breaker panel", body:[
+      "Αυτόματη «πέφτει»: υπερφόρτωση/βραχυκύκλωμα — αποσύνδεσε συσκευές & ανέβασέ την.",
+      "Το αντιηλεκτροπληξιακό ρελέ (30mA) προστατεύει από ηλεκτροπληξία — δοκίμασέ το με το κουμπί TEST περιοδικά."]},
+    {t:"Εντοπισμός βλάβης", q:"electrical fault finding", body:[
+      "Δούλεψε τμηματικά: ποιο κύκλωμα; ποια πρίζα/φωτιστικό; έλεγχος με δοκιμαστικό.",
+      "Χαλαρές επαφές/καμένα καλώδια μυρίζουν/μαυρίζουν — αντικατάσταση."]},
+  ]},
+  {group:"🐜 Έντομα & Προστασία σπιτιού", items:[
+    {t:"⚠️ Κανόνες εντομοκτόνων", q:"pest control safety", body:[
+      "Διάβασε τις οδηγίες, γάντια/μάσκα, μακριά από τρόφιμα & παιδιά/κατοικίδια, αερισμός.",
+      "Προτίμησε στοχευμένα δολώματα αντί για ψεκασμό παντού."]},
+    {t:"Κατσαρίδα / Μυρμήγκι", q:"cockroach ant control", body:[
+      "Καθαριότητα, σφράγισμα ρωγμών/εισόδων, τζελ-δολώματα στα περάσματα.",
+      "Μυρμήγκια: εντόπισε τη «γραμμή» & τη φωλιά, δόλωμα που το μεταφέρουν μέσα."]},
+    {t:"Τερμίτης (σοβαρό)", q:"termite damage wood", body:[
+      "Τρώει ξύλα/δομικά — σημάδια: κούφια ξύλα, χωμάτινες στοές. Χρειάζεται <b>επαγγελματική</b> αντιμετώπιση."]},
+    {t:"Σφήκα / Σκορπιός", q:"wasp nest", body:[
+      "Φωλιά σφήκας: απομάκρυνση βράδυ ή από επαγγελματία — προσοχή σε αλλεργικούς.",
+      "Σκορπιός: σφράγισε χαραμάδες, τίναξε παπούτσια/ρούχα σε επιρρεπείς περιοχές."]},
+    {t:"Κουνούπι / Μύγα / Σκόρος", q:"mosquito screen window", body:[
+      "Σίτες σε παράθυρα, όχι στάσιμα νερά, εντομοαπωθητικά.",
+      "Σκόρος ρούχων: καθαριότητα ντουλάπας, κέδρος/λεβάντα, ερμητικά σακούλες."]},
+  ]},
+];
+function renderTech(){
+  const groups=TECHNIQUES.map(g=>{
+    const items=g.items.map(it=>`
+      <div class="accordion" data-name="${(it.t+' '+g.group).toLowerCase()}">
+        <div class="acc-head" onclick="this.parentElement.classList.toggle('open')">
+          <span>${it.t}</span>
+          ${photoBtn(it.q, it.t)}
+          <span class="chev">▶</span>
+        </div>
+        <div class="acc-body">
+          <ul style="margin-top:14px">${it.body.map(b=>`<li>${b}</li>`).join('')}</ul>
+          ${it.warn?`<div class="warn">⚠️ ${it.warn}</div>`:''}
+        </div>
+      </div>`).join('');
+    return `<div class="sectitle"><span class="em">${g.group.split(' ')[0]}</span><h2 style="font-size:19px">${g.group.replace(/^\S+\s/,'')}</h2></div>${items}`;
+  }).join('');
+  document.getElementById('tech').innerHTML=`
+    <div class="sectitle"><span class="em">🔧</span><h2>Τεχνικές & Επισκευές</h2>
+      <p>Πρακτικές τεχνικές & μερεμέτια βήμα-βήμα (από τη σειρά «Όλα μόνος σου»). Πάτησε 📷 για φωτογραφία.</p></div>
+    <div class="search"><span class="si">🔍</span><input type="text" placeholder="Αναζήτηση τεχνικής (π.χ. στεγανοποίηση, πρίζα, κεραμίδι)..." oninput="filterAcc('tech',this.value)"></div>
+    ${groups}
+    <div class="warn" style="margin-top:16px">⚠️ Οι εργασίες σε φέροντα στοιχεία, ρεύμα & αέριο θέλουν αδειούχο τεχνικό. Το DIY ταιριάζει σε φινιρίσματα & μικροεπισκευές.</div>`;
+}
+
+/* ============================================================
+   ΦΩΤΟΓΡΑΦΙΕΣ (opt-in, Wikimedia Commons — ελεύθερης άδειας)
+   ============================================================ */
+const PHOTO_Q = {
+  // Κατηγορίες εργαλείων
+  "Μέτρηση & Χάραξη":"spirit level tape measure tool",
+  "Χωματουργικά & Σκυρόδεμα":"concrete mixer construction equipment",
+  "Οικοδομικά (Χτίσιμο/Σοβάς)":"trowel bricklaying tool",
+  "Ηλεκτρικά Εργαλεία":"power tools drill grinder",
+  "Υδραυλικά":"plumbing tools pipe wrench",
+  "Ηλεκτρολογικά":"electrician tools multimeter",
+  "Χρωματισμοί":"paint roller brush",
+  "Ασφάλεια & Εργοτάξιο":"construction safety helmet equipment",
+  // Κατηγορίες υλικών
+  "Υπηρεσίες":"architecture blueprint drawing",
+  "Σκελετός":"rebar reinforced concrete",
+  "Τοιχοποιία":"clay bricks wall",
+  "Δομικά":"cement bags construction",
+  "Χωματουργικά":"gravel aggregate pile",
+  "Επιχρίσματα":"plaster mortar wall",
+  "Μονώσεις":"thermal insulation boards facade",
+  "Στέγη":"roof tiles",
+  "Κουφώματα":"aluminium window",
+  "Δάπεδα":"ceramic floor tiles",
+  "Θέρμανση":"radiator heating system",
+  "Ψύξη":"air conditioner unit",
+  "Ξυλουργικά":"kitchen cabinet woodwork",
+  "Μπάνιο":"bathroom fixtures sink",
+  "Εξωτερικά":"garden fence paving",
+  // Χώροι επίπλωσης
+  "Υπνοδωμάτιο":"bedroom furniture",
+  "Σαλόνι":"living room sofa furniture",
+  "Τραπεζαρία":"dining table furniture",
+  "Κουζίνα (συσκευές)":"kitchen appliances refrigerator",
+  "Πλυσταριό":"laundry room washing machine",
+  "Μπάνιο (έπιπλα)":"bathroom vanity furniture",
+  "Ηλεκτρονικά & λοιπά":"home electronics television",
+  "Φωτισμός & Υφάσματα":"home lighting curtains",
+};
+const STAGE_PHOTO = {
+  design:"architecture blueprint construction plan", earth:"excavator foundation excavation",
+  found:"concrete foundation construction", frame:"reinforced concrete building frame",
+  masonry:"brick wall masonry construction", roof:"roof construction tiles",
+  frames:"aluminium window installation", plumb:"plumbing pipes installation",
+  elec:"electrical wiring installation", plaster:"plastering wall",
+  insul:"building insulation facade", floor:"floor tiles installation",
+  paint:"house painting wall roller", hvac:"air conditioning heat pump installation",
+  kitchen:"kitchen cabinets installation", sanit:"bathroom sink toilet installation",
+  ext:"garden landscaping paving", clean:"finished house construction"
+};
+function escAttr(s){ return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;'); }
+function photoBtn(query,title){
+  return `<span class="photob no-print" data-q="${escAttr(query)}" data-t="${escAttr(title)}" onclick="event.stopPropagation();openPhoto(this.dataset.q,this.dataset.t)">📷 Φωτο</span>`;
+}
+function closePhoto(){ const m=document.getElementById('photoModal'); if(m) m.classList.remove('open'); }
+async function openPhoto(query,title){
+  const m=document.getElementById('photoModal'), body=document.getElementById('photoBody');
+  document.getElementById('photoTitle').textContent=title||'Φωτογραφία';
+  m.classList.add('open');
+  body.innerHTML='<div style="padding:40px;color:var(--muted)">⏳ Φόρτωση φωτογραφίας…</div>';
+  const searchUrl='https://commons.wikimedia.org/w/index.php?search='+encodeURIComponent(query)+'&title=Special:MediaSearch&type=image';
+  try{
+    const api='https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch='+encodeURIComponent('filetype:bitmap '+query)+'&gsrnamespace=6&gsrlimit=1&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=680&format=json&origin=*';
+    const r=await fetch(api); const j=await r.json();
+    const pages=j.query&&j.query.pages; if(!pages) throw 0;
+    const ii=Object.values(pages)[0].imageinfo[0]; const src=ii.thumburl||ii.url;
+    const em=ii.extmetadata||{};
+    const artist=((em.Artist&&em.Artist.value)||'').replace(/<[^>]+>/g,'').trim();
+    const lic=(em.LicenseShortName&&em.LicenseShortName.value)||'';
+    body.innerHTML='<img src="'+src+'" alt="'+escAttr(title)+'" style="max-width:100%;border-radius:10px" '+
+      'onerror="this.parentElement.innerHTML=\'<div style=&quot;padding:30px;color:var(--muted)&quot;>📵 Η εικόνα δεν φορτώθηκε.</div>\'">'+
+      '<div style="font-size:11px;color:var(--dim);margin-top:8px">Πηγή: Wikimedia Commons'+(artist?' · '+artist:'')+(lic?' · '+lic:'')+
+      ' · <a href="'+searchUrl+'" target="_blank" rel="noopener" style="color:var(--amber2)">περισσότερες</a></div>';
+  }catch(e){
+    body.innerHTML='<div style="padding:26px;color:var(--muted)">📵 Δεν βρέθηκε φωτογραφία — χρειάζεται σύνδεση στο διαδίκτυο.<br><br>'+
+      '<a href="'+searchUrl+'" target="_blank" rel="noopener" style="color:var(--amber2);font-weight:700">🔎 Αναζήτηση εικόνων στο Wikimedia Commons</a></div>';
+  }
+}
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closePhoto(); });
+
+/* ============================================================
    INIT
    ============================================================ */
 STAGE_NORM = 100 / STAGES.reduce((a,s)=>a+s.w,0);
@@ -2270,6 +2522,7 @@ renderFurnish();
 renderChecklist();
 renderPermits();
 renderDIY();
+renderTech();
 </script>
 </body>
 </html>

@@ -1553,7 +1553,7 @@ function renderCrews(){
   const rows=Object.entries(CREWS).map(([k,c])=>`
     <tr data-name="${(c.n+' '+c.role).toLowerCase()}">
       <td style="font-size:20px">${c.em}</td>
-      <td><b>${c.n}</b></td>
+      <td><b>${c.n}</b> ${photoBtn(CREW_PHOTO[k]||c.n, c.n)}</td>
       <td style="color:var(--muted)">${c.role}</td>
       <td class="num">${priceInput('crew_'+k,c.rate,false)}</td>
     </tr>`).join('');
@@ -2484,6 +2484,16 @@ const FURN_PHOTO = {
   "Έπιπλο μπάνιου + καθρέφτης":"bathroom vanity mirror","Αξεσουάρ μπάνιου":"bathroom accessories","Τηλεόραση(εις)":"television",
   "Οικιακές μικροσυσκευές (σκούπα/σίδερο)":"vacuum cleaner iron","Φωτιστικά χώρων":"ceiling light fixture",
   "Κουρτίνες / Ρόλερ / Λευκά είδη":"curtains window","Χαλιά & Διακόσμηση":"rug carpet home"
+};
+const CREW_PHOTO = {
+  engineer:"civil engineer construction site", architect:"architect blueprint drawing", topographer:"land surveyor theodolite",
+  excavator_op:"excavator operator digging", laborer:"construction worker", concrete_crew:"concrete pouring workers",
+  ironworker:"rebar steel fixer", carpenter_form:"formwork carpenter concrete", mason:"mason bricklayer wall",
+  plasterer:"plasterer wall trowel", roofer:"roofer roof tiles", carpenter:"carpenter woodworking",
+  insulator:"insulation installer facade", aluminum_fitter:"aluminium window installer", plumber:"plumber pipe work",
+  electrician:"electrician wiring", hvac_tech:"hvac technician air conditioning", tiler:"tiler laying tiles",
+  marble_worker:"marble mason stone", painter:"house painter roller", cabinetmaker:"cabinet maker furniture",
+  metalworker:"metalworker welding", landscaper:"landscaper gardener"
 };
 const HOWTO_PHOTO = {
   tiles:"tiling floor installation", wall:"bricklaying brick wall", plaster:"plastering wall trowel",

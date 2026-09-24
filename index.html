@@ -1586,10 +1586,10 @@ function renderPrices(){
     ["Γυψοσανίδες","€/m²","20–40"],
     ["Στεγανοποίηση δώματος","€/m²","15–35"],
   ];
-  const rows=workRates.map((r,i)=>`<tr data-name="${r[0].toLowerCase()}"><td><b>${r[0]}</b></td><td style="color:var(--muted)">${r[1]}</td><td class="num">${priceInput('work_'+i,r[2],false)}</td></tr>`).join('');
+  const rows=workRates.map((r,i)=>`<tr data-name="${r[0].toLowerCase()}"><td><b>${r[0]}</b> ${photoBtn(WORK_PHOTO[r[0]]||r[0], r[0])}</td><td style="color:var(--muted)">${r[1]}</td><td class="num">${priceInput('work_'+i,r[2],false)}</td></tr>`).join('');
 
   // full material list
-  const matRows=Object.entries(MATERIALS).map(([k,m])=>`<tr data-name="${m.name.toLowerCase()}"><td><b>${m.name}</b></td><td style="color:var(--muted)">${m.cat}</td><td style="color:var(--muted)">${m.unit}</td><td class="num">${priceInput('mat_'+k,m.price,false)}</td></tr>`).join('');
+  const matRows=Object.entries(MATERIALS).map(([k,m])=>`<tr data-name="${m.name.toLowerCase()}"><td><b>${m.name}</b> ${photoBtn(MAT_PHOTO[k]||m.name, m.name)}</td><td style="color:var(--muted)">${m.cat}</td><td style="color:var(--muted)">${m.unit}</td><td class="num">${priceInput('mat_'+k,m.price,false)}</td></tr>`).join('');
 
   document.getElementById('prices').innerHTML=`
     <div class="sectitle"><span class="em">💰</span><h2>Τιμοκατάλογος</h2>
@@ -2484,6 +2484,14 @@ const FURN_PHOTO = {
   "Έπιπλο μπάνιου + καθρέφτης":"bathroom vanity mirror","Αξεσουάρ μπάνιου":"bathroom accessories","Τηλεόραση(εις)":"television",
   "Οικιακές μικροσυσκευές (σκούπα/σίδερο)":"vacuum cleaner iron","Φωτιστικά χώρων":"ceiling light fixture",
   "Κουρτίνες / Ρόλερ / Λευκά είδη":"curtains window","Χαλιά & Διακόσμηση":"rug carpet home"
+};
+const WORK_PHOTO = {
+  "Σκυροδέτηση (υλικά+εργασία)":"concrete pouring construction","Τοιχοποιία τούβλο":"brick wall masonry",
+  "Επίχρισμα (σοβάς) 3 στρώσεων":"plastering wall trowel","Θερμοπρόσοψη ολοκληρωμένη":"facade thermal insulation",
+  "Τοποθέτηση πλακιδίων":"tiling floor installation","Τοποθέτηση μαρμάρου":"marble installation",
+  "Ηλεκτρολογική εγκατάσταση":"electrical wiring installation","Υδραυλική εγκατάσταση":"plumbing pipes installation",
+  "Χρωματισμοί (στοκ+αστάρι+2 χέρια)":"house painting roller","Ενδοδαπέδια θέρμανση":"underfloor heating pipes",
+  "Γυψοσανίδες":"drywall installation","Στεγανοποίηση δώματος":"roof waterproofing membrane"
 };
 const METHOD_PHOTO = {
   concrete:"reinforced concrete building construction", steel:"steel frame building construction",

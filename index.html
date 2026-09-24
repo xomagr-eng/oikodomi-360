@@ -1531,7 +1531,7 @@ function renderTools(){
     <div class="card">
       <h3><span class="em">${g.em}</span> ${g.cat} ${photoBtn(PHOTO_Q[g.cat]||g.cat, g.cat)}</h3>
       <table style="margin-top:6px"><thead><tr><th>Εργαλείο</th><th>Χρήση</th><th class="num">Τιμή € ✏️</th></tr></thead><tbody>
-        ${g.items.map((it,ii)=>`<tr data-name="${(it.n+' '+it.u).toLowerCase()}"><td><b>${it.n}</b></td><td style="color:var(--muted)">${it.u}</td><td class="num">${priceInput('tool_'+gi+'_'+ii,it.p,false)}</td></tr>`).join('')}
+        ${g.items.map((it,ii)=>`<tr data-name="${(it.n+' '+it.u).toLowerCase()}"><td><b>${it.n}</b> ${photoBtn(TOOL_PHOTO[it.n]||it.n, it.n)}</td><td style="color:var(--muted)">${it.u}</td><td class="num">${priceInput('tool_'+gi+'_'+ii,it.p,false)}</td></tr>`).join('')}
       </tbody></table>
     </div>`).join('');
   document.getElementById('tools').innerHTML=`
@@ -2484,6 +2484,29 @@ const FURN_PHOTO = {
   "Έπιπλο μπάνιου + καθρέφτης":"bathroom vanity mirror","Αξεσουάρ μπάνιου":"bathroom accessories","Τηλεόραση(εις)":"television",
   "Οικιακές μικροσυσκευές (σκούπα/σίδερο)":"vacuum cleaner iron","Φωτιστικά χώρων":"ceiling light fixture",
   "Κουρτίνες / Ρόλερ / Λευκά είδη":"curtains window","Χαλιά & Διακόσμηση":"rug carpet home"
+};
+const TOOL_PHOTO = {
+  "Μέτρο laser / αποστασιόμετρο":"laser distance meter","Αλφάδι (φυσαλίδας & laser)":"spirit level tool",
+  "Νήμα στάθμης & μπλε νήμα (μολυβιά)":"chalk line reel","Γωνία / ψαλίδι μέτρησης":"carpenter square tool",
+  "Ρολομέτρι / μεζούρα 5-10m":"tape measure","Τρίποδας laser level":"laser level tripod",
+  "Εκσκαφέας / JCB":"excavator backhoe","Μπετονιέρα / αναδευτήρας":"cement mixer","Αντλία σκυροδέματος":"concrete pump truck",
+  "Δονητής μπετόν (βιμπρατέρ)":"concrete vibrator","Κουρμπαδόρος / ψαλίδι σιδήρου":"rebar bender cutter",
+  "Πλάκα συμπύκνωσης (βίμπρα)":"plate compactor","Καροτσάκι / φτυάρι / κασμάς":"wheelbarrow shovel",
+  "Μυστρί / σπάτουλα":"masonry trowel","Πήχης αλουμινίου (οδηγός)":"aluminium screed straightedge",
+  "Τριβίδι / φραγκόφτυαρο":"plastering float","Κόφτης πλακιδίων / γωνιακός τροχός":"manual tile cutter",
+  "Οδοντωτή σπάτουλα":"notched trowel","Σταυροί αρμών & σφήνες":"tile spacers",
+  "Δράπανο / κρουστικό / κατσαβίδι μπαταρίας":"cordless drill","Πιστολέτο (SDS)":"rotary hammer sds",
+  "Γωνιακός τροχός (γκαζόν)":"angle grinder","Δισκοπρίονο / σέγα / φαλτσοπρίονο":"circular saw jigsaw",
+  "Τριβείο (παλμικό/έκκεντρο)":"orbital sander","Ρούτερ / πλάνη":"wood router planer",
+  "Κολλητήρι PPR (μούφα)":"ppr pipe welding tool","Κόφτης σωλήνων":"pipe cutter","Πρεσαριστικό πολυστρωματικών":"pipe crimping tool",
+  "Σπιράλ αποφράξεων":"drain snake auger","Μανόμετρο δοκιμής πίεσης":"pressure test gauge","Γερμανικά/γαλλικά κλειδιά":"adjustable wrench set",
+  "Πολύμετρο / δοκιμαστικό":"multimeter","Απογυμνωτής/πρέσα ακροδεκτών":"wire stripper crimper","Οδηγός καλωδίων (σύρμα)":"cable fish tape",
+  "Κατσαβίδια μονωμένα":"insulated screwdriver","Ανιχνευτής καλωδίων/μετάλλων":"wall cable detector scanner",
+  "Ρολά & πινέλα":"paint roller brush","Σπάτουλες στοκαρίσματος":"putty knife","Πιστόλι βαφής (airless)":"airless paint sprayer",
+  "Χαρτοταινία & νάιλον":"masking tape painting","Τηλεσκοπικός κοντός":"telescopic paint pole",
+  "Κράνος / γάντια / γυαλιά":"safety helmet gloves goggles","Παπούτσια ασφαλείας":"safety boots",
+  "Ζώνη/σύστημα ανάσχεσης πτώσης":"fall arrest harness","Ικριώματα / σκαλωσιές":"scaffolding",
+  "Πυροσβεστήρας & κιβώτιο Α' βοηθειών":"fire extinguisher first aid","Προβολείς εργασίας / μπαλαντέζες ασφαλείας":"work light floodlight"
 };
 const MAT_PHOTO = {
   design:"engineering blueprint drawing", concrete:"ready mix concrete truck", rebar:"steel rebar reinforcement",

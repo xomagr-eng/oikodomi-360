@@ -2072,6 +2072,11 @@ const DIY_LABOR = {
 };
 const DIY_Q = {}; // ποιότητα υλικών ανά οδηγό
 let RENO = null;   // τελευταία ανακαίνιση (για εξαγωγή)
+let RENO_TYPE = 'room';
+const RENO_TYPES = {
+  room:"🛋️ Δωμάτιο", bathroom:"🛁 Μπάνιο", kitchen:"🍳 Κουζίνα", whole:"🏠 Ολόκληρο σπίτι", outdoor:"🌳 Εξωτερικός χώρος"
+};
+function renoChk(id,label,on){ return `<label class="toggle"><input type="checkbox" id="${id}" ${on?'checked':''} onchange="renoCompute()">${label}</label>`; }
 const QMULT = {econ:0.72, mid:1, premium:1.6};
 const QLBL = {econ:"💶 Οικονομικό", mid:"🏠 Μεσαίο", premium:"💎 Premium"};
 function setDiyQ(id,q){
@@ -2080,62 +2085,121 @@ function setDiyQ(id,q){
   if(id==='reno') renoCompute(); else diyCompute(id);
 }
 function parseDays(s){ if(!s) return 0; if(s.indexOf('ημέρ')>=0) return parseFloat(s)||0; if(s.indexOf('ώρ')>=0) return (parseFloat(s)||0)/8; if(s.indexOf('′')>=0) return (parseFloat(s)||0)/(8*60); return 0; }
-function renoCard(){
+function renoCard(){ return `<div class="card" id="renoWrap" style="margin-bottom:16px;border-color:var(--red)">${renoCardInner()}</div>`; }
+function renoSetType(t){ RENO_TYPE=t; var w=document.getElementById('renoWrap'); if(w){ w.innerHTML=renoCardInner(); renoCompute(); } }
+function renoCardInner(){
   const q=DIY_Q['reno']||'mid';
-  const chips=['econ','mid','premium'].map(k=>`<div class="chip ${q===k?'sel':''} amber" data-q="${k}" onclick="setDiyQ('reno','${k}')">${QLBL[k]}</div>`).join('');
-  return `<div class="card" style="margin-bottom:16px;border-color:var(--red)">
-    <h3><span class="em">🏚️</span> Ανακαίνιση ολόκληρου δωματίου</h3>
-    <p style="color:var(--muted);margin:4px 0 10px;font-size:13.5px">Βάλε διαστάσεις & διάλεξε εργασίες — αθροίζει υλικά, κόστος DIY, χρόνο & πόσα γλιτώνεις έναντι μάστορα.</p>
-    <div class="grid g3">
-      <div class="field" style="margin-bottom:8px"><label>Μήκος <span class="hint">(m)</span></label><input type="number" id="reno_l" value="4" step="any" min="0" oninput="renoCompute()"></div>
-      <div class="field" style="margin-bottom:8px"><label>Πλάτος <span class="hint">(m)</span></label><input type="number" id="reno_w" value="3.5" step="any" min="0" oninput="renoCompute()"></div>
-      <div class="field" style="margin-bottom:8px"><label>Ύψος <span class="hint">(m)</span></label><input type="number" id="reno_h" value="2.7" step="any" min="0" oninput="renoCompute()"></div>
-    </div>
-    <div class="switchrow" style="margin:2px 0 10px">
-      <label class="toggle"><input type="checkbox" id="reno_paint" checked onchange="renoCompute()">🎨 Βάψιμο</label>
-      <label class="toggle"><input type="checkbox" id="reno_plaster" onchange="renoCompute()">🧴 Σοβάς τοίχων</label>
-      <label class="toggle"><input type="checkbox" id="reno_drywall" onchange="renoCompute()">⬜ Γυψοσανίδα</label>
-      <label class="toggle"><input type="checkbox" id="reno_ceil" checked onchange="renoCompute()">🔲 Να συμπεριληφθεί ταβάνι</label>
-      <label class="toggle"><input type="checkbox" id="reno_consum" checked onchange="renoCompute()">🧰 Αναλώσιμα (+8%)</label>
-      <label class="toggle"><input type="checkbox" id="reno_waste" checked onchange="renoCompute()">🗑️ Απομάκρυνση μπάζων</label>
+  const qchips=['econ','mid','premium'].map(k=>`<div class="chip ${q===k?'sel':''} amber" data-q="${k}" onclick="setDiyQ('reno','${k}')">${QLBL[k]}</div>`).join('');
+  const typechips=Object.entries(RENO_TYPES).map(([k,v])=>`<div class="chip ${RENO_TYPE===k?'sel':''}" onclick="renoSetType('${k}')">${v}</div>`).join('');
+  const dim3=`<div class="grid g3">
+    <div class="field" style="margin-bottom:8px"><label>Μήκος <span class="hint">(m)</span></label><input type="number" id="reno_l" value="${RENO_TYPE==='bathroom'?'2':'4'}" step="any" min="0" oninput="renoCompute()"></div>
+    <div class="field" style="margin-bottom:8px"><label>Πλάτος <span class="hint">(m)</span></label><input type="number" id="reno_w" value="${RENO_TYPE==='bathroom'?'2':'3'}" step="any" min="0" oninput="renoCompute()"></div>
+    <div class="field" style="margin-bottom:8px"><label>Ύψος <span class="hint">(m)</span></label><input type="number" id="reno_h" value="2.7" step="any" min="0" oninput="renoCompute()"></div>
+  </div>`;
+  let inputs='';
+  if(RENO_TYPE==='room'){
+    inputs=dim3+`<div class="switchrow" style="margin:2px 0 10px">
+      ${renoChk('reno_paint','🎨 Βάψιμο',true)}${renoChk('reno_plaster','🧴 Σοβάς τοίχων',false)}${renoChk('reno_drywall','⬜ Γυψοσανίδα',false)}${renoChk('reno_ceil','🔲 Ταβάνι',true)}
     </div>
     <div class="field" style="max-width:280px;margin-bottom:8px"><label>Δάπεδο</label>
-      <select id="reno_floor" onchange="renoCompute()">
-        <option value="none">— Χωρίς δάπεδο —</option>
-        <option value="tiles" selected>🔲 Πλακάκια</option>
-        <option value="laminate">🪵 Laminate</option>
-      </select></div>
-    <div style="margin:2px 0 2px;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px">Ποιότητα υλικών</div>
-    <div class="chips" id="diyq_reno">${chips}</div>
-    <div id="renoRes" style="margin-top:12px"></div>
-  </div>`;
+      <select id="reno_floor" onchange="renoCompute()"><option value="none">— Χωρίς —</option><option value="tiles" selected>🔲 Πλακάκια</option><option value="laminate">🪵 Laminate</option></select></div>`;
+  } else if(RENO_TYPE==='bathroom'){
+    inputs=dim3+`<div class="tip">Περιλαμβάνει: αποξήλωση, υδραυλικά, στεγανοποίηση, πλακάκια δάπεδο+τοίχοι, είδη υγιεινής, βάψιμο ταβανιού, ηλεκτρολογικά.</div>`;
+  } else if(RENO_TYPE==='kitchen'){
+    inputs=dim3+`<div class="field" style="max-width:300px;margin-bottom:8px"><label>Μέτρα πάγκου/ντουλαπιών <span class="hint">(m)</span></label><input type="number" id="reno_km" value="4" step="any" min="0" oninput="renoCompute()"></div>
+    <div class="tip">Περιλαμβάνει: αποξήλωση, ντουλάπια, πάγκο, πλακάκια δαπέδου, πλάτη (backsplash), υδραυλικά, ηλεκτρολογικά, βάψιμο.</div>`;
+  } else if(RENO_TYPE==='whole'){
+    inputs=`<div class="field" style="max-width:300px;margin-bottom:8px"><label>Επιφάνεια κατοικίας <span class="hint">(m²)</span></label><input type="number" id="reno_area" value="90" step="any" min="0" oninput="renoCompute()"></div>
+    <div class="tip">Συνολική εκτίμηση ανά m². Για αναλυτικό πλάνο ανά στάδιο δες τον <a onclick="go('solver')" style="cursor:pointer">🧮 Λύτη</a> (τύπος: Ριζική Ανακαίνιση).</div>`;
+  } else if(RENO_TYPE==='outdoor'){
+    inputs=`<div class="grid g2">
+      <div class="field" style="margin-bottom:8px"><label>Αυλή/πλακόστρωση <span class="hint">(m²)</span></label><input type="number" id="reno_area" value="30" step="any" min="0" oninput="renoCompute()"></div>
+      <div class="field" style="margin-bottom:8px"><label>Μήκος περίφραξης <span class="hint">(m)</span></label><input type="number" id="reno_fence" value="20" step="any" min="0" oninput="renoCompute()"></div>
+    </div>
+    <div class="switchrow" style="margin:2px 0 10px">
+      ${renoChk('reno_paving','🧱 Πλακόστρωση',true)}${renoChk('reno_fenceon','🚧 Περίφραξη',true)}${renoChk('reno_extpaint','🎨 Εξωτ. βάψιμο',false)}${renoChk('reno_light','💡 Φωτισμός',true)}${renoChk('reno_garden','🌿 Κήπος',false)}
+    </div>`;
+  }
+  const showCW=(RENO_TYPE==='room'||RENO_TYPE==='bathroom'||RENO_TYPE==='kitchen');
+  return `
+    <h3><span class="em">🏚️</span> Ανακαίνιση</h3>
+    <p style="color:var(--muted);margin:4px 0 10px;font-size:13.5px">Διάλεξε τι ανακαινίζεις, βάλε διαστάσεις — αθροίζει υλικά, κόστος DIY/μάστορα & χρόνο.</p>
+    <div style="margin:2px 0 4px;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px">Τι ανακαινίζεις;</div>
+    <div class="chips" style="margin-bottom:12px">${typechips}</div>
+    ${inputs}
+    <div style="margin:6px 0 2px;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px">Ποιότητα υλικών</div>
+    <div class="chips" id="diyq_reno">${qchips}</div>
+    ${showCW?`<div class="switchrow" style="margin-top:10px">${renoChk('reno_consum','🧰 Αναλώσιμα (+8%)',true)}${renoChk('reno_waste','🗑️ Απομάκρυνση μπάζων',true)}</div>`:''}
+    <div id="renoRes" style="margin-top:12px"></div>`;
 }
 function renoCompute(){
   const el=document.getElementById('renoRes'); if(!el) return;
   const g=id=>document.getElementById(id);
-  const l=parseFloat(g('reno_l').value)||0, w=parseFloat(g('reno_w').value)||0, h=parseFloat(g('reno_h').value)||0;
-  const ceil=g('reno_ceil').checked, doPaint=g('reno_paint').checked, doPlaster=g('reno_plaster').checked, doDrywall=g('reno_drywall').checked, floorType=g('reno_floor').value;
+  const rv=(id,d)=>{var e=document.getElementById(id);return e?(parseFloat(e.value)||0):(d||0);};
+  const rc=(id,d)=>{var e=document.getElementById(id);return e?e.checked:!!d;};
   const qm=QMULT[DIY_Q['reno']||'mid'];
+  const rT=(a,b,c)=>{const q=DIY_Q['reno']||'mid';return q==='econ'?a:q==='premium'?c:b;};
   const tasks=[];
-  const add=(id,label,v)=>{ const c=DIY_CALC[id]; if(!c) return; const r=c.fn(v);
+  const addCalc=(id,label,v)=>{ const c=DIY_CALC[id]; if(!c) return; const r=c.fn(v);
     const mat=r.mats.reduce((s,m)=>s+(m.cost||0),0)*qm; const lab=DIY_LABOR[id]?DIY_LABOR[id](v):0;
     tasks.push({label, mat, lab, days:parseDays(r.time)}); };
-  if(doPaint)   add('paint','🎨 Βάψιμο (τοίχοι'+(ceil?'+ταβάνι':'')+')',{l,w,h,ceil,openings:true});
-  if(doPlaster) add('plaster','🧴 Σοβάς τοίχων',{l,w,h,ceil:false,openings:true});
-  if(doDrywall) add('drywall','⬜ Γυψοσανίδα',{l,w,h,ceil:false});
-  if(floorType==='tiles')    add('tiles','🔲 Πλακάκια δαπέδου',{l,w,h,floor:true,walls:false});
-  if(floorType==='laminate') add('laminate','🪵 Laminate δάπεδο',{l,w});
+  const addFix=(label,mat,lab,days)=>{ tasks.push({label, mat:mat*qm, lab, days:days||1}); };
+  const t=RENO_TYPE; let title='Ανακαίνιση';
+  if(t==='room'){
+    title='Ανακαίνιση δωματίου';
+    const l=rv('reno_l',4),w=rv('reno_w',3),h=rv('reno_h',2.7),ceil=rc('reno_ceil',true);
+    if(rc('reno_paint',true)) addCalc('paint','🎨 Βάψιμο (τοίχοι'+(ceil?'+ταβάνι':'')+')',{l,w,h,ceil,openings:true});
+    if(rc('reno_plaster',false)) addCalc('plaster','🧴 Σοβάς τοίχων',{l,w,h,ceil:false,openings:true});
+    if(rc('reno_drywall',false)) addCalc('drywall','⬜ Γυψοσανίδα',{l,w,h,ceil:false});
+    const ft=(document.getElementById('reno_floor')||{}).value||'tiles';
+    if(ft==='tiles') addCalc('tiles','🔲 Πλακάκια δαπέδου',{l,w,h,floor:true,walls:false});
+    if(ft==='laminate') addCalc('laminate','🪵 Laminate δάπεδο',{l,w});
+  } else if(t==='bathroom'){
+    title='Ανακαίνιση μπάνιου';
+    const l=rv('reno_l',2),w=rv('reno_w',2),h=rv('reno_h',2.6),area=l*w;
+    addFix('🧨 Αποξήλωση',0,Math.round(area*15),1);
+    addFix('🚿 Υδραυλικά (ανακατανομή)',rT(200,400,700),rT(250,400,600),1.5);
+    addFix('🛡️ Στεγανοποίηση',Math.round(area*rT(8,12,18)),Math.round(area*10),0.5);
+    addCalc('tiles','🔲 Πλακάκια (δάπεδο+τοίχοι)',{l,w,h,floor:true,walls:true});
+    addFix('🚽 Είδη υγιεινής (λεκάνη/νιπτήρας/ντουζιέρα/μπαταρίες)',rT(600,1200,2500),rT(200,300,450),1.5);
+    addCalc('paint','🎨 Βάψιμο ταβανιού',{l,w,h:0,ceil:true,openings:false});
+    addFix('⚡ Ηλεκτρολογικά',rT(150,300,500),rT(150,250,400),0.5);
+  } else if(t==='kitchen'){
+    title='Ανακαίνιση κουζίνας';
+    const l=rv('reno_l',4),w=rv('reno_w',3),h=rv('reno_h',2.7),km=rv('reno_km',4),area=l*w;
+    addFix('🧨 Αποξήλωση',0,Math.round(area*12),1);
+    addFix('🚪 Ντουλάπια κουζίνας ('+km+'m)',km*rT(250,500,900),km*rT(60,90,150),2);
+    addFix('🍽️ Πάγκος ('+km+'m)',km*rT(80,180,400),km*rT(20,30,50),0.5);
+    addCalc('tiles','🔲 Πλακάκια δαπέδου',{l,w,h,floor:true,walls:false});
+    addFix('🧱 Πλακάκι πλάτης (backsplash)',km*rT(30,60,120),km*rT(20,30,45),0.5);
+    addFix('🚿 Υδραυλικά',rT(150,300,500),rT(150,250,400),1);
+    addFix('⚡ Ηλεκτρολογικά',rT(200,400,700),rT(150,300,500),1);
+    addCalc('paint','🎨 Βάψιμο',{l,w,h,ceil:true,openings:true});
+  } else if(t==='whole'){
+    title='Πλήρης ανακαίνιση κατοικίας';
+    const a=rv('reno_area',90), pm=rT(400,650,1000), total=a*pm;
+    tasks.push({label:'🏠 Πλήρης ανακαίνιση ('+a+' m² × '+pm+' €/m²)', mat:total*0.45, lab:total*0.55, days:Math.max(5,Math.round(a/8))});
+  } else if(t==='outdoor'){
+    title='Ανακαίνιση εξωτερικού χώρου';
+    const a=rv('reno_area',30), fl=rv('reno_fence',20);
+    if(rc('reno_paving',true)) addFix('🧱 Πλακόστρωση ('+a+' m²)',Math.round(a*rT(20,35,60)),Math.round(a*rT(15,20,30)),Math.max(1,Math.round(a/15)));
+    if(rc('reno_fenceon',true)) addFix('🚧 Περίφραξη/κάγκελα ('+fl+' m)',Math.round(fl*rT(40,80,150)),Math.round(fl*rT(20,30,50)),Math.max(1,Math.round(fl/10)));
+    if(rc('reno_extpaint',false)) addFix('🎨 Εξωτερικό βάψιμο',Math.round(a*rT(4,8,14)),Math.round(a*rT(5,8,12)),Math.max(1,Math.round(a/40)));
+    if(rc('reno_light',true)) addFix('💡 Εξωτερικός φωτισμός',rT(200,500,1000),rT(150,300,500),1);
+    if(rc('reno_garden',false)) addFix('🌿 Κήπος/φύτευση',Math.round(a*rT(10,20,40)),Math.round(a*rT(8,12,20)),Math.max(1,Math.round(a/30)));
+  }
   if(!tasks.length){ el.innerHTML=`<div class="tip">Διάλεξε τουλάχιστον μία εργασία για να δεις το άθροισμα.</div>`; RENO=null; return; }
-  const matWork=tasks.reduce((a,t)=>a+t.mat,0), labSum=tasks.reduce((a,t)=>a+t.lab,0), daysSum=tasks.reduce((a,t)=>a+t.days,0);
-  const consum = g('reno_consum').checked ? matWork*0.08 : 0;
-  const waste  = g('reno_waste').checked ? P('waste_skip') : 0;
-  const matSum = matWork + consum + waste;          // μόνος σου (υλικά + αναλώσιμα + κάδος)
-  const proSum = matSum + labSum;                    // με μάστορα
-  let rows=tasks.map(t=>`<tr><td>${t.label}</td><td class="num">${eur(t.mat)}</td><td class="num" style="color:var(--muted)">${eur(t.mat+t.lab)}</td></tr>`).join('');
+  const matWork=tasks.reduce((a,x)=>a+x.mat,0), labSum=tasks.reduce((a,x)=>a+x.lab,0), daysSum=tasks.reduce((a,x)=>a+x.days,0);
+  const consum = rc('reno_consum',false) ? matWork*0.08 : 0;
+  const waste  = rc('reno_waste',false) ? P('waste_skip') : 0;
+  const matSum = matWork + consum + waste;
+  const proSum = matSum + labSum;
+  let rows=tasks.map(x=>`<tr><td>${x.label}</td><td class="num">${eur(x.mat)}</td><td class="num" style="color:var(--muted)">${eur(x.mat+x.lab)}</td></tr>`).join('');
   if(consum>0) rows+=`<tr><td>🧰 Μικροϋλικά/αναλώσιμα (8%)</td><td class="num">${eur(consum)}</td><td class="num" style="color:var(--muted)">${eur(consum)}</td></tr>`;
   if(waste>0)  rows+=`<tr><td>🗑️ Απομάκρυνση μπάζων (κάδος)</td><td class="num">${eur(waste)}</td><td class="num" style="color:var(--muted)">${eur(waste)}</td></tr>`;
-  RENO={l,w,h,tasks,consum,waste,matSum,labSum,proSum,daysSum,quality:QLBL[DIY_Q['reno']||'mid']};
+  RENO={title,tasks,consum,waste,matSum,labSum,proSum,daysSum,quality:QLBL[DIY_Q['reno']||'mid']};
   el.innerHTML=`
+    <div style="font-weight:700;color:var(--amber2);margin-bottom:8px">${title} · ${RENO.quality}</div>
     <table><thead><tr><th>Εργασία</th><th class="num">Υλικά (μόνος σου)</th><th class="num">Με μάστορα</th></tr></thead>
     <tbody>${rows}
       <tr style="border-top:2px solid var(--red)"><td><b>ΣΥΝΟΛΟ</b></td><td class="num"><b style="color:var(--red2)">${eur(matSum)}</b></td><td class="num"><b>${eur(proSum)}</b></td></tr>
@@ -2154,8 +2218,8 @@ function renoCompute(){
 function renoHTML(){
   if(!RENO) return '<p>Δεν υπάρχουν δεδομένα.</p>';
   const R=RENO;
-  let t=`<h1 style="color:#e63329">Ανακαίνιση δωματίου</h1>
-  <p><b>Διαστάσεις:</b> ${R.l} × ${R.w} × ${R.h} m &nbsp;·&nbsp; <b>Ποιότητα:</b> ${R.quality}</p>
+  let t=`<h1 style="color:#e63329">${R.title||'Ανακαίνιση'}</h1>
+  <p><b>Ποιότητα:</b> ${R.quality}</p>
   <table border="1" cellpadding="6" style="border-collapse:collapse;width:100%;font-family:Calibri,Arial">
   <tr style="background:#eee"><th align="left">Εργασία</th><th align="right">Υλικά (μόνος σου)</th><th align="right">Με μάστορα</th></tr>`;
   R.tasks.forEach(x=>{ t+=`<tr><td>${x.label}</td><td align="right">${eur(x.mat)}</td><td align="right">${eur(x.mat+x.lab)}</td></tr>`; });

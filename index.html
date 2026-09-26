@@ -850,11 +850,24 @@ function toggleFullscreen(){
   }catch(e){ alert('Η πλήρης οθόνη δεν υποστηρίζεται εδώ. Στο iPhone/iPad: «Προσθήκη στην αρχική οθόνη».'); }
 }
 document.addEventListener('fullscreenchange',()=>{ const b=document.getElementById('fsBtn'); if(b){ const fs=document.fullscreenElement; b.textContent = fs?'⤡':'⛶'; b.title = fs?'Έξοδος από πλήρη οθόνη':'Πλήρης οθόνη (F11)'; } });
+let autoFs=false;
+function enterFs(){
+  if(document.fullscreenElement||document.webkitFullscreenElement) return;
+  const el=document.documentElement, req=el.requestFullscreen||el.webkitRequestFullscreen||el.msRequestFullscreen;
+  if(req){ try{ const p=req.call(el); if(p&&p.catch) p.catch(()=>{}); autoFs=true; }catch(e){} }
+}
+function exitFsAuto(){
+  if(autoFs && (document.fullscreenElement||document.webkitFullscreenElement)){
+    const ex=document.exitFullscreen||document.webkitExitFullscreen||document.msExitFullscreen;
+    if(ex){ try{ ex.call(document); }catch(e){} }
+  }
+  autoFs=false;
+}
 function go(id){
   document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===id));
   document.querySelectorAll('#tabs button').forEach(b=>b.classList.toggle('active',b.dataset.tab===id));
-  if(id==='digital'){ try{ drawRuler(); }catch(e){} }
-  else { try{ if(typeof noiseStop==='function') noiseStop(); if(typeof flashScreen==='function') flashScreen(false); if(typeof measStop==='function'){ measStop(); dSet('measStartBtn','📷 Άνοιγμα κάμερας'); } }catch(e){} }
+  if(id==='digital'){ try{ drawRuler(); }catch(e){} try{ enterFs(); }catch(e){} }
+  else { try{ if(typeof noiseStop==='function') noiseStop(); if(typeof flashScreen==='function') flashScreen(false); if(typeof measStop==='function'){ measStop(); dSet('measStartBtn','📷 Άνοιγμα κάμερας'); } }catch(e){} try{ exitFsAuto(); }catch(e){} }
   window.scrollTo({top:0,behavior:'smooth'});
 }
 window.addEventListener('resize',()=>{ try{ drawRuler(); }catch(e){} });

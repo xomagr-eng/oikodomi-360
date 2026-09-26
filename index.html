@@ -246,6 +246,18 @@
   @media(max-width:380px){
     .grid.g4{grid-template-columns:1fr}
   }
+  /* Οριζόντια θέση κινητού/τάμπλετ → αξιοποίηση πλάτους + λιγότερο ύψος header */
+  @media (orientation:landscape) and (max-height:600px){
+    header.top{position:relative}
+    .top-in{padding:8px 14px}
+    .brand .sub{display:none}
+    .hero{margin-top:10px;padding:16px 18px}
+    .hero h2{font-size:20px}
+    nav.tabs{flex-wrap:wrap;overflow:visible}
+    .grid.g4{grid-template-columns:repeat(4,1fr)}
+    .grid.g3{grid-template-columns:repeat(3,1fr)}
+    .grid.g2{grid-template-columns:repeat(2,1fr)}
+  }
   /* Photo button + modal */
   .photob{display:inline-flex;align-items:center;gap:4px;background:var(--bg2);border:1px solid var(--line2);color:var(--amber2);border-radius:8px;padding:3px 9px;font-size:11.5px;font-weight:700;cursor:pointer;white-space:nowrap}
   .photob:hover{border-color:var(--amber);color:var(--amber)}
@@ -256,6 +268,37 @@
   .pmodal-head h3{margin:0;font-size:16px;flex:1}
   .pmodal-head button{background:var(--bg2);border:1px solid var(--line2);color:var(--txt);width:32px;height:32px;border-radius:8px;cursor:pointer;font-size:16px}
   .pmodal-body{padding:16px;text-align:center}
+  /* Ψηφιακά εργαλεία */
+  .dtool{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow);text-align:center}
+  .dtool h3{justify-content:center}
+  .lvl{width:230px;height:230px;max-width:80vw;max-height:80vw;margin:14px auto;border-radius:50%;position:relative;
+    background:radial-gradient(circle,var(--bg2),var(--bg));border:3px solid var(--line2);transition:border-color .1s}
+  .lvl.on{border-color:var(--amber)}
+  .lvl:before,.lvl:after{content:"";position:absolute;background:var(--line2)}
+  .lvl:before{left:50%;top:8%;bottom:8%;width:1px;transform:translateX(-.5px)}
+  .lvl:after{top:50%;left:8%;right:8%;height:1px;transform:translateY(-.5px)}
+  .lvl .center{position:absolute;left:50%;top:50%;width:64px;height:64px;margin:-32px 0 0 -32px;border:2px dashed var(--amber2);border-radius:50%;opacity:.6}
+  .lvl .bubble{position:absolute;left:50%;top:50%;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;
+    background:radial-gradient(circle at 35% 35%,var(--red2),var(--red));box-shadow:0 3px 10px rgba(0,0,0,.5);transition:transform .06s linear}
+  .lvl-read{display:flex;justify-content:center;gap:22px;flex-wrap:wrap;margin-top:6px}
+  .lvl-read .r{font-size:13px;color:var(--muted)}
+  .lvl-read .r b{display:block;font-size:22px;color:var(--txt);font-variant-numeric:tabular-nums}
+  .ruler-wrap{overflow-x:auto;padding:10px 0}
+  .ruler{position:relative;height:80px;background:linear-gradient(180deg,#fff8e6,#ffedcf);border-radius:6px;min-width:100%}
+  .ruler .tick{position:absolute;top:0;width:1px;background:#4a3b1e}
+  .ruler .lbl{position:absolute;top:34px;font-size:10px;color:#4a3b1e;transform:translateX(2px)}
+  .compass{width:230px;height:230px;max-width:80vw;max-height:80vw;margin:14px auto;position:relative;border-radius:50%;border:3px solid var(--line2);background:radial-gradient(circle,var(--bg2),var(--bg))}
+  .compass .rose{position:absolute;inset:0;transition:transform .1s linear;font-weight:800}
+  .compass .rose span{position:absolute;left:50%;transform:translateX(-50%);font-size:20px}
+  .compass .rose .n{top:8px;color:var(--red2)} .compass .rose .s{bottom:8px}
+  .compass .rose .e{right:8px;top:50%;left:auto;transform:translateY(-50%)} .compass .rose .w{left:8px;top:50%;transform:translateY(-50%)}
+  .compass .needle{position:absolute;left:50%;top:12%;bottom:12%;width:4px;margin-left:-2px;background:linear-gradient(180deg,var(--red2) 50%,var(--txt) 50%);border-radius:3px}
+  .meter{height:26px;border-radius:8px;background:var(--bg2);border:1px solid var(--line2);overflow:hidden;position:relative}
+  .meter i{display:block;height:100%;background:linear-gradient(90deg,var(--amber),var(--red));width:0;transition:width .08s}
+  .big-read{font-size:40px;font-weight:800;font-variant-numeric:tabular-nums}
+  .flash-overlay{position:fixed;inset:0;background:#fff;z-index:300;display:none}
+  .flash-overlay.on{display:block}
+  .flash-overlay .x{position:fixed;top:16px;right:16px;background:#000;color:#fff;border:none;border-radius:10px;padding:12px 16px;font-size:16px;font-weight:700;cursor:pointer}
   .toprint{display:none}
   @media print{
     header.top,nav.tabs,.no-print,.hero .cta{display:none!important}
@@ -319,6 +362,8 @@
   <section class="view" id="diy"></section>
   <!-- TECHNIQUES -->
   <section class="view" id="tech"></section>
+  <!-- DIGITAL TOOLS -->
+  <section class="view" id="digital"></section>
 
   <div class="pmodal" id="photoModal" onclick="if(event.target===this)closePhoto()">
     <div class="pmodal-in">
@@ -759,6 +804,7 @@ const TABS = [
   {id:"materials", ic:"🧱", label:"Υλικά"},
   {id:"furnish", ic:"🛋️", label:"Επίπλωση"},
   {id:"tools", ic:"🔨", label:"Εργαλεία"},
+  {id:"digital", ic:"🧰", label:"Ψηφιακά"},
   {id:"diy", ic:"🧑‍🔧", label:"DIY"},
   {id:"tech", ic:"🔧", label:"Τεχνικές"},
   {id:"crews", ic:"👷", label:"Μάστορες"},
@@ -799,8 +845,11 @@ document.addEventListener('fullscreenchange',()=>{ const b=document.getElementBy
 function go(id){
   document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===id));
   document.querySelectorAll('#tabs button').forEach(b=>b.classList.toggle('active',b.dataset.tab===id));
+  if(id==='digital'){ try{ drawRuler(); }catch(e){} }
+  else { try{ if(typeof noiseStop==='function') noiseStop(); if(typeof flashScreen==='function') flashScreen(false); }catch(e){} }
   window.scrollTo({top:0,behavior:'smooth'});
 }
+window.addEventListener('resize',()=>{ try{ drawRuler(); }catch(e){} });
 
 /* ============================================================
    HELPERS
@@ -982,6 +1031,7 @@ function renderHome(){
       materials:"Κατάλογος υλικών με χρήση & ενδεικτικές τιμές αγοράς.",
       furnish:"Έπιπλα, συσκευές & στυλ διακόσμησης/αρχιτεκτονικής.",
       tools:"Ποια εργαλεία χρειάζεσαι ανά εργασία & το κόστος τους.",
+      digital:"Αλφάδι, κλισίμετρο, χάρακας, πυξίδα, φακός, χρονόμετρο, θόρυβος.",
       diy:"Οδηγίες βήμα-βήμα: πλακάκια, χτίσιμο, βάψιμο & άλλα μόνος σου.",
       tech:"Τεχνικές & μερεμέτια: τοιχοποιία, στέγες, δάπεδα, ηλεκτρολογικά, έντομα.",
       crews:"Ειδικότητες μαστόρων, τι κάνουν & ενδεικτικά μεροκάματα.",
@@ -2690,6 +2740,143 @@ async function openPhoto(query,title){
 document.addEventListener('keydown',e=>{ if(e.key==='Escape') closePhoto(); });
 
 /* ============================================================
+   ΨΗΦΙΑΚΑ ΕΡΓΑΛΕΙΑ (αισθητήρες κινητού)
+   ============================================================ */
+function dSet(id,v){ var e=document.getElementById(id); if(e) e.textContent=v; }
+// Αλφάδι / Κλισίμετρο
+let LVL_ON=false;
+function lvlStart(){
+  if(LVL_ON){ dSet('lvlStatus','Ήδη ενεργό.'); return; }
+  const go=()=>{ window.addEventListener('deviceorientation',onOrient,true); LVL_ON=true; dSet('lvlStatus','✅ Ενεργό — ακούμπησε επίπεδα (αλφάδι) ή στον τοίχο.'); };
+  if(typeof DeviceOrientationEvent!=='undefined' && typeof DeviceOrientationEvent.requestPermission==='function'){
+    DeviceOrientationEvent.requestPermission().then(s=>{ s==='granted'?go():dSet('lvlStatus','⛔ Δεν δόθηκε άδεια αισθητήρα.'); }).catch(()=>dSet('lvlStatus','⛔ Σφάλμα άδειας.'));
+  } else if('DeviceOrientationEvent' in window){ go(); }
+  else dSet('lvlStatus','Η συσκευή δεν διαθέτει αισθητήρα κλίσης.');
+}
+function onOrient(e){
+  const beta=e.beta||0, gamma=e.gamma||0, maxA=20, R=92;
+  const bx=Math.max(-1,Math.min(1,gamma/maxA)), by=Math.max(-1,Math.min(1,beta/maxA));
+  const bub=document.getElementById('lvlBubble'); if(bub) bub.style.transform=`translate(${bx*R}px,${by*R}px)`;
+  const ring=document.getElementById('lvlRing'); if(ring) ring.classList.toggle('on', Math.abs(gamma)<0.8 && Math.abs(beta)<0.8);
+  dSet('lvlX',gamma.toFixed(1)+'°'); dSet('lvlY',beta.toFixed(1)+'°');
+  const ang=Math.max(Math.abs(gamma),Math.abs(beta));
+  dSet('lvlSlope',(Math.tan(ang*Math.PI/180)*100).toFixed(1)+'%');
+}
+// Πυξίδα
+let CMP_ON=false;
+function cmpStart(){
+  if(CMP_ON){ return; }
+  const go=()=>{ window.addEventListener('deviceorientationabsolute',onCompass,true); window.addEventListener('deviceorientation',onCompass,true); CMP_ON=true; dSet('cmpDir','…'); };
+  if(typeof DeviceOrientationEvent!=='undefined' && typeof DeviceOrientationEvent.requestPermission==='function'){
+    DeviceOrientationEvent.requestPermission().then(s=>{ s==='granted'?go():dSet('cmpDir','⛔ άδεια'); }).catch(()=>dSet('cmpDir','⛔'));
+  } else if('DeviceOrientationEvent' in window){ go(); } else dSet('cmpDir','Χωρίς αισθητήρα');
+}
+function onCompass(e){
+  let hd=(e.webkitCompassHeading!=null)?e.webkitCompassHeading:(e.alpha!=null?(360-e.alpha):null);
+  if(hd==null) return;
+  const rose=document.getElementById('cmpRose'); if(rose) rose.style.transform=`rotate(${-hd}deg)`;
+  dSet('cmpDeg',Math.round(hd)+'°'); dSet('cmpDir',['Β','ΒΑ','Α','ΝΑ','Ν','ΝΔ','Δ','ΒΔ'][Math.round(hd/45)%8]);
+}
+// Χάρακας
+function rulerPPMM(){ let v; try{ v=parseFloat(localStorage.getItem('oik_ppmm')); }catch(e){} return (v&&v>1)?v:(96/25.4); }
+function drawRuler(){
+  const el=document.getElementById('ruler'); if(!el) return;
+  const ppmm=rulerPPMM(); const avail=(el.parentElement.clientWidth||320)-20;
+  const mm=Math.max(40,Math.min(320,Math.floor(avail/ppmm)));
+  el.style.width=(mm*ppmm)+'px'; let h='';
+  for(let i=0;i<=mm;i++){ const x=i*ppmm, hh=i%10===0?30:i%5===0?18:10; h+=`<div class="tick" style="left:${x}px;height:${hh}px"></div>`; if(i%10===0) h+=`<div class="lbl" style="left:${x}px">${i/10}</div>`; }
+  el.innerHTML=h;
+}
+function calibRuler(v){ try{ localStorage.setItem('oik_ppmm',String(v)); }catch(e){} drawRuler(); }
+// Φακός
+let TORCH=null;
+async function flashTorch(){
+  try{
+    const stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:'environment'}});
+    const track=stream.getVideoTracks()[0], caps=track.getCapabilities?track.getCapabilities():{};
+    if(caps.torch){ await track.applyConstraints({advanced:[{torch:true}]}); TORCH=track; dSet('flashStatus','🔦 Φακός ΑΝΑΜΜΕΝΟΣ — πάτησε ξανά για σβήσιμο.'); }
+    else { track.stop(); flashScreen(true); dSet('flashStatus','Χωρίς LED — λευκή οθόνη.'); }
+  }catch(e){ flashScreen(true); dSet('flashStatus','Λευκή οθόνη (χωρίς πρόσβαση κάμερας).'); }
+}
+function flashTorchOff(){ if(TORCH){ try{TORCH.applyConstraints({advanced:[{torch:false}]});}catch(e){} try{TORCH.stop();}catch(e){} TORCH=null; } dSet('flashStatus',''); }
+function toggleFlash(){ if(TORCH){ flashTorchOff(); } else { flashTorch(); } }
+function flashScreen(on){ const o=document.getElementById('flashOv'); if(o) o.classList.toggle('on',on); if(!on) flashTorchOff(); }
+// Χρονόμετρο
+let TMR={t0:0,acc:0,run:false,iv:null};
+function tmrRender(){ const el=document.getElementById('tmrDisp'); if(!el) return; const ms=TMR.acc+(TMR.run?(performance.now()-TMR.t0):0); const s=Math.floor(ms/1000); el.textContent=[Math.floor(s/3600),Math.floor(s%3600/60),s%60].map(n=>String(n).padStart(2,'0')).join(':'); }
+function tmrStart(){ if(TMR.run){ TMR.acc+=performance.now()-TMR.t0; TMR.run=false; if(TMR.iv) clearInterval(TMR.iv); dSet('tmrBtn','▶️ Συνέχεια'); tmrRender(); } else { TMR.t0=performance.now(); TMR.run=true; dSet('tmrBtn','⏸️ Παύση'); TMR.iv=setInterval(tmrRender,200); tmrRender(); } }
+function tmrReset(){ if(TMR.iv) clearInterval(TMR.iv); TMR={t0:0,acc:0,run:false,iv:null}; dSet('tmrDisp','00:00:00'); dSet('tmrBtn','▶️ Έναρξη'); }
+// Μετρητής θορύβου
+let NOISE=null;
+async function noiseStart(){
+  if(NOISE){ noiseStop(); return; }
+  try{
+    const stream=await navigator.mediaDevices.getUserMedia({audio:true});
+    const ctx=new (window.AudioContext||window.webkitAudioContext)();
+    const src=ctx.createMediaStreamSource(stream), an=ctx.createAnalyser(); an.fftSize=1024; src.connect(an);
+    const data=new Uint8Array(an.fftSize); NOISE={ctx,stream,an,data,raf:null}; dSet('noiseBtn','⏹️ Στοπ'); dSet('noiseStatus','*Ενδεικτικό (όχι πιστοποιημένο ηχόμετρο).');
+    const loop=()=>{ an.getByteTimeDomainData(data); let sum=0; for(let i=0;i<data.length;i++){ const v=(data[i]-128)/128; sum+=v*v; } const rms=Math.sqrt(sum/data.length); let db=Math.round(Math.max(0,Math.min(120,20*Math.log10(rms||1e-6)+90))); dSet('noiseDb',db); const m=document.getElementById('noiseMeter'); if(m) m.style.width=(db/120*100)+'%'; NOISE.raf=requestAnimationFrame(loop); };
+    loop();
+  }catch(e){ dSet('noiseStatus','⛔ Χωρίς πρόσβαση μικροφώνου.'); }
+}
+function noiseStop(){ if(!NOISE) return; try{cancelAnimationFrame(NOISE.raf);}catch(e){} try{NOISE.stream.getTracks().forEach(t=>t.stop());}catch(e){} try{NOISE.ctx.close();}catch(e){} NOISE=null; dSet('noiseBtn','🎙️ Έναρξη'); }
+function renderDigital(){
+  document.getElementById('digital').innerHTML=`
+    <div class="sectitle"><span class="em">🧰</span><h2>Ψηφιακά Εργαλεία</h2>
+      <p>Εργαλεία εργοταξίου με τους αισθητήρες του κινητού. Δώσε άδεια όταν ζητηθεί. 💡 Γύρνα το κινητό <b>οριζόντια</b> για μεγαλύτερη εικόνα.</p></div>
+    <div class="grid g2">
+      <div class="dtool">
+        <h3><span class="em">📐</span> Αλφάδι & Κλισίμετρο</h3>
+        <div class="lvl" id="lvlRing"><div class="center"></div><div class="bubble" id="lvlBubble"></div></div>
+        <div class="lvl-read">
+          <div class="r">Χ (αρ/δε)<b id="lvlX">–</b></div>
+          <div class="r">Ψ (εμπ/πί)<b id="lvlY">–</b></div>
+          <div class="r">Κλίση<b id="lvlSlope">–</b></div>
+        </div>
+        <button class="btn primary no-print" style="margin-top:8px" onclick="lvlStart()">▶️ Ενεργοποίηση</button>
+        <div id="lvlStatus" style="color:var(--dim);font-size:12px;margin-top:8px">Ακούμπησε το κινητό επίπεδα (αλφάδι) ή στον τοίχο (κατακόρυφο/ζύγι).</div>
+      </div>
+      <div class="dtool">
+        <h3><span class="em">📏</span> Χάρακας οθόνης</h3>
+        <div class="ruler-wrap"><div class="ruler" id="ruler"></div></div>
+        <div style="font-size:12px;color:var(--muted);margin-top:8px">Βαθμονόμηση: σύρε ώσπου το πλάτος μιας <b>τραπεζικής κάρτας (8,56 cm)</b> να ταιριάζει στα σημάδια (0→8,5).</div>
+        <input type="range" min="2.2" max="6.5" step="0.02" value="${rulerPPMM()}" style="width:100%;margin-top:8px;accent-color:var(--red)" oninput="calibRuler(this.value)">
+      </div>
+      <div class="dtool">
+        <h3><span class="em">🧭</span> Πυξίδα</h3>
+        <div class="compass"><div class="rose" id="cmpRose"><span class="n">Β</span><span class="e">Α</span><span class="s">Ν</span><span class="w">Δ</span></div><div class="needle"></div></div>
+        <div class="lvl-read"><div class="r">Μοίρες<b id="cmpDeg">–</b></div><div class="r">Διεύθυνση<b id="cmpDir">–</b></div></div>
+        <button class="btn primary no-print" style="margin-top:8px" onclick="cmpStart()">▶️ Ενεργοποίηση</button>
+      </div>
+      <div class="dtool">
+        <h3><span class="em">🔦</span> Φακός</h3>
+        <p style="color:var(--muted);font-size:13px;margin:6px 0 12px">LED φακός (Android/Chrome) ή λευκή οθόνη.</p>
+        <button class="btn amber no-print" onclick="toggleFlash()">💡 Άναμμα / Σβήσιμο</button>
+        <div id="flashStatus" style="color:var(--dim);font-size:12px;margin-top:10px"></div>
+      </div>
+      <div class="dtool">
+        <h3><span class="em">⏱️</span> Χρονόμετρο</h3>
+        <div class="big-read" id="tmrDisp">00:00:00</div>
+        <div style="display:flex;gap:10px;justify-content:center;margin-top:8px" class="no-print">
+          <button class="btn primary" id="tmrBtn" onclick="tmrStart()">▶️ Έναρξη</button>
+          <button class="btn ghost" onclick="tmrReset()">🔄 Μηδέν</button>
+        </div>
+        <div class="tip" style="margin-top:10px">Χρήσιμο για χρόνους πήξης/στεγνώματος (μπετόν, κόλλα, σοβάς, σιλικόνη).</div>
+      </div>
+      <div class="dtool">
+        <h3><span class="em">🔊</span> Μετρητής θορύβου</h3>
+        <div class="big-read"><span id="noiseDb">–</span> <span style="font-size:16px;color:var(--muted)">dB*</span></div>
+        <div class="meter" style="margin-top:8px"><i id="noiseMeter"></i></div>
+        <button class="btn primary no-print" id="noiseBtn" style="margin-top:10px" onclick="noiseStart()">🎙️ Έναρξη</button>
+        <div id="noiseStatus" style="color:var(--dim);font-size:12px;margin-top:8px">*Ενδεικτικό (όχι πιστοποιημένο ηχόμετρο).</div>
+      </div>
+    </div>
+    <div class="flash-overlay" id="flashOv"><button class="x" onclick="flashScreen(false)">✕ Κλείσιμο φακού</button></div>
+    <div class="warn" style="margin-top:16px">ℹ️ Οι αισθητήρες χρειάζονται κινητό/τάμπλετ & άδεια (λειτουργούν στο <b>live https</b>). Στον υπολογιστή τα περισσότερα δεν δουλεύουν. Η <b>ζυγαριά βάρους</b> δεν είναι εφικτή — δεν υπάρχει αισθητήρας βάρους σε κινητά.</div>`;
+  drawRuler();
+}
+
+/* ============================================================
    INIT
    ============================================================ */
 STAGE_NORM = 100 / STAGES.reduce((a,s)=>a+s.w,0);
@@ -2709,6 +2896,7 @@ renderChecklist();
 renderPermits();
 renderDIY();
 renderTech();
+renderDigital();
 </script>
 </body>
 </html>

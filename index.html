@@ -269,7 +269,18 @@
   .pmodal-head button{background:var(--bg2);border:1px solid var(--line2);color:var(--txt);width:32px;height:32px;border-radius:8px;cursor:pointer;font-size:16px}
   .pmodal-body{padding:16px;text-align:center}
   /* Ψηφιακά εργαλεία */
-  .dtool{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow);text-align:center}
+  .dtool{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow);text-align:center;position:relative}
+  .tool-fs{position:absolute;top:10px;right:10px;background:var(--bg2);border:1px solid var(--line2);color:var(--txt);width:34px;height:34px;border-radius:9px;cursor:pointer;font-size:16px;line-height:1;z-index:3}
+  .tool-fs:hover{border-color:var(--red);color:var(--red2)}
+  .dtool:fullscreen,.dtool:-webkit-full-screen{width:100vw;height:100vh;box-sizing:border-box;padding:26px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;background:var(--bg);overflow:auto}
+  .dtool:fullscreen .lvl,.dtool:fullscreen .compass{width:min(72vh,88vw);height:min(72vh,88vw)}
+  .dtool:-webkit-full-screen .lvl,.dtool:-webkit-full-screen .compass{width:min(72vh,88vw);height:min(72vh,88vw)}
+  .dtool:fullscreen .camwrap{max-width:min(94vw,860px)}
+  .dtool:-webkit-full-screen .camwrap{max-width:min(94vw,860px)}
+  .dtool:fullscreen .big-read{font-size:64px}
+  .dtool:-webkit-full-screen .big-read{font-size:64px}
+  .dtool:fullscreen .tool-fs::after,.dtool:-webkit-full-screen .tool-fs::after{content:"✕";position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+  .dtool:fullscreen .tool-fs,.dtool:-webkit-full-screen .tool-fs{font-size:0}
   .dtool h3{justify-content:center}
   .lvl{width:230px;height:230px;max-width:80vw;max-height:80vw;margin:14px auto;border-radius:50%;position:relative;
     background:radial-gradient(circle,var(--bg2),var(--bg));border:3px solid var(--line2);transition:border-color .1s}
@@ -850,24 +861,22 @@ function toggleFullscreen(){
   }catch(e){ alert('Η πλήρης οθόνη δεν υποστηρίζεται εδώ. Στο iPhone/iPad: «Προσθήκη στην αρχική οθόνη».'); }
 }
 document.addEventListener('fullscreenchange',()=>{ const b=document.getElementById('fsBtn'); if(b){ const fs=document.fullscreenElement; b.textContent = fs?'⤡':'⛶'; b.title = fs?'Έξοδος από πλήρη οθόνη':'Πλήρης οθόνη (F11)'; } });
-let autoFs=false;
-function enterFs(){
-  if(document.fullscreenElement||document.webkitFullscreenElement) return;
-  const el=document.documentElement, req=el.requestFullscreen||el.webkitRequestFullscreen||el.msRequestFullscreen;
-  if(req){ try{ const p=req.call(el); if(p&&p.catch) p.catch(()=>{}); autoFs=true; }catch(e){} }
+// Πλήρης οθόνη ΑΝΑ εργαλείο (εστίαση σε ένα εργαλείο, όχι όλη η εφαρμογή)
+function toolFs(btn){
+  const card=btn.closest('.dtool'); if(!card) return;
+  const cur=document.fullscreenElement||document.webkitFullscreenElement;
+  if(cur===card){ const ex=document.exitFullscreen||document.webkitExitFullscreen; if(ex) try{ex.call(document);}catch(e){} return; }
+  const req=card.requestFullscreen||card.webkitRequestFullscreen||card.msRequestFullscreen;
+  if(req){ try{ const p=req.call(card); if(p&&p.catch) p.catch(()=>{}); }catch(e){} }
+  else alert('Η πλήρης οθόνη εργαλείου δεν υποστηρίζεται εδώ.\nΣτο iPhone: «Προσθήκη στην αρχική οθόνη».');
 }
-function exitFsAuto(){
-  if(autoFs && (document.fullscreenElement||document.webkitFullscreenElement)){
-    const ex=document.exitFullscreen||document.webkitExitFullscreen||document.msExitFullscreen;
-    if(ex){ try{ ex.call(document); }catch(e){} }
-  }
-  autoFs=false;
-}
+document.addEventListener('fullscreenchange',()=>{ try{ drawRuler(); }catch(e){} });
+document.addEventListener('webkitfullscreenchange',()=>{ try{ drawRuler(); }catch(e){} });
 function go(id){
   document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===id));
   document.querySelectorAll('#tabs button').forEach(b=>b.classList.toggle('active',b.dataset.tab===id));
-  if(id==='digital'){ try{ drawRuler(); }catch(e){} try{ enterFs(); }catch(e){} }
-  else { try{ if(typeof noiseStop==='function') noiseStop(); if(typeof flashScreen==='function') flashScreen(false); if(typeof measStop==='function'){ measStop(); dSet('measStartBtn','📷 Άνοιγμα κάμερας'); } }catch(e){} try{ exitFsAuto(); }catch(e){} }
+  if(id==='digital'){ try{ drawRuler(); }catch(e){} }
+  else { try{ if(typeof noiseStop==='function') noiseStop(); if(typeof flashScreen==='function') flashScreen(false); if(typeof measStop==='function'){ measStop(); dSet('measStartBtn','📷 Άνοιγμα κάμερας'); } }catch(e){} }
   window.scrollTo({top:0,behavior:'smooth'});
 }
 window.addEventListener('resize',()=>{ try{ drawRuler(); }catch(e){} });
@@ -2944,7 +2953,14 @@ function renderDigital(){
       </div>
     </div>
     <div class="flash-overlay" id="flashOv"><button class="x" onclick="flashScreen(false)">✕ Κλείσιμο φακού</button></div>
-    <div class="warn" style="margin-top:16px">ℹ️ Οι αισθητήρες χρειάζονται κινητό/τάμπλετ & άδεια (λειτουργούν στο <b>live https</b>). Στον υπολογιστή τα περισσότερα δεν δουλεύουν. Η <b>ζυγαριά βάρους</b> δεν είναι εφικτή — δεν υπάρχει αισθητήρας βάρους σε κινητά.</div>`;
+    <div class="warn" style="margin-top:16px">ℹ️ Οι αισθητήρες χρειάζονται κινητό/τάμπλετ & άδεια (λειτουργούν στο <b>live https</b>). Στον υπολογιστή τα περισσότερα δεν δουλεύουν. Η <b>ζυγαριά βάρους</b> δεν είναι εφικτή — δεν υπάρχει αισθητήρας βάρους σε κινητά. 💡 Πάτησε ⛶ σε κάθε εργαλείο για <b>πλήρη οθόνη με εστίαση</b>.</div>`;
+  document.querySelectorAll('#digital .dtool').forEach(c=>{
+    if(!c.querySelector('.tool-fs')){
+      const b=document.createElement('button'); b.className='tool-fs no-print'; b.title='Πλήρης οθόνη εργαλείου';
+      b.textContent='⛶'; b.onclick=function(){ toolFs(this); };
+      c.appendChild(b);
+    }
+  });
   drawRuler();
 }
 

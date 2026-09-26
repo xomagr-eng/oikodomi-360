@@ -999,10 +999,11 @@ function renderHome(){
       κόστη, τρόπους ανέγερσης, υλικά, εργαλεία και μάστορες. Ο <b>Λύτης</b> παίρνει τις επιλογές σου
       και βγάζει αυτόματα αναλυτικό πλάνο, προϋπολογισμό και χρονοδιάγραμμα.</p>
       <div class="cta">
-        <button class="btn primary" onclick="go('solver')">🧮 Ξεκίνα τον Λύτη</button>
-        <button class="btn ghost" onclick="go('stages')">📋 Δες τα στάδια</button>
-        <button class="btn ghost" onclick="go('methods')">🏗️ Τρόποι ανέγερσης</button>
+        <button class="btn primary" onclick="go('solver')">🏗️ Θα χτίσω</button>
+        <button class="btn amber" onclick="go('diy')">🛠️ Θα ανακαινίσω</button>
+        <button class="btn ghost" onclick="go('tech')">📚 Πώς γίνεται</button>
       </div>
+      <p style="color:var(--dim);font-size:12.5px;margin-top:12px;margin-bottom:0">💡 Διάλεξε διαδρομή: <b>Θα χτίσω</b> → ο Λύτης βγάζει πλήρη προϋπολογισμό · <b>Θα ανακαινίσω</b> → υπολογιστές & «μόνος σου vs μάστορας» · <b>Πώς γίνεται</b> → τεχνικές, επισκευές & χρήσιμοι πίνακες. Πάτησε 📷 οπουδήποτε για φωτογραφία.</p>
     </div>
 
     <div class="grid g4" style="margin-top:18px">
@@ -1010,6 +1011,8 @@ function renderHome(){
       <div class="stat accent-amber"><div class="k">Τρόποι ανέγερσης</div><div class="v">${Object.keys(METHODS).length}</div></div>
       <div class="stat accent-blue"><div class="k">Υλικά στη βάση</div><div class="v">${Object.keys(MATERIALS).length}</div></div>
       <div class="stat"><div class="k">Ειδικότητες μαστόρων</div><div class="v">${Object.keys(CREWS).length}</div></div>
+      <div class="stat accent-amber"><div class="k">Τεχνικές & επισκευές</div><div class="v">${TECHNIQUES.reduce((a,g)=>a+g.items.length,0)}</div></div>
+      <div class="stat accent-red"><div class="k">Οδηγοί DIY</div><div class="v">${HOWTO.length}</div></div>
     </div>
 
     <div class="sectitle"><span class="em">🧭</span><h2>Ενότητες</h2></div>
@@ -2462,6 +2465,46 @@ const TECHNIQUES = [
     {t:"Κουνούπι / Μύγα / Σκόρος", q:"mosquito screen window", body:[
       "Σίτες σε παράθυρα, όχι στάσιμα νερά, εντομοαπωθητικά.",
       "Σκόρος ρούχων: καθαριότητα ντουλάπας, κέδρος/λεβάντα, ερμητικά σακούλες."]},
+  ]},
+  {group:"📐 Χρήσιμοι Πίνακες", items:[
+    {t:"Αναλογίες μιγμάτων", q:"concrete mix ratio", body:[
+      "🧱 <b>Λάσπη χτισίματος:</b> 1 τσιμέντο : 3–4 άμμος",
+      "🧴 <b>Σοβάς (λάσπωμα):</b> 1 τσιμέντο : 3 άμμος (+ ασβέστης)",
+      "🏗️ <b>Γαρμπιλομπετόν:</b> 1 τσιμέντο : 2 άμμος : 3 γαρμπίλι",
+      "💪 <b>Μπετόν C20/25:</b> προτίμησε <b>έτοιμο</b> (εργοστασιακό) για φέροντα",
+      "🪣 <b>Κόλλα πλακιδίων:</b> ~4–6 kg/m² · <b>αρμόστοκος:</b> ~0,5 kg/m²"]},
+    {t:"Σκάλες (ρίχτι & πάτημα)", q:"staircase dimensions", body:[
+      "📏 <b>Ρίχτι (ύψος):</b> 16–18 cm · <b>Πάτημα:</b> 28–30 cm",
+      "🧮 <b>Κανόνας άνεσης:</b> 2×ρίχτι + πάτημα = 62–65 cm",
+      "↔️ <b>Πλάτος σκάλας κατοικίας:</b> ≥ 80–90 cm",
+      "🛡️ <b>Κουπαστή:</b> ύψος ~90–100 cm"]},
+    {t:"Κλίσεις", q:"drainage slope", body:[
+      "🚿 <b>Αποχέτευση (οριζόντια):</b> 1–2%",
+      "🏘️ <b>Ταράτσα/δώμα:</b> ελάχ. 1,5% προς υδρορροές",
+      "♿ <b>Ράμπα ΑμΕΑ:</b> ≤ 5% (1:20)",
+      "🅿️ <b>Ράμπα γκαράζ:</b> ≤ 15–18% (με απόληξη ηπιότερη)"]},
+    {t:"Πάχη τοίχων & μονώσεων", q:"wall insulation thickness", body:[
+      "🧱 <b>Εξωτ. μπατικός τοίχος:</b> ~25 cm (+ θερμομόνωση)",
+      "🧱 <b>Δρομικός/εσωτ.:</b> ~10–12 cm",
+      "🧊 <b>Θερμοπρόσοψη EPS:</b> 5–8 cm",
+      "🧊 <b>Μόνωση δώματος:</b> 8–12 cm · <b>δαπέδου:</b> 3–5 cm"]},
+    {t:"Τυπικές διαστάσεις χώρων & κουφωμάτων", q:"door dimensions standard", body:[
+      "🚪 <b>Πόρτα εισόδου:</b> ~90–100 × 210–220 cm",
+      "🚪 <b>Εσωτ. πόρτα:</b> ~70–90 × 210 cm",
+      "🛁 <b>Μπάνιο:</b> ελάχ. ~1,5–2,0 m² · <b>WC:</b> ~1,2 m²",
+      "🛏️ <b>Υπνοδωμάτιο:</b> ≥ 9–12 m² · <b>Κρεβάτι διπλό:</b> 160×200 cm",
+      "🍳 <b>Διάδρομος κουζίνας:</b> ≥ 90–120 cm"]},
+    {t:"Ύψη τοποθέτησης", q:"electrical socket height", body:[
+      "🔌 <b>Πρίζες:</b> ~30 cm από δάπεδο (κουζίνας πάγκου ~110 cm)",
+      "💡 <b>Διακόπτες:</b> ~105–110 cm",
+      "🍽️ <b>Πάγκος κουζίνας:</b> ~90 cm · <b>ντουλάπια πάνω:</b> ~145 cm",
+      "🚽 <b>Νιπτήρας:</b> ~85 cm · <b>καθρέφτης:</b> ~135 cm κέντρο",
+      "📐 <b>Ελεύθερο ύψος χώρου:</b> ≥ 2,60–2,70 m"]},
+    {t:"Φωτισμός (lux) ανά χώρο", q:"interior lighting lux", body:[
+      "🛋️ <b>Σαλόνι:</b> ~100–150 lux · 🍽️ <b>Τραπεζαρία:</b> ~150–200",
+      "🍳 <b>Κουζίνα (πάγκος):</b> ~300–500 · 🛁 <b>Μπάνιο:</b> ~200",
+      "🛏️ <b>Υπνοδωμάτιο:</b> ~100–150 · 🖥️ <b>Γραφείο:</b> ~500",
+      "🪜 <b>Σκάλα/διάδρομος:</b> ~100–150 lux"]},
   ]},
 ];
 function renderTech(){

@@ -2852,21 +2852,32 @@ async function noiseStart(){
 function noiseStop(){ if(!NOISE) return; try{cancelAnimationFrame(NOISE.raf);}catch(e){} try{NOISE.stream.getTracks().forEach(t=>t.stop());}catch(e){} try{NOISE.ctx.close();}catch(e){} NOISE=null; dSet('noiseBtn','🎙️ Έναρξη'); }
 // Μέτρο με κάμερα (τριγωνομετρικό: γωνία κλίσης + ύψος κρατήματος)
 let CAMSTREAM=null, MEAS={pitch:0,dist:null};
-async function measStart(){
-  if(CAMSTREAM){ measStop(); dSet('measStatus','Κάμερα κλειστή.'); dSet('measStartBtn','📷 Άνοιγμα κάμερας'); return; }
+function measStart(){
+  if(CAMSTREAM){ measStop(); dSet('measStartBtn','📷 Άνοιγμα κάμερας'); dSet('measStatus','Κάμερα κλειστή.'); return; }
+  // 1) Άδεια αισθητήρα κλίσης ΠΡΩΤΑ (μέσα στο user-gesture — απαραίτητο σε iPhone)
+  const attach=()=>window.addEventListener('deviceorientation',onMeasOrient,true);
+  try{
+    if(typeof DeviceOrientationEvent!=='undefined' && typeof DeviceOrientationEvent.requestPermission==='function'){
+      DeviceOrientationEvent.requestPermission().then(st=>{ st==='granted'?attach():dSet('measStatus','⛔ Χωρίς άδεια αισθητήρα κλίσης — δώσε «Να επιτρέπεται».'); }).catch(()=>{});
+    } else if('DeviceOrientationEvent' in window){ attach(); }
+    else dSet('measStatus','Η συσκευή δεν έχει αισθητήρα κλίσης — δοκίμασε σε κινητό.');
+  }catch(e){}
+  // 2) Κάμερα (ασύγχρονα)
+  measCam();
+  // 3) Έλεγχος ότι έρχονται δεδομένα αισθητήρα
+  MEAS._got=false;
+  setTimeout(()=>{ if(!MEAS._got) dSet('measStatus','⚠️ Ο αισθητήρας κλίσης δεν δίνει δεδομένα. Άνοιξέ το στο <b>ΚΙΝΗΤΟ</b> (live https), κράτα το κατακόρυφα & κούνησέ το ελαφρά.'); },2500);
+}
+async function measCam(){
   try{
     const s=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:'environment'}}});
-    CAMSTREAM=s; const v=document.getElementById('measVid'); if(v){ v.srcObject=s; await v.play(); }
-    const go=()=>window.addEventListener('deviceorientation',onMeasOrient,true);
-    if(typeof DeviceOrientationEvent!=='undefined' && typeof DeviceOrientationEvent.requestPermission==='function'){
-      DeviceOrientationEvent.requestPermission().then(st=>{ if(st==='granted') go(); }).catch(()=>{});
-    } else if('DeviceOrientationEvent' in window){ go(); }
+    CAMSTREAM=s; const v=document.getElementById('measVid'); if(v){ v.srcObject=s; v.setAttribute('playsinline',''); try{ await v.play(); }catch(e){} }
     dSet('measStartBtn','⏹️ Κλείσιμο κάμερας');
-    dSet('measStatus','Κράτα το κινητό κατακόρυφα (portrait). Στόχευσε & πάτησε το κουμπί.');
-  }catch(e){ dSet('measStatus','⛔ Χωρίς πρόσβαση κάμερας.'); }
+    dSet('measStatus','✅ Κράτα το κινητό <b>ΚΑΤΑΚΟΡΥΦΑ</b>. Στόχευσε τη <b>βάση</b> του απέναντι τοίχου → «Σημείο στο δάπεδο».');
+  }catch(e){ dSet('measStatus','⛔ Χωρίς πρόσβαση κάμερας. Χρειάζεται <b>κινητό + https + άδεια</b>. (Στο artifact/υπολογιστή δεν δουλεύει — άνοιξε το live link.)'); }
 }
 function measStop(){ if(CAMSTREAM){ try{CAMSTREAM.getTracks().forEach(t=>t.stop());}catch(e){} CAMSTREAM=null; } }
-function onMeasOrient(e){ const beta=e.beta||0; MEAS.pitch=beta-90; dSet('measPitch',(MEAS.pitch>=0?'+':'')+MEAS.pitch.toFixed(0)+'°'); }
+function onMeasOrient(e){ if(e.beta==null && e.gamma==null) return; MEAS._got=true; const beta=e.beta||0; MEAS.pitch=beta-90; dSet('measPitch',(MEAS.pitch>=0?'+':'')+MEAS.pitch.toFixed(0)+'°'); }
 function measH(){ return parseFloat((document.getElementById('measHin')||{}).value)||1.5; }
 function measFloor(){
   const down=-MEAS.pitch;
@@ -2919,8 +2930,9 @@ function renderDigital(){
       </div>
       <div class="dtool">
         <h3><span class="em">📏</span> Χάρακας οθόνης</h3>
+        <p style="color:var(--muted);font-size:12.5px;margin:2px 0 6px">Ακούμπησε το <b>αντικείμενο πάνω στην οθόνη</b> και διάβασε τα εκατοστά (για μικρά μεγέθη ή γρήγορο έλεγχο).</p>
         <div class="ruler-wrap"><div class="ruler" id="ruler"></div></div>
-        <div style="font-size:12px;color:var(--muted);margin-top:8px">Βαθμονόμηση: σύρε ώσπου το πλάτος μιας <b>τραπεζικής κάρτας (8,56 cm)</b> να ταιριάζει στα σημάδια (0→8,5).</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:8px">1️⃣ <b>Βαθμονόμησε πρώτα</b>: σύρε τον διακόπτη ώσπου το πλάτος μιας <b>τραπεζικής κάρτας (8,56 cm)</b> να ταιριάζει από το 0 έως το 8,5.</div>
         <input type="range" min="2.2" max="6.5" step="0.02" value="${rulerPPMM()}" style="width:100%;margin-top:8px;accent-color:var(--red)" oninput="calibRuler(this.value)">
       </div>
       <div class="dtool">
